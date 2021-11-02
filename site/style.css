@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Zen Kurenaido', sans-serif;
 }
 
 li {
@@ -17,11 +20,6 @@ button {
     outline: 0;
 }
 
-form {
-    border: 0;
-    outline: 0;
-}
-
 .container {
     max-width: 1170px;
     margin: 0 auto;
@@ -29,13 +27,36 @@ form {
 
 header {
     width: 100%;
-    background-color: #000;
-    height: 60px;
+    background-color: #BEBEBE8B;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-ul {
+
+header ul {
     display: flex;
-    justify-content: center;
+}
+
+header ul li:first-of-type {
+    margin-left: 0px;
+}
+
+header ul li {
+    margin-left: 20px;
+}
+
+header ul li a:first-of-type {
+    color: black;
+    font-size: 1.8em;
+    margin-left: 5px;
+}
+
+main .grid_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
 }
 
 footer {
