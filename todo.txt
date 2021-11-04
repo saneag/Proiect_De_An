@@ -1,8 +1,6 @@
-Buton de schimbare a temei 
-casuta cu search
-menu cu sortari
-de facut 5 pagini cu masini
-de facut buton next si prev
-date despre autori (media links ... )
-contact
-report bug
+Buton de schimbare a temei //pe jumate am facut
+casuta cu search //inca nu am facut
+menu cu sortari //inca nu am facut
+date despre autori (media links ... ) //o sa fac mai incolo oleak
+contact //tot mai incolo
+report bug //mai incolo
