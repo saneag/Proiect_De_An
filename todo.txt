@@ -1,0 +1,8 @@
+Buton de schimbare a temei 
+casuta cu search
+menu cu sortari
+de facut 5 pagini cu masini
+de facut buton next si prev
+date despre autori (media links ... )
+contact
+report bug

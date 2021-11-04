@@ -4,40 +4,119 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Cars sort</title>
 </head>
 
 <body>
     <header>
-        <nav>
-            <div class="container">
+        <div class="container">
+            <nav>
+                <div id="circle_theme">
+                    <a href="javascript:void(0);" onclick="change_theme()">
+                        <img src="./images/color_change_white.png" alt="" id="theme_changer">
+                    </a>
+                </div>
                 <ul>
-                    <li><img src="./images/home.png" alt="Home" width="25px"><a href="#">Home</a></li>
+                    <li id="contact"><a href="javascript:void(0);">Contact</a></li>
+                    <li><a href="index.html" id="home"><img src="./images/home.png" alt="Home" width="25px"> Home</a>
+                    </li>
+                    <li><a href="#">About</a></li>
                 </ul>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
     <main>
-        <div class="container">
-            <div class="grid_container">
-                <div id="cars">
-                    
+        <div class="grid_container">
+            <div class="cars" id="car1">
+                <a href="#"><img src="./images/alfa_romeo_stelvio_quadrifoglio.png" alt="">Alfa Romeo
+                    Stelvio Quadrifoglio</a>
+            </div>
+            <div class="cars" id="car2">
+                <a href="#"><img src="./images/alfa_romeo_giulia_quadrifoglio.jpg" alt="" height="169px">Alfa Romeo
+                    Giulia Quadrifoglio</a>
+            </div>
+            <div class="cars" id="car3">
+                <a href="#"><img src="./images/alfa_romeo_4c.png" alt="">Alfa Romeo 4C</a>
+            </div>
+            <div class="cars" id="car4">
+                <a href="#"><img src="./images/alfa_romeo_8c.png" alt="">Alfa Romeo 8C
+                    Competizione</a>
+            </div>
+            <div class="cars" id="car5">
+                <a href="#"><img src="./images/aston_martin_DB11.png" alt="">Aston Martin DB11</a>
+            </div>
+            <div class="cars" id="car6">
+                <a href="#"><img src="./images/aston_martin_vulcan.png" alt="">Aston Martin Vulcan</a>
+            </div>
+            <div class="cars" id="car7">
+                <a href="#"><img src="./images/aston_martin_vantage_gt12.png" alt="">Aston Martin Vantage GT12</a>
+            </div>
+            <div class="cars" id="car8">
+                <a href="#"><img src="./images/aston_martin_DB10.png" alt="">Aston Martin DB10</a>
+            </div>
+            <div class="cars" id="car9">
+                <a href="#"><img src="./images/audi_r8_v10_plus.png" alt="">Audi R8 V10 plus</a>
+            </div>
+            <div class="cars" id="car10">
+                <a href="#"><img src="./images/audi_s1.png" alt="">Audi S1</a>
+            </div>
+            <div class="cars" id="car11">
+                <a href="#"><img src="./images/audi_rs_6_avant.png" alt="">Audi RS 6 Avant</a>
+            </div>
+            <div class="cars" id="car12">
+                <a href=" #"><img src="./images/audi_tts_coupe.png" alt="">Audi TTS Coupé</a>
+            </div>
+            <div class=" cars" id="car13">
+                <a href="#"><img src="" alt=""></a>
+            </div>
+            <div class="cars" id="car14">
+                <a href="#"><img src="" alt=""></a>
+            </div>
+            <div class="cars" id="car15">
+                <a href="#"><img src="" alt=""></a>
+            </div>
+            <div class="cars" id="car16">
+                <a href="#"><img src="" alt=""></a>
+            </div>
+            <div class="cars" id="car17">
+                <a href="#"><img src="" alt=""></a>
+            </div>
+            <div class="cars" id="car18">
+                <a href="#"><img src="" alt=""></a>
+            </div>
+            <div class="cars" id="car19">
+                <a href="#"><img src="" alt=""></a>
+            </div>
+            <div class="cars" id="car20">
+                <a href="#"><img src="" alt=""></a>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="close">
+                    <div class="close_btn_x" onclick="remove_info()">
+                        <div class="x-bar" id="x-bar-top"></div>
+                        <div class="x-bar" id="x-bar-bottom"></div>
+                    </div>
+                </div>
+                <div id="modal_content" class="cars_about">
+
                 </div>
             </div>
         </div>
-        <button onclick="Sort()">Sort</button>
     </main>
     <footer>
         <div class="container">
             <p class="copyright">
-                © 2021 Alexandr Garstea, Tentiuc Ion. All rights reserved.
+                © 2021 Alexandr Garstea, Tentiuc Ion, Raileanu Daniel. All rights reserved.
             </p>
         </div>
     </footer>
     <noscript>Your browser don't support JavaScript!</noscript>
-    <script type =" text/javascript" src="./script.js"></script>
+    <script type=" text/javascript" src="./script.js"></script>
+    <script type=" text/javascript" src="./cars.js"></script>
 </body>
 
 </html>
