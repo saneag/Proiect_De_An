@@ -1,9 +1,9 @@
-let cars = document.getElementsByClassName('cars')
-let myModal = document.getElementById('myModal')
-let modal_content = document.getElementById('modal_content')
-let par, car_info
-let img = document.createElement('img')
+const cars = document.getElementsByClassName('cars')
+const myModal = document.getElementById('myModal')
+const modal_content = document.getElementById('modal_content')
+const img = document.createElement('img')
 let new_div = document.createElement('div')
+let par, car_info
 
 for (let i = 0; i < cars.length; i++) {
     cars[i].addEventListener('click', () => {
@@ -33,13 +33,75 @@ function display_img(i) {
     switch (i) {
         case 0:
             img.src = './images/alfa_romeo_stelvio_quadrifoglio_modal.png'
-            new_div.appendChild(img)
-            modal_content.appendChild(new_div)
+            add_image(img)
             break
-        case 1: img.src = './images/alfa_romeo_giulia_quadrifoglio_modal.jpg'
-            new_div.appendChild(img)
-            modal_content.appendChild(new_div)
+        case 1:
+            img.src = './images/alfa_romeo_giulia_quadrifoglio_modal.jpg'
+            add_image(img)
+            break
+        case 2: img.src = './images/'
+            add_image(img)
+            break
+        case 3: img.src = './images/'
+            add_image(img)
+            break
+        case 4: img.src = './images/'
+            add_image(img)
+            break
+        case 5: img.src = './images/'
+            add_image(img)
+            break
+        case 6: img.src = './images/'
+            add_image(img)
+            break
+        case 7: img.src = './images/'
+            add_image(img)
+            break
+        case 8: img.src = './images/'
+            add_image(img)
+            break
+        case 9: img.src = './images/'
+            add_image(img)
+            break
+        case 10: img.src = './images/'
+            add_image(img)
+            break
+        case 11: img.src = './images/'
+            add_image(img)
+            break
+        case 12: img.src = './images/'
+            add_image(img)
+            break
+        case 13: img.src = './images/'
+            add_image(img)
+            break
+        case 14: img.src = './images/'
+            add_image(img)
+            break
+        case 15: img.src = './images/'
+            add_image(img)
+            break
+        case 16: img.src = './images/'
+            add_image(img)
+            break
+        case 17: img.src = './images/'
+            add_image(img)
+            break
+        case 18: img.src = './images/'
+            add_image(img)
+            break
+        case 19: img.src = './images/'
+            add_image(img)
+            break
+        case 20: img.src = './images/'
+            add_image(img)
+            break
     }
+}
+
+function add_image(img) {
+    new_div.appendChild(img)
+    modal_content.appendChild(new_div)
 }
 
 function remove_info() {
