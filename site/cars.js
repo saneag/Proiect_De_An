@@ -108,48 +108,48 @@ allCars[7] = new Car({
     pret: '3.430.000 $'
 });
 allCars[8] = new Car({
-    marca: '',
-    model: '',
-    anul: '',
-    combustibil: '',
-    capacitatea: '',
-    puterea: '',
-    tractiunea: '',
-    cutia: '',
-    pret: ''
+    marca: 'Audi',
+    model: 'R8 V10 Plus',
+    anul: '2016',
+    combustibil: 'benzin',
+    capacitatea: '5.2 l',
+    puterea: '610 hp',
+    tractiunea: 'RWD',
+    cutia: 'Automat',
+    pret: '255.000 $'
 });
 allCars[9] = new Car({
-    marca: '',
-    model: '',
-    anul: '',
-    combustibil: '',
-    capacitatea: '',
-    puterea: '',
-    tractiunea: '',
-    cutia: '',
-    pret: ''
+    marca: 'Audi',
+    model: 'S1',
+    anul: '2015',
+    combustibil: 'benzin',
+    capacitatea: '2.0 l',
+    puterea: '231 hp',
+    tractiunea: '4x4',
+    cutia: 'Manual',
+    pret: '23.200 $'
 });
 allCars[10] = new Car({
-    marca: '',
-    model: '',
-    anul: '',
-    combustibil: '',
-    capacitatea: '',
-    puterea: '',
-    tractiunea: '',
-    cutia: '',
-    pret: ''
+    marca: 'Audi',
+    model: 'RS 6 Avant',
+    anul: '2015',
+    combustibil: 'benzin',
+    capacitatea: '4.0 l',
+    puterea: '560 hp',
+    tractiunea: '4x4',
+    cutia: 'Automat',
+    pret: '117.700 $'
 });
 allCars[11] = new Car({
-    marca: '',
-    model: '',
-    anul: '',
-    combustibil: '',
-    capacitatea: '',
-    puterea: '',
-    tractiunea: '',
-    cutia: '',
-    pret: ''
+    marca: 'Audi',
+    model: 'TTS Coupe',
+    anul: '2015',
+    combustibil: 'benzin',
+    capacitatea: '2.0 l',
+    puterea: '265 hp',
+    tractiunea: '4x4',
+    cutia: 'Automat',
+    pret: '49.000 $'
 });
 allCars[12] = new Car({
     marca: '',
