@@ -139,3 +139,11 @@ function change_theme() {
         }
     }
 }
+
+window.onload = () =>{
+    setTimeout(()=> 
+    {
+        document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
+        document.getElementsByClassName('loading')[0].style.opacity = '0'
+    },2000)
+}
