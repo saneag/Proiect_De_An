@@ -62,7 +62,7 @@ header ul li a {
 
 header ul li a:hover {
     border-bottom: 1px solid red;
-    filter: opacity(0.5);
+    filter: opacity(0.7);
 }
 
 #home img {
@@ -84,14 +84,6 @@ nav {
 
 #circle_theme img {
     width: 30px;
-}
-
-body.change_color {
-    background-color: #ACACACFF;
-}
-
-header.change_color {
-    background-color: #fff;
 }
 
 main {
@@ -117,7 +109,10 @@ main .grid_container {
 
 .cars img {
     border-radius: 5%;
-    border: 2px solid white;
+}
+
+.cars a {
+    font-weight: bold;
 }
 
 .modal {
@@ -143,6 +138,7 @@ main .grid_container {
     width: 60vw;
     height: 80vh;
     border-radius: 5%;
+    user-select: none;
 }
 
 .close {
@@ -154,7 +150,7 @@ main .grid_container {
     position: relative;
     transform: scale(3);
     display: block;
-    padding: 10px;
+    padding: 5px 2px;
     transition: 0.3s;
     cursor: pointer;
 }

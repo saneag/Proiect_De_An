@@ -4,6 +4,7 @@ const modal_content = document.getElementById('modal_content')
 const img = document.createElement('img')
 let new_div = document.createElement('div')
 let par, car_info
+const links = document.getElementsByTagName('a')
 
 for (let i = 0; i < cars.length; i++) {
     cars[i].addEventListener('click', () => {
@@ -39,34 +40,34 @@ function display_img(i) {
             img.src = './images/alfa_romeo_giulia_quadrifoglio_modal.jpg'
             add_image(img)
             break
-        case 2: img.src = './images/'
+        case 2: img.src = './images/alfa_romeo_4c_modal.png'
             add_image(img)
             break
-        case 3: img.src = './images/'
+        case 3: img.src = './images/alfa-romeo-8c-competizione_modal.jpg'
             add_image(img)
             break
-        case 4: img.src = './images/'
+        case 4: img.src = './images/aston_martin_db11_modal.png'
             add_image(img)
             break
-        case 5: img.src = './images/'
+        case 5: img.src = './images/aston_martin_vulcan_modal.png'
             add_image(img)
             break
-        case 6: img.src = './images/'
+        case 6: img.src = './images/aston_martin_vantage_gt12_modal.png'
             add_image(img)
             break
-        case 7: img.src = './images/'
+        case 7: img.src = './images/aston_martin_db10_modal.png'
             add_image(img)
             break
-        case 8: img.src = './images/'
+        case 8: img.src = './images/audi_r8_v10_plus_modal.png'
             add_image(img)
             break
-        case 9: img.src = './images/'
+        case 9: img.src = './images/audi_s1_modal.png'
             add_image(img)
             break
-        case 10: img.src = './images/'
+        case 10: img.src = './images/audi_rs_6_avant_modal.png'
             add_image(img)
             break
-        case 11: img.src = './images/'
+        case 11: img.src = './images/audi_tts_coupe_modal.png'
             add_image(img)
             break
         case 12: img.src = './images/'
@@ -117,14 +118,24 @@ window.onclick = (event) => {
         remove_info()
 }
 
+const footer = document.querySelector('footer')
+
 function change_theme() {
     let img = document.getElementById('theme_changer')
     if (img.src.match('color_change_white.png')) {
         img.src = './images/color_change_dark.png'
-        document.body.classList.add('change_color')
+        document.body.style.backgroundColor = 'white'
+        footer.style.color = 'black'
+        for (let i = 4; i < links.length; i++) {
+            links[i].style.color = 'black'
+        }
     }
     else {
         img.src = './images/color_change_white.png'
-        document.body.classList.remove('change_color')
+        document.body.style.backgroundColor = ''
+        footer.style.color = ''
+        for (let i = 4; i < links.length; i++) {
+            links[i].style.color = ''
+        }
     }
 }
