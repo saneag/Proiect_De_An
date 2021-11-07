@@ -6,6 +6,16 @@ let new_div = document.createElement('div')
 let par, car_info
 const links = document.getElementsByTagName('a')
 
+window.onload = () => {
+    window.scrollTo(0, 0)
+    document.body.style.overflowY = 'hidden'
+    setTimeout(() => {
+        document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
+        document.getElementsByClassName('loading')[0].style.opacity = '0'
+        document.body.style.overflowY = ''
+    }, 3000)
+}
+
 for (let i = 0; i < cars.length; i++) {
     cars[i].addEventListener('click', () => {
         display(i)
@@ -27,7 +37,7 @@ function display(x) {
         new_div.appendChild(par)
         modal_content.appendChild(new_div)
     }
-
+    disableScroll()
 }
 function display_img(i) {
     new_div = document.createElement('div')
@@ -111,11 +121,14 @@ function remove_info() {
     while (modal_content.firstChild) {
         modal_content.removeChild(modal_content.lastChild)
     }
+    enableScroll()
 }
 
 window.onclick = (event) => {
-    if (event.target == myModal)
+    if (event.target == myModal) {
         remove_info()
+        enableScroll()
+    }
 }
 
 const footer = document.querySelector('footer')
@@ -140,10 +153,47 @@ function change_theme() {
     }
 }
 
-window.onload = () =>{
-    setTimeout(()=> 
+
+//go back
+/*
+    arrowTop.onclick = function()
     {
-        document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
-        document.getElementsByClassName('loading')[0].style.opacity = '0'
-    },2000)
+        window.scrolltTo(pageXOffset, 0);
+    }
+    window.addEventListener('scroll', function()
+    {
+        arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight)
+    })
+*/
+
+//prevent scrolling
+let keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+function preventDefault(e) {
+    e.preventDefault();
+}
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+let supportsPassive = false;
+try {
+    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+        get: function () { supportsPassive = true; }
+    }));
+} catch (e) { }
+let wheelOpt = supportsPassive ? { passive: false } : false;
+let wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+function disableScroll() {
+    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+function enableScroll() {
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+    window.removeEventListener('touchmove', preventDefault, wheelOpt);
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
