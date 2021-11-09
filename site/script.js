@@ -5,6 +5,9 @@ const img = document.createElement('img')
 let new_div = document.createElement('div')
 let par, car_info
 const links = document.getElementsByTagName('a')
+const inp = document.querySelectorAll('input')
+const footer = document.querySelector('footer')
+
 
 window.onload = () => {
     window.scrollTo(0, 0)
@@ -13,7 +16,7 @@ window.onload = () => {
         document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
         document.getElementsByClassName('loading')[0].style.opacity = '0'
         document.body.style.overflowY = ''
-    }, 3000)
+    }, 2000)
 }
 
 for (let i = 0; i < cars.length; i++) {
@@ -131,12 +134,10 @@ window.onclick = (event) => {
     }
 }
 
-const footer = document.querySelector('footer')
-
 function change_theme() {
     let img = document.getElementById('theme_changer')
-    if (img.src.match('color_change_white.png')) {
-        img.src = './images/color_change_dark.png'
+    img.classList.toggle('rotate_theme')
+    if (img.classList.contains('rotate_theme')) {
         document.body.style.backgroundColor = 'white'
         footer.style.color = 'black'
         for (let i = 4; i < links.length; i++) {
@@ -144,7 +145,6 @@ function change_theme() {
         }
     }
     else {
-        img.src = './images/color_change_white.png'
         document.body.style.backgroundColor = ''
         footer.style.color = ''
         for (let i = 4; i < links.length; i++) {
@@ -152,19 +152,6 @@ function change_theme() {
         }
     }
 }
-
-
-//go back
-/*
-    arrowTop.onclick = function()
-    {
-        window.scrolltTo(pageXOffset, 0);
-    }
-    window.addEventListener('scroll', function()
-    {
-        arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight)
-    })
-*/
 
 //prevent scrolling
 let keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
@@ -196,4 +183,26 @@ function enableScroll() {
     window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
     window.removeEventListener('touchmove', preventDefault, wheelOpt);
     window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
+let cnt = 0
+
+function deleteInput() {
+    document.getElementsByClassName('arrow')[0].classList.toggle('down')
+    document.getElementsByClassName('arrow')[0].classList.toggle('up')
+    if (cnt) {
+        setTimeout(() => {
+            for (let i = 0; i < inp.length; i++)
+                if (inp[i].value.length != 0) {
+                    inp[i].value = ''
+                }
+            cnt = 0
+        }, 300)
+    }
+    cnt = 1
+}
+
+function rotateArrow() {
+    document.getElementsByClassName('arrow')[1].classList.toggle('down')
+    document.getElementsByClassName('arrow')[1].classList.toggle('up')
 }
