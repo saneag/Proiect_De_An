@@ -141,8 +141,7 @@ function change_theme() {
     if (img.classList.contains('rotate_theme')) {
         document.body.style.backgroundColor = 'white'
         footer.style.color = 'black'
-        for(let i = 0; i < inp.length;i++)
-        {
+        for (let i = 0; i < inp.length; i++) {
             inp[i].style.color = 'black'
         }
         for (let i = 4; i < links.length; i++) {
@@ -152,8 +151,7 @@ function change_theme() {
     else {
         document.body.style.backgroundColor = ''
         footer.style.color = ''
-        for(let i = 0; i < inp.length;i++)
-        {
+        for (let i = 0; i < inp.length; i++) {
             inp[i].style.color = ''
         }
         for (let i = 4; i < links.length; i++) {
@@ -213,4 +211,9 @@ function deleteInput() {
 function rotateArrow() {
     document.getElementsByClassName('arrow')[1].classList.toggle('down')
     document.getElementsByClassName('arrow')[1].classList.toggle('up')
+}
+
+function openMenu() {
+    document.getElementById('mobile_nav').classList.toggle('show_nav')
+    document.getElementById('openmenu').classList.toggle('change')
 }

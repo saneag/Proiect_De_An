@@ -1,0 +1,68 @@
+@media only screen and (max-width: 1600px) {
+    main .car_galery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    main .car_galery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .main_container {
+        grid-template-columns: 1fr;
+    }
+
+    .burger_menu {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav {
+        justify-content: space-between;
+        margin: 0 40px;
+    }
+
+    .mobile_nav {
+        background-color: inherit;
+        top: 69px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 30vh;
+    }
+
+    .mobile_nav a {
+        font-size: 3em;
+    }
+
+    .mobile_nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .mobile_nav li:first-of-type {
+        margin: 0;
+    }
+
+    .mobile_nav li {
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    main .car_galery {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 550px) {}

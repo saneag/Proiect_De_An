@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./media.css">
     <title>Cars sort</title>
 </head>
 
@@ -14,25 +15,41 @@
         <div class="loader"></div>
     </div>
     <header>
-        <div class="container">
-            <nav>
-                <div id="circle_theme">
-                    <a href="javascript:void(0);" onclick="change_theme()">
-                        <img src="./images/color_change.png" alt="" id="theme_changer">
-                    </a>
-                </div>
-                <ul>
-                    <li>
-                        <a href="index.html"><img src="./images/home.png" alt="Home" width="25px"> Home</a>
-
-                    </li>
-                    <li id="contact"><a href="javascript:void(0);">Contact</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);">About</a>
-                    </li>
-                </ul>
-            </nav>
+        <nav>
+            <div id="circle_theme">
+                <a href="javascript:void(0);" onclick="change_theme()">
+                    <img src="./images/color_change.png" alt="" id="theme_changer">
+                </a>
+            </div>
+            <ul>
+                <li>
+                    <a href="javascript:void(0);">Contact</a>
+                </li>
+                <li>
+                    <a href="index.html"><img src="./images/home.png" alt="Home" width="25px"> Home</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">About</a>
+                </li>
+            </ul>
+            <div class="burger_menu" id="openmenu" onclick="openMenu()">
+                <div class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
+            </div>
+        </nav>
+        <div class="mobile_nav" id="mobile_nav">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">Contact</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">About</a>
+                </li>
+            </ul>
         </div>
     </header>
     <main>
@@ -140,7 +157,7 @@
                     </a>
                 </div>
             </div>
-            <div>
+            <div class="function__btns">
                 <div class="search_menu">
                     <label for="search_drop" class="alg_btn" onclick="deleteInput()">Search<i
                             class="arrow down"></i></label>
@@ -240,14 +257,13 @@
         </div>
     </main>
     <footer>
-        <div class="container">
-            <p class="copyright">
-                © 2021 Alexandr Garstea, Tentiuc Ion, Raileanu Daniel. All rights reserved.
-            </p>
-        </div>
+        <p class="copyright">
+            © 2021 Garstea Alexandr, Tentiuc Ion, Raileanu Daniel. All rights reserved.
+        </p>
     </footer>
     <noscript>Your browser don't support JavaScript!</noscript>
     <script type=" text/javascript" src="./script.js"></script>
     <script type=" text/javascript" src="./cars.js"></script>
 </body>
+
 </html>
