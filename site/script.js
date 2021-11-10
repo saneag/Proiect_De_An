@@ -15,16 +15,16 @@ window.onload = () => {
         document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
         document.getElementsByClassName('loading')[0].style.opacity = '0'
         document.body.style.overflowY = ''
-    }, 0)
-    //change 0 to 2000 next time
+    }, 2000)
+    //change 2000 to 0 to faster load
 }
-
+//aici se trimit masinile spre afisarea
 for (let i = 0; i < cars.length; i++) {
     cars[i].addEventListener('click', () => {
         display(i)
     })
 }
-
+//aici se afiseaza masinile
 function display(x) {
     myModal.style.visibility = 'visible'
     myModal.style.opacity = '1'
@@ -42,7 +42,7 @@ function display(x) {
     }
     disableScroll()
 }
-
+//aici bagam imaginile de la masini (obligatoriu)
 function display_img(i) {
     new_div = document.createElement('div')
     switch (i) {
@@ -113,7 +113,7 @@ function display_img(i) {
             break
     }
 }
-
+//aici nu fa nimic
 function add_image(img) {
     new_div.appendChild(img)
     modal_content.appendChild(new_div)

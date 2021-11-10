@@ -1,3 +1,5 @@
+//aici scrie masinile
+
 class Car {
     constructor(options) {
         this.marca = options.marca
