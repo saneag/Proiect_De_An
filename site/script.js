@@ -15,7 +15,8 @@ window.onload = () => {
         document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
         document.getElementsByClassName('loading')[0].style.opacity = '0'
         document.body.style.overflowY = ''
-    }, 2000)
+    }, 0)
+    //change 0 to 2000 next time
 }
 
 for (let i = 0; i < cars.length; i++) {
@@ -41,6 +42,7 @@ function display(x) {
     }
     disableScroll()
 }
+
 function display_img(i) {
     new_div = document.createElement('div')
     switch (i) {
@@ -160,7 +162,6 @@ function change_theme() {
     }
 }
 
-//prevent scrolling
 let keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
 function preventDefault(e) {
     e.preventDefault();
@@ -180,9 +181,9 @@ try {
 let wheelOpt = supportsPassive ? { passive: false } : false;
 let wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 function disableScroll() {
-    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('DOMMouseScroll', preventDefault, false);
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt);
+    window.addEventListener('touchmove', preventDefault, wheelOpt);
     window.addEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 function enableScroll() {
@@ -192,7 +193,7 @@ function enableScroll() {
     window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
-let cnt = 0
+let cnt = false
 
 function deleteInput() {
     document.getElementsByClassName('arrow')[0].classList.toggle('down')
@@ -203,10 +204,10 @@ function deleteInput() {
                 if (inp[i].value.length != 0) {
                     inp[i].value = ''
                 }
-            cnt = 0
+            cnt = false
         }, 300)
     }
-    cnt = 1
+    cnt = true
 }
 
 function rotateArrow() {
