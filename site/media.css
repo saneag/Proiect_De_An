@@ -8,11 +8,44 @@
     main .car_galery {
         grid-template-columns: 1fr 1fr;
     }
+
+    .cars_about {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+    }
 }
 
 @media only screen and (max-width: 960px) {
     .main_container {
         grid-template-columns: 1fr;
+    }
+
+    .function__btns {
+        grid-row-start: 1;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+
+    .sort_btns {
+        width: 300px;
+        height: 60px;
+    }
+
+    .search_menu input {
+        width: 300px;
+        height: 60px;
+    }
+
+    #search_drop:checked+.slide {
+        height: 600px;
+    }
+
+    #sort_drop:checked+.slide {
+        height: 600px;
     }
 
     .burger_menu {
@@ -28,34 +61,26 @@
         justify-content: space-between;
         margin: 0 40px;
     }
+}
 
-    .mobile_nav {
-        background-color: inherit;
-        top: 69px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+@media only screen and (max-width: 850px) {
+    .cars_about img {
+        width: 400px;
+        border-radius: 5%;
+        margin-bottom: 20px;
+    }
+
+    .cars_about {
+        align-content: center;
+    }
+
+    .modal_content {
         width: 100%;
-        height: 30vh;
+        height: 100%;
     }
 
-    .mobile_nav a {
-        font-size: 3em;
-    }
-
-    .mobile_nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .mobile_nav li:first-of-type {
-        margin: 0;
-    }
-
-    .mobile_nav li {
-        margin-top: 30px;
+    .close {
+        right: 15%;
     }
 }
 
@@ -63,6 +88,40 @@
     main .car_galery {
         grid-template-columns: 1fr;
     }
+
+    .function__btns {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
 }
 
-@media only screen and (max-width: 550px) {}
+@media only screen and (max-width: 630px) {
+    .cars_about img {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .cars_about {
+        align-content: center;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .cars_about img {
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 439px) {
+    .cars_about img {
+        width: 200px;
+    }
+
+    .cars_about p {
+        font-size: 16px;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+    }
+}

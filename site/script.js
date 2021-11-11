@@ -7,6 +7,8 @@ let par, car_info
 const links = document.getElementsByTagName('a')
 const inp = document.querySelectorAll('input')
 const footer = document.querySelector('footer')
+const mobile_nav = document.getElementById('mobile_nav')
+const menu = document.getElementById('openmenu')
 
 window.onload = () => {
     window.scrollTo(0, 0)
@@ -109,6 +111,96 @@ function display_img(i) {
             add_image(img)
             break
         case 20: img.src = './images/'
+            add_image(img)
+            break
+        case 21: img.src = './images/'
+            add_image(img)
+            break
+        case 22: img.src = './images/'
+            add_image(img)
+            break
+        case 23: img.src = './images/'
+            add_image(img)
+            break
+        case 24: img.src = './images/'
+            add_image(img)
+            break
+        case 25: img.src = './images/'
+            add_image(img)
+            break
+        case 26: img.src = './images/'
+            add_image(img)
+            break
+        case 27: img.src = './images/'
+            add_image(img)
+            break
+        case 28: img.src = './images/'
+            add_image(img)
+            break
+        case 29: img.src = './images/'
+            add_image(img)
+            break
+        case 30: img.src = './images/'
+            add_image(img)
+            break
+        case 31: img.src = './images/'
+            add_image(img)
+            break
+        case 32: img.src = './images/'
+            add_image(img)
+            break
+        case 33: img.src = './images/'
+            add_image(img)
+            break
+        case 34: img.src = './images/'
+            add_image(img)
+            break
+        case 35: img.src = './images/'
+            add_image(img)
+            break
+        case 36: img.src = './images/'
+            add_image(img)
+            break
+        case 37: img.src = './images/'
+            add_image(img)
+            break
+        case 38: img.src = './images/'
+            add_image(img)
+            break
+        case 39: img.src = './images/'
+            add_image(img)
+            break
+        case 40: img.src = './images/'
+            add_image(img)
+            break
+        case 41: img.src = './images/'
+            add_image(img)
+            break
+        case 42: img.src = './images/'
+            add_image(img)
+            break
+        case 43: img.src = './images/'
+            add_image(img)
+            break
+        case 44: img.src = './images/'
+            add_image(img)
+            break
+        case 45: img.src = './images/'
+            add_image(img)
+            break
+        case 46: img.src = './images/'
+            add_image(img)
+            break
+        case 47: img.src = './images/'
+            add_image(img)
+            break
+        case 48: img.src = './images/'
+            add_image(img)
+            break
+        case 49: img.src = './images/'
+            add_image(img)
+            break
+        case 50: img.src = './images/'
             add_image(img)
             break
     }
@@ -214,6 +306,22 @@ function rotateArrow() {
 }
 
 function openMenu() {
-    document.getElementById('mobile_nav').classList.toggle('show_nav')
-    document.getElementById('openmenu').classList.toggle('change')
+    mobile_nav.classList.toggle('show_nav')
+    menu.classList.toggle('change')
 }
+
+window.onscroll = () => {
+    if (mobile_nav.classList.contains('show_nav')) {
+        mobile_nav.classList.remove('show_nav')
+    }
+    if (menu.classList.contains('change')) {
+        menu.classList.remove('change')
+    }
+}
+
+window.addEventListener('mouseup', (event) => {
+    if (event.target != mobile_nav && event.target.parentNode != mobile_nav) {
+        mobile_nav.classList.remove('show_nav')
+        menu.classList.remove('change')
+    }
+})
