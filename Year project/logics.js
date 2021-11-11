@@ -154,10 +154,21 @@ function partitionByName(arr, start, end)
     let pivotIndex = start;
     for (let i = start; i < end; i++) 
     {
-      if (arr[i].name < pivotValue) 
+      if(ascending == true)
       {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
+        if (arr[i].name <= pivotValue) 
+        {
+          [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+          pivotIndex++;
+        }
+      }
+      else
+      {
+        if (arr[i].name >= pivotValue) 
+        {
+          [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+          pivotIndex++;
+        }
       }
     }
   
@@ -171,10 +182,21 @@ function partitionByModel(arr, start, end)
     let pivotIndex = start;
     for (let i = start; i < end; i++) 
     {
-      if (arr[i].model < pivotValue) 
+      if (ascending == true) 
       {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
+        if (arr[i].model <= pivotValue) 
+        {
+          [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+          pivotIndex++;
+        }
+      } 
+      else 
+      {
+        if (arr[i].model >= pivotValue) 
+        {
+          [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+          pivotIndex++;
+        }
       }
     }
   
@@ -188,10 +210,21 @@ function partitionByYear(arr, start, end)
   let pivotIndex = start;
   for (let i = start; i < end; i++) 
   {
-    if (arr[i].year < pivotValue) 
+    if(ascending == true)
     {
-      [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-      pivotIndex++;
+      if (arr[i].year <= pivotValue) 
+      {
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        pivotIndex++;
+      }
+    }
+    else
+    {
+      if (arr[i].year >= pivotValue) 
+      {
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        pivotIndex++;
+      }
     }
   }
 
@@ -205,10 +238,21 @@ function partitionByFuelType(arr, start, end)
   let pivotIndex = start;
   for (let i = start; i < end; i++) 
   {
-    if (arr[i].fuelType < pivotValue) 
+    if (ascending == true) 
     {
-      [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-      pivotIndex++;
+      if (arr[i].fuelType <= pivotValue) 
+      {
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        pivotIndex++;
+      }
+    } 
+    else 
+    {
+      if (arr[i].fuelType >= pivotValue) 
+      {
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        pivotIndex++;
+      }
     }
   }
 
@@ -222,10 +266,21 @@ function partitionByEngineCapacity(arr, start, end)
   let pivotIndex = start;
   for (let i = start; i < end; i++) 
   {
-    if (arr[i].engineCapacity < pivotValue) 
+    if (ascending == true)
     {
-      [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-      pivotIndex++;
+      if (arr[i].engineCapacity <= pivotValue) 
+      {
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        pivotIndex++;
+      }
+    } 
+    else 
+    {
+      if (arr[i].engineCapacity >= pivotValue) 
+      {
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        pivotIndex++;
+      }
     }
   }
 
@@ -239,10 +294,21 @@ function partitionByHP(arr, start, end)
   let pivotIndex = start;
   for (let i = start; i < end; i++) 
   {
-    if (arr[i].hp < pivotValue) 
+    if (ascending == true) 
     {
-      [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-      pivotIndex++;
+      if (arr[i].hp <= pivotValue) 
+      {
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        pivotIndex++;
+      }
+    }
+    else 
+    {
+      if (arr[i].hp >= pivotValue) 
+      {
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        pivotIndex++;
+      }
     }
   }
 
@@ -256,10 +322,21 @@ function partitionByWheelDrive(arr, start, end)
   let pivotIndex = start;
   for (let i = start; i < end; i++) 
   {
-    if (arr[i].wheelDrive < pivotValue) 
+    if (ascending == true) 
     {
-      [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-      pivotIndex++;
+      if (arr[i].wheelDrive <= pivotValue) 
+      {
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        pivotIndex++;
+      }
+    } 
+    else 
+    {
+      if (arr[i].wheelDrive >= pivotValue) 
+      {
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        pivotIndex++;
+      }
     }
   }
 
@@ -273,10 +350,21 @@ function partitionByGearbox(arr, start, end)
   let pivotIndex = start;
   for (let i = start; i < end; i++) 
   {
-    if (arr[i].gearbox < pivotValue) 
+    if (ascending == true) 
     {
-      [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-      pivotIndex++;
+      if (arr[i].gearbox <= pivotValue) 
+      {
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        pivotIndex++;
+      }
+    } 
+    else 
+    {
+      if (arr[i].gearbox >= pivotValue) 
+      {
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        pivotIndex++;
+      }
     }
   }
 
@@ -290,10 +378,20 @@ function partitionByPrice(arr, start, end)
   let pivotIndex = start;
   for (let i = start; i < end; i++) 
   {
-    if (arr[i].price < pivotValue) 
+    if (ascending == true) {
+      if (arr[i].price <= pivotValue) 
+      {
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        pivotIndex++;
+      }
+    } 
+    else 
     {
-      [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-      pivotIndex++;
+      if (arr[i].price >= pivotValue) 
+      {
+        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+        pivotIndex++;
+      }
     }
   }
 
@@ -301,7 +399,7 @@ function partitionByPrice(arr, start, end)
   return pivotIndex;
 }
 
-function quickSort(arr, start, end, type) 
+function quickSort(arr, start, end, type, ascending) 
 {
   let index;
 
@@ -313,84 +411,107 @@ function quickSort(arr, start, end, type)
   switch(type)
   {
     case '1':
-      index = partitionByName(arr, start, end);
+      index = partitionByName(arr, start, end, ascending);
       break;
     case '2':
-      index = partitionByModel(arr, start, end);
+      index = partitionByModel(arr, start, end, ascending);
       break;
     case '3':
-      index = partitionByYear(arr, start, end);
+      index = partitionByYear(arr, start, end, ascending);
       break;
     case '4':
-      index = partitionByFuelType(arr, start, end);
+      index = partitionByFuelType(arr, start, end, ascending);
       break;
     case '5':
-      index = partitionByEngineCapacity(arr, start, end);
+      index = partitionByEngineCapacity(arr, start, end, ascending);
       break;
     case '6':
-      index = partitionByHP(arr, start, end);
+      index = partitionByHP(arr, start, end, ascending);
       break;
     case '7':
-      index = partitionByWheelDrive(arr, start, end);
+      index = partitionByWheelDrive(arr, start, end, ascending);
       break;
     case '8':
-      index = partitionByGearbox(arr, start, end);
+      index = partitionByGearbox(arr, start, end, ascending);
       break;
     case '9':
-      index = partitionByPrice(arr, start, end);
+      index = partitionByPrice(arr, start, end, ascending);
       break;
   }
 
-  quickSort(arr, start, index - 1, type);
-  quickSort(arr, index + 1, end, type);
+  quickSort(arr, start, index - 1, type, ascending);
+  quickSort(arr, index + 1, end, type, ascending);
 }
 
 
 function searching(arr, compName, compYearMin, compYearMax, 
   compCapacityMin, compCapacityMax, compHPMin, compHPMax,
-  compPriceMin, compPriceMax) 
+  compPriceMin, compPriceMax, type) 
 {
-  let k = 0;
-  for (let i = 0; i < arr.length; i++) 
+  //type: 1 - inputName nu avem
+  //      2 - inputName avem
+  if(type == 2)
   {
-    if (arr[i].name == compName) 
+    let k = 0;
+    for (let i = 0; i < arr.length; i++) 
     {
-      tempSearchFinal[k] = arr[i];
-      k++;
+      if (arr[i].name == compName || arr[i].name.split(' ')[0] == compName || arr[i].name.split(' ')[1] == compName) 
+      {
+        tempSearchFinal[k] = arr[i];
+        k++;
+      }
     }
   }
-  
-  for (let i = 0; i < tempSearchFinal.length; i++) 
+  else
   {
-    if (tempSearchFinal[i].year <= compYearMin)
-      if (tempSearchFinal[i].year >= compYearMax)
+    for (let i = 0; i < arr.length; i++) 
     {
-      tempSearchFinal.splice(i, 1);
+      tempSearchFinal[i] = arr[i];
     }
   }
-  
-  for (let i = 0; i < tempSearchFinal.length; i++) 
+
+  removeIndex = 0;
+  while(removeIndex<tempSearchFinal.length)
   {
-    if (!(tempSearchFinal[i].engineCapacity >= compCapacityMin && tempSearchFinal[i].engineCapacity <= compCapacityMax))
+    if(tempSearchFinal[removeIndex].year > compYearMax || tempSearchFinal[removeIndex].year < compYearMin)
     {
-      tempSearchFinal.splice(i, 1);
+      tempSearchFinal.splice(removeIndex, 1);
+      removeIndex--;
     }
+    removeIndex++;
+  }
+
+  removeIndex = 0;
+  while(removeIndex<tempSearchFinal.length)
+  {
+    if(tempSearchFinal[removeIndex].engineCapacity > compCapacityMax || tempSearchFinal[removeIndex].engineCapacity < compCapacityMin)
+    {
+      tempSearchFinal.splice(removeIndex, 1);
+      removeIndex--;
+    }
+    removeIndex++;
   }
  
-  for (let i = 0; i < tempSearchFinal.length; i++) 
+  removeIndex = 0;
+  while(removeIndex<tempSearchFinal.length)
   {
-    if (!(tempSearchFinal[i].hp >= compHPMin && tempSearchFinal[i].hp <= compHPMax))
+    if(tempSearchFinal[removeIndex].hp > compHPMax || tempSearchFinal[removeIndex].hp < compHPMin)
     {
-      tempSearchFinal.splice(i, 1);
+      tempSearchFinal.splice(removeIndex, 1);
+      removeIndex--;
     }
+    removeIndex++;
   }
   
-  for (let i = 0; i < tempSearchFinal.length; i++) 
+  removeIndex = 0;
+  while(removeIndex<tempSearchFinal.length)
   {
-    if (!(tempSearchFinal[i].price >= compPriceMin && tempSearchFinal[i].price <= compPriceMax))
+    if(tempSearchFinal[removeIndex].price > compPriceMax || tempSearchFinal[removeIndex].price < compPriceMin)
     {
-      tempSearchFinal.splice(i, 1);
+      tempSearchFinal.splice(removeIndex, 1);
+      removeIndex--;
     }
+    removeIndex++;
   }
  
   for (let i = 0; i < tempSearchFinal.length; i++) 
@@ -400,97 +521,185 @@ function searching(arr, compName, compYearMin, compYearMax,
 }
 
 
+let ascending = true;
+let iterationCnt = 0;
+
 sortName.addEventListener('click', () => {
-  quickSort(allCars, 0, allCars.length - 1, "1");
+  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "1", ascending);
 
   console.log("Sortare dupa nume:");
-  for (let i = 0; i < allCars.length; i++) 
+  for (let i = 0; i < tempSearchFinal.length; i++) 
   {
-    console.log(allCars[i]);
+    console.log(tempSearchFinal[i]);
+  }
+ 
+  if(ascending == false)
+  {
+    ascending = true;
+  }
+  else
+  {
+    ascending = false;
   }
 })
 
 sortModel.addEventListener('click', () => {
-  quickSort(allCars, 0, allCars.length - 1, "2");
+  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "2", ascending);
 
   console.log("Sortare dupa model:");
-  for (let i = 0; i < allCars.length; i++) 
+  for (let i = 0; i < tempSearchFinal.length; i++) 
   {
-    console.log(allCars[i]);
+    console.log(tempSearchFinal[i]);
+  }
+
+  if(ascending == false)
+  {
+    ascending = true;
+  }
+  else
+  {
+    ascending = false;
   }
 })
 
 sortYear.addEventListener('click', () => {
-  quickSort(allCars, 0, allCars.length - 1, "3");
+  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "3", ascending);
 
   console.log("Sortare dupa anul producerii:");
-  for (let i = 0; i < allCars.length; i++) 
+  for (let i = 0; i < tempSearchFinal.length; i++) 
   {
-    console.log(allCars[i]);
+    console.log(tempSearchFinal[i]);
+  }
+  
+  if(ascending == false)
+  {
+    ascending = true;
+  }
+  else
+  {
+    ascending = false;
   }
 })
 
 sortFuelType.addEventListener('click', () => {
-  quickSort(allCars, 0, allCars.length - 1, "4");
+  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "4", ascending);
 
   console.log("Sortare dupa tipul combustibilului:");
-  for (let i = 0; i < allCars.length; i++) 
+  for (let i = 0; i < tempSearchFinal.length; i++) 
   {
-    console.log(allCars[i]);
+    console.log(tempSearchFinal[i]);
+  }
+
+  if(ascending == false)
+  {
+    ascending = true;
+  }
+  else
+  {
+    ascending = false;
   }
 })
 
 sortEngineCapacity.addEventListener('click', () => {
-  quickSort(allCars, 0, allCars.length - 1, "5");
+  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "5", ascending);
 
   console.log("Sortare dupa capacitatea motorului:");
-  for (let i = 0; i < allCars.length; i++) 
+  for (let i = 0; i < tempSearchFinal.length; i++) 
   {
-    console.log(allCars[i]);
+    console.log(tempSearchFinal[i]);
+  }
+
+  if(ascending == false)
+  {
+    ascending = true;
+  }
+  else
+  {
+    ascending = false;
   }
 })
 
 sortHP.addEventListener('click', () => {
-  quickSort(allCars, 0, allCars.length - 1, "6");
+  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "6", ascending);
 
   console.log("Sortare dupa puterea masinii:");
-  for (let i = 0; i < allCars.length; i++) 
+  for (let i = 0; i < tempSearchFinal.length; i++) 
   {
-    console.log(allCars[i]);
+    console.log(tempSearchFinal[i]);
+  }
+
+  if(ascending == false)
+  {
+    ascending = true;
+  }
+  else
+  {
+    ascending = false;
   }
 })
 
 sortWheelDrive.addEventListener('click', () => {
-  quickSort(allCars, 0, allCars.length - 1, "7");
+  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "7", ascending);
 
   console.log("Sortare dupa tipul tractiunii:");
-  for (let i = 0; i < allCars.length; i++) 
+  for (let i = 0; i < tempSearchFinal.length; i++) 
   {
-    console.log(allCars[i]);
+    console.log(tempSearchFinal[i]);
+  }
+
+  if(ascending == false)
+  {
+    ascending = true;
+  }
+  else
+  {
+    ascending = false;
   }
 })
 
 sortGearbox.addEventListener('click', () => {
-  quickSort(allCars, 0, allCars.length - 1, "8");
+  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "8", ascending);
 
   console.log("Sortare dupa tipul cutiei de viteze:");
-  for (let i = 0; i < allCars.length; i++) 
+  for (let i = 0; i < tempSearchFinal.length; i++) 
   {
-    console.log(allCars[i]);
+    console.log(tempSearchFinal[i]);
+  }
+
+  if(ascending == false)
+  {
+    ascending = true;
+  }
+  else
+  {
+    ascending = false;
   }
 })
 
 sortPrice.addEventListener('click', () => {
-  quickSort(allCars, 0, allCars.length - 1, "9");
+  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "9", ascending);
 
   console.log("Sortare dupa pret:");
-  for (let i = 0; i < allCars.length; i++) 
+  for (let i = 0; i < tempSearchFinal.length; i++) 
   {
-    console.log(allCars[i]);
+    console.log(tempSearchFinal[i]);
+  }
+
+  if(ascending == false)
+  {
+    ascending = true;
+  }
+  else
+  {
+    ascending = false;
   }
 })
 
 search.addEventListener('click', () => {
+
+  tempSearch = [];
+  tempSearchFinal = [];
+
   let inputName = document.getElementById("searchName").value;
   let inputYearMin = document.getElementById("searchYearMin").value;
   let inputYearMax = document.getElementById("searchYearMax").value;
@@ -547,14 +756,14 @@ search.addEventListener('click', () => {
  
     searching(tempSearch, inputName, inputYearMin, inputYearMax, 
       inputCapacityMin, inputCapacityMax, inputHPMin, inputHPMax, 
-      inputPriceMin, inputPriceMax)
+      inputPriceMin, inputPriceMax, 1)
   }
   else
   {
     let j = 0;
     for(let i = 0; i < allCars.length; i++)
     {
-      if (allCars[i].name == inputName) 
+      if (allCars[i].name == inputName || allCars[i].name.split(' ')[0] == inputName || allCars[i].name.split(' ')[1] == inputName) 
         {
           tempSearch[j] = allCars[i];
           j++
@@ -599,9 +808,6 @@ search.addEventListener('click', () => {
 
     searching(tempSearch, inputName, inputYearMin, inputYearMax, 
       inputCapacityMin, inputCapacityMax, inputHPMin, inputHPMax, 
-      inputPriceMin, inputPriceMax)
+      inputPriceMin, inputPriceMax, 2)
   }
-
-  tempSearch = [];
-  tempSearchFinal = [];
 })
