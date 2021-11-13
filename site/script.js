@@ -17,16 +17,15 @@ window.onload = () => {
         document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
         document.getElementsByClassName('loading')[0].style.opacity = '0'
         document.body.style.overflowY = ''
-    }, 2000)
-    //change 2000 to 0 to faster load
+    }, 0)
+
 }
-//aici se trimit masinile spre afisarea
+
 for (let i = 0; i < cars.length; i++) {
     cars[i].addEventListener('click', () => {
         display(i)
     })
 }
-//aici se afiseaza masinile
 function display(x) {
     myModal.style.visibility = 'visible'
     myModal.style.opacity = '1'
@@ -44,169 +43,10 @@ function display(x) {
     }
     disableScroll()
 }
-//aici bagam imaginile de la masini (obligatoriu)
+
 function display_img(i) {
     new_div = document.createElement('div')
-    switch (i) {
-        case 0:
-            img.src = './images/alfa_romeo_stelvio_quadrifoglio_modal.png'
-            add_image(img)
-            break
-        case 1:
-            img.src = './images/alfa_romeo_giulia_quadrifoglio_modal.jpg'
-            add_image(img)
-            break
-        case 2: img.src = './images/alfa_romeo_4c_modal.png'
-            add_image(img)
-            break
-        case 3: img.src = './images/alfa-romeo-8c-competizione_modal.jpg'
-            add_image(img)
-            break
-        case 4: img.src = './images/aston_martin_db11_modal.png'
-            add_image(img)
-            break
-        case 5: img.src = './images/aston_martin_vulcan_modal.png'
-            add_image(img)
-            break
-        case 6: img.src = './images/aston_martin_vantage_gt12_modal.png'
-            add_image(img)
-            break
-        case 7: img.src = './images/aston_martin_db10_modal.png'
-            add_image(img)
-            break
-        case 8: img.src = './images/audi_r8_v10_plus_modal.png'
-            add_image(img)
-            break
-        case 9: img.src = './images/audi_s1_modal.png'
-            add_image(img)
-            break
-        case 10: img.src = './images/audi_rs_6_avant_modal.png'
-            add_image(img)
-            break
-        case 11: img.src = './images/audi_tts_coupe_modal.png'
-            add_image(img)
-            break
-        case 12: img.src = './images/'
-            add_image(img)
-            break
-        case 13: img.src = './images/'
-            add_image(img)
-            break
-        case 14: img.src = './images/'
-            add_image(img)
-            break
-        case 15: img.src = './images/'
-            add_image(img)
-            break
-        case 16: img.src = './images/'
-            add_image(img)
-            break
-        case 17: img.src = './images/'
-            add_image(img)
-            break
-        case 18: img.src = './images/'
-            add_image(img)
-            break
-        case 19: img.src = './images/'
-            add_image(img)
-            break
-        case 20: img.src = './images/'
-            add_image(img)
-            break
-        case 21: img.src = './images/'
-            add_image(img)
-            break
-        case 22: img.src = './images/'
-            add_image(img)
-            break
-        case 23: img.src = './images/'
-            add_image(img)
-            break
-        case 24: img.src = './images/'
-            add_image(img)
-            break
-        case 25: img.src = './images/'
-            add_image(img)
-            break
-        case 26: img.src = './images/'
-            add_image(img)
-            break
-        case 27: img.src = './images/'
-            add_image(img)
-            break
-        case 28: img.src = './images/'
-            add_image(img)
-            break
-        case 29: img.src = './images/'
-            add_image(img)
-            break
-        case 30: img.src = './images/'
-            add_image(img)
-            break
-        case 31: img.src = './images/'
-            add_image(img)
-            break
-        case 32: img.src = './images/'
-            add_image(img)
-            break
-        case 33: img.src = './images/'
-            add_image(img)
-            break
-        case 34: img.src = './images/'
-            add_image(img)
-            break
-        case 35: img.src = './images/'
-            add_image(img)
-            break
-        case 36: img.src = './images/'
-            add_image(img)
-            break
-        case 37: img.src = './images/'
-            add_image(img)
-            break
-        case 38: img.src = './images/'
-            add_image(img)
-            break
-        case 39: img.src = './images/'
-            add_image(img)
-            break
-        case 40: img.src = './images/'
-            add_image(img)
-            break
-        case 41: img.src = './images/'
-            add_image(img)
-            break
-        case 42: img.src = './images/'
-            add_image(img)
-            break
-        case 43: img.src = './images/'
-            add_image(img)
-            break
-        case 44: img.src = './images/'
-            add_image(img)
-            break
-        case 45: img.src = './images/'
-            add_image(img)
-            break
-        case 46: img.src = './images/'
-            add_image(img)
-            break
-        case 47: img.src = './images/'
-            add_image(img)
-            break
-        case 48: img.src = './images/'
-            add_image(img)
-            break
-        case 49: img.src = './images/'
-            add_image(img)
-            break
-        case 50: img.src = './images/'
-            add_image(img)
-            break
-    }
-}
-//aici nu fa nimic
-function add_image(img) {
+    img.src = './images/' + (i + 1) + '.webp'
     new_div.appendChild(img)
     modal_content.appendChild(new_div)
 }
@@ -325,3 +165,26 @@ window.addEventListener('mouseup', (event) => {
         menu.classList.remove('change')
     }
 })
+
+let link, para, image
+
+function display_main_cars(i) {
+    link = document.createElement('a')
+    link.href = 'javascript:void(0)'
+    image = document.createElement('img')
+    para = document.createElement('p')
+    image.src = './images/' + (i + 1) + '.webp'
+    para.textContent = allCars[i].marca + ' ' + allCars[i].model
+    link.appendChild(image)
+    link.appendChild(para)
+    cars[i].appendChild(link)
+    console.log(cars[i])
+}
+
+function delete_main_cars() {
+    for (let i = 0; i < allCars.length; i++) {
+        while (cars[i].firstChild) {
+            cars[i].removeChild(cars[i].lastChild)
+        }
+    }
+}

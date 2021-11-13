@@ -237,6 +237,12 @@ main .car_galery {
     transition: all 0.3s ease;
 }
 
+.cars img {
+    width: 300px;
+    height: 169px;
+    object-fit: cover;
+}
+
 .cars:hover {
     transform: scale(1.1);
 }
@@ -266,15 +272,17 @@ main .car_galery {
     overflow: auto;
     background-color: #B8B8B8C4;
     transition: all 0.3s linear;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .modal-content {
     background-color: #282C34FF;
-    margin: auto;
     padding: 20px;
     border: 2px solid white;
     width: 80%;
-    height: 100%;
+    height: 70%;
     user-select: none;
 }
 
@@ -323,7 +331,9 @@ main .car_galery {
 }
 
 .cars_about img {
-    width: 500px;
+    width: 800px;
+    margin-left: 40px;
+    object-fit: cover;
     border-radius: 5%;
 }
 
