@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 * {
     padding: 0;
@@ -282,7 +283,7 @@ main .car_galery {
     padding: 20px;
     border: 2px solid white;
     width: 80%;
-    height: 70%;
+    height: 80%;
     user-select: none;
 }
 
@@ -353,13 +354,14 @@ main .car_galery {
     justify-content: space-between;
     align-items: center;
     z-index: 2;
+    transition: 0.3s;
 }
 
 .alg_btn:hover {
     -webkit-box-shadow: 0px 0px 5px 0px rgba(226, 163, 81, 1);
     -moz-box-shadow: 0px 0px 5px 0px rgba(226, 163, 81, 1);
     box-shadow: 0px 0px 5px 0px rgba(226, 163, 81, 1);
-    background-color: rgba(226, 163, 81, 0.8);
+    background-color: rgb(182, 133, 69);
     cursor: pointer;
 }
 
@@ -411,7 +413,7 @@ main .car_galery {
 }
 
 #sort_drop:checked+.slide {
-    height: 410px;
+    height: 540px;
 }
 
 .search_menu input {
@@ -419,7 +421,7 @@ main .car_galery {
     font-size: 1.3em;
     background-color: inherit;
     color: white;
-    transition: all 0.3s;
+    transition: all 0.5s;
     width: 100%;
 }
 
@@ -429,7 +431,7 @@ main .car_galery {
 }
 
 .search_menu input::placeholder {
-    color: rgba(199, 150, 87, 0.6);
+    color: rgba(153, 114, 62, 0.8);
 }
 
 .search_menu input::-webkit-inner-spin-button,
@@ -446,7 +448,7 @@ input::-webkit-search-cancel-button {
 .btn {
     padding: 5px;
     margin-top: 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Zen Kurenaido', sans-serif;
     font-size: 1.4em;
     background-color: rgb(39, 165, 39);
     color: white;
@@ -458,12 +460,12 @@ input::-webkit-search-cancel-button {
     -webkit-box-shadow: 0px 0px 10px 0px rgba(39, 165, 39, 1);
     -moz-box-shadow: 0px 0px 10px 0px rgba(39, 165, 39, 1);
     box-shadow: 0px 0px 10px 0px rgba(39, 165, 39, 1);
-    background-color: rgba(39, 165, 39, 0.7);
+    background-color: rgba(30, 128, 30, 1);
     cursor: pointer;
 }
 
 .btn:active {
-    background-color: rgba(39, 165, 39, 0.5);
+    background-color: rgba(30, 128, 30, 1);
 }
 
 .sort_btns {
@@ -472,6 +474,8 @@ input::-webkit-search-cancel-button {
     margin-top: 2px;
     background-color: #8491ACFF;
     color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
 }
 
 .sort_btns:hover {
@@ -493,13 +497,15 @@ input::-webkit-search-cancel-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    
+
     transition: 0.5s ease;
 }
-#up_arrow:hover{
+
+#up_arrow:hover {
     transform: scale(1.2);
     filter: drop-shadow(0 0 3px white);
 }
+
 .change#up_arrow {
     visibility: visible;
     opacity: 1;

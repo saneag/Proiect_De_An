@@ -232,3 +232,14 @@ function goto_up() {
     document.body.scrollTop = 0
     document.documentElement.scrollTop = 0
 }
+
+inp.forEach(element => {
+    element.addEventListener('keyup', (event) =>
+    {
+        if(event.keyCode === 13)
+        {
+            event.preventDefault()
+            search.click()
+        }
+    })
+})
