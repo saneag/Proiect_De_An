@@ -607,7 +607,4 @@ function searching_alg(temp) {
     }
     display_help()
   }
-  else {
-
-  }
 }
