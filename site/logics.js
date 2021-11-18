@@ -26,7 +26,6 @@ function partitionByName(arr, start, end) {
       }
     }
   }
-
   [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]];
   return pivotIndex;
 }
@@ -307,14 +306,17 @@ let ascending = true;
 let iterationCnt = 0;
 
 sortName.addEventListener('click', () => {
-  searching_alg()
+  searching_alg(1)
   quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "1", ascending);
-
-  console.log("Sortare dupa nume:");
+  delete_main_cars()
   for (let i = 0; i < tempSearchFinal.length; i++) {
-    console.log(tempSearchFinal[i]);
+    for (let j = 0; j < tempSearchFinal.length; j++) {
+      if (allCars[j] == tempSearchFinal[i]) {
+        temp_array[i] = j
+      }
+    }
   }
-
+  display_help()
   if (ascending == false) {
     ascending = true;
   }
@@ -324,13 +326,18 @@ sortName.addEventListener('click', () => {
 })
 
 sortModel.addEventListener('click', () => {
-  searching_alg()
+  searching_alg(1)
   quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "2", ascending);
 
-  console.log("Sortare dupa model:");
+  delete_main_cars()
   for (let i = 0; i < tempSearchFinal.length; i++) {
-    console.log(tempSearchFinal[i]);
+    for (let j = 0; j < tempSearchFinal.length; j++) {
+      if (allCars[j] == tempSearchFinal[i]) {
+        temp_array[i] = j
+      }
+    }
   }
+  display_help()
 
   if (ascending == false) {
     ascending = true;
@@ -341,13 +348,18 @@ sortModel.addEventListener('click', () => {
 })
 
 sortYear.addEventListener('click', () => {
-  searching_alg()
+  searching_alg(1)
   quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "3", ascending);
 
-  console.log("Sortare dupa anul producerii:");
+  delete_main_cars()
   for (let i = 0; i < tempSearchFinal.length; i++) {
-    console.log(tempSearchFinal[i]);
+    for (let j = 0; j < tempSearchFinal.length; j++) {
+      if (allCars[j] == tempSearchFinal[i]) {
+        temp_array[i] = j
+      }
+    }
   }
+  display_help()
 
   if (ascending == false) {
     ascending = true;
@@ -358,13 +370,18 @@ sortYear.addEventListener('click', () => {
 })
 
 sortFuelType.addEventListener('click', () => {
-  searching_alg()
+  searching_alg(1)
   quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "4", ascending);
 
-  console.log("Sortare dupa tipul combustibilului:");
+  delete_main_cars()
   for (let i = 0; i < tempSearchFinal.length; i++) {
-    console.log(tempSearchFinal[i]);
+    for (let j = 0; j < tempSearchFinal.length; j++) {
+      if (allCars[j] == tempSearchFinal[i]) {
+        temp_array[i] = j
+      }
+    }
   }
+  display_help()
 
   if (ascending == false) {
     ascending = true;
@@ -375,13 +392,18 @@ sortFuelType.addEventListener('click', () => {
 })
 
 sortEngineCapacity.addEventListener('click', () => {
-  searching_alg()
+  searching_alg(1)
   quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "5", ascending);
 
-  console.log("Sortare dupa capacitatea motorului:");
+  delete_main_cars()
   for (let i = 0; i < tempSearchFinal.length; i++) {
-    console.log(tempSearchFinal[i]);
+    for (let j = 0; j < tempSearchFinal.length; j++) {
+      if (allCars[j] == tempSearchFinal[i]) {
+        temp_array[i] = j
+      }
+    }
   }
+  display_help()
 
   if (ascending == false) {
     ascending = true;
@@ -392,13 +414,18 @@ sortEngineCapacity.addEventListener('click', () => {
 })
 
 sortHP.addEventListener('click', () => {
-  searching_alg()
+  searching_alg(1)
   quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "6", ascending);
 
-  console.log("Sortare dupa puterea masinii:");
+  delete_main_cars()
   for (let i = 0; i < tempSearchFinal.length; i++) {
-    console.log(tempSearchFinal[i]);
+    for (let j = 0; j < tempSearchFinal.length; j++) {
+      if (allCars[j] == tempSearchFinal[i]) {
+        temp_array[i] = j
+      }
+    }
   }
+  display_help()
 
   if (ascending == false) {
     ascending = true;
@@ -409,13 +436,18 @@ sortHP.addEventListener('click', () => {
 })
 
 sortWheelDrive.addEventListener('click', () => {
-  searching_alg()
+  searching_alg(1)
   quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "7", ascending);
 
-  console.log("Sortare dupa tipul tractiunii:");
+  delete_main_cars()
   for (let i = 0; i < tempSearchFinal.length; i++) {
-    console.log(tempSearchFinal[i]);
+    for (let j = 0; j < tempSearchFinal.length; j++) {
+      if (allCars[j] == tempSearchFinal[i]) {
+        temp_array[i] = j
+      }
+    }
   }
+  display_help()
 
   if (ascending == false) {
     ascending = true;
@@ -426,13 +458,18 @@ sortWheelDrive.addEventListener('click', () => {
 })
 
 sortGearbox.addEventListener('click', () => {
-  searching_alg()
+  searching_alg(1)
   quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "8", ascending);
 
-  console.log("Sortare dupa tipul cutiei de viteze:");
+  delete_main_cars()
   for (let i = 0; i < tempSearchFinal.length; i++) {
-    console.log(tempSearchFinal[i]);
+    for (let j = 0; j < tempSearchFinal.length; j++) {
+      if (allCars[j] == tempSearchFinal[i]) {
+        temp_array[i] = j
+      }
+    }
   }
+  display_help()
 
   if (ascending == false) {
     ascending = true;
@@ -443,13 +480,18 @@ sortGearbox.addEventListener('click', () => {
 })
 
 sortPrice.addEventListener('click', () => {
-  searching_alg()
+  searching_alg(1)
   quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "9", ascending);
 
-  console.log("Sortare dupa pret:");
+  delete_main_cars()
   for (let i = 0; i < tempSearchFinal.length; i++) {
-    console.log(tempSearchFinal[i]);
+    for (let j = 0; j < tempSearchFinal.length; j++) {
+      if (allCars[j] == tempSearchFinal[i]) {
+        temp_array[i] = j
+      }
+    }
   }
+  display_help()
 
   if (ascending == false) {
     ascending = true;
@@ -459,7 +501,7 @@ sortPrice.addEventListener('click', () => {
   }
 })
 
-function searching_alg() {
+function searching_alg(temp) {
   tempSearch = [];
   tempSearchFinal = [];
 
@@ -551,5 +593,21 @@ function searching_alg() {
     searching(tempSearch, inputName, inputYearMin, inputYearMax,
       inputCapacityMin, inputCapacityMax, inputHPMin, inputHPMax,
       inputPriceMin, inputPriceMax, 2)
+  }
+  if (temp == 0) {
+    console.log(tempSearchFinal)
+    temp_array = new Array()
+    delete_main_cars()
+    for (let i = 0; i < tempSearchFinal.length; i++) {
+      for (let j = 0; j < allCars.length; j++) {
+        if (allCars[j] == tempSearchFinal[i]) {
+          temp_array[i] = j
+        }
+      }
+    }
+    display_help()
+  }
+  else {
+
   }
 }

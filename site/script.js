@@ -9,21 +9,23 @@ const inp = document.querySelectorAll('input')
 const footer = document.querySelector('footer')
 const mobile_nav = document.getElementById('mobile_nav')
 const menu = document.getElementById('openmenu')
+let temp_array = []
 
 window.onload = () => {
     window.scrollTo(0, 0)
     document.body.style.overflowY = 'hidden'
+    for (let i = 0; i < allCars.length; i++)
+        temp_array[i] = i
     setTimeout(() => {
         document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
         document.getElementsByClassName('loading')[0].style.opacity = '0'
         document.body.style.overflowY = ''
     }, 0)
-
 }
 
 for (let i = 0; i < cars.length; i++) {
     cars[i].addEventListener('click', () => {
-        display(i)
+        display(temp_array[i])
     })
 }
 function display(x) {
@@ -31,16 +33,28 @@ function display(x) {
     myModal.style.opacity = '1'
     let id = 'car' + (x + 1)
     let txt = ''
+    a = 0
     display_img(x)
     new_div = document.createElement('div')
     for (let i in allCars[x]) {
         txt = i.charAt(0).toUpperCase() + i.slice(1) + ': ' + allCars[x][i] + '\n'
+        if (a == 4) {
+            txt += 'ml'
+        }
+        if (a == 5) {
+            txt += 'HP'
+        }
+        if (a == 8) {
+            txt += ' $'
+        }
         par = document.createElement('p')
         car_info = document.createTextNode(txt)
         par.appendChild(car_info)
         new_div.appendChild(par)
         modal_content.appendChild(new_div)
+        a++
     }
+    a = 0
     disableScroll()
 }
 
@@ -166,7 +180,13 @@ window.addEventListener('mouseup', (event) => {
     }
 })
 
-let link, para, image
+let link, para, image, a = 0
+
+function display_help() {
+    for (let i = 0; i < temp_array.length; i++) {
+        display_main_cars(temp_array[i])
+    }
+}
 
 function display_main_cars(i) {
     link = document.createElement('a')
@@ -177,8 +197,10 @@ function display_main_cars(i) {
     para.textContent = allCars[i].marca + ' ' + allCars[i].model
     link.appendChild(image)
     link.appendChild(para)
-    cars[i].appendChild(link)
-    console.log(cars[i])
+    cars[a].appendChild(link)
+    a++
+    if (a == tempSearchFinal.length)
+        a = 0
 }
 
 function delete_main_cars() {
@@ -187,4 +209,26 @@ function delete_main_cars() {
             cars[i].removeChild(cars[i].lastChild)
         }
     }
+}
+
+function reset_search() {
+    for (let i = 0; i < inp.length; i++)
+        if (inp[i].value.length != 0) {
+            inp[i].value = ''
+        }
+    searching_alg(0)
+}
+
+window.addEventListener('scroll', () => {
+    let up_arrow = document.getElementById('up_arrow')
+    if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+        up_arrow.classList.add('change')
+    }
+    else {
+        up_arrow.classList.remove('change')
+    }
+})
+function goto_up() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
 }

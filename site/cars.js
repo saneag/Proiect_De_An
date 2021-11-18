@@ -18,11 +18,11 @@ allCars[0] = new Car({
     marca: 'Alfa Romeo',
     model: 'Stelvio Quadrifoglio',
     anul: 2018,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 2900,
     puterea: 505,
-    tractiunea: 'integral',
-    cutia: 'automat',
+    tractiunea: 'Integrala',
+    cutia: 'Automata',
     pret: 80000
 });
 
@@ -30,11 +30,11 @@ allCars[1] = new Car({
     marca: 'Alfa Romeo',
     model: 'Giulia Quadrifoglio',
     anul: 2017,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 2900,
     puterea: 505,
-    tractiunea: 'spate',
-    cutia: 'automat',
+    tractiunea: 'Spate',
+    cutia: 'Automata',
     pret: 87000
 });
 
@@ -42,11 +42,11 @@ allCars[2] = new Car({
     marca: 'Alfa Romeo',
     model: '4C',
     anul: 2014,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 1700,
     puterea: 240,
-    tractiunea: 'spate',
-    cutia: 'automat',
+    tractiunea: 'Spate',
+    cutia: 'Automata',
     pret: 55000
 });
 
@@ -54,11 +54,11 @@ allCars[3] = new Car({
     marca: 'Alfa Romeo',
     model: '8C Competizione',
     anul: 2007,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 4700,
     puterea: 450,
-    tractiunea: 'spate',
-    cutia: 'manual',
+    tractiunea: 'Spate',
+    cutia: 'Manuala',
     pret: 310000
 });
 
@@ -66,110 +66,110 @@ allCars[4] = new Car({
     marca: 'Aston Martin',
     model: 'DB11',
     anul: 2017,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 5200,
     puterea: 600,
-    tractiunea: 'spate',
-    cutia: 'automat',
+    tractiunea: 'Spate',
+    cutia: 'Automata',
     pret: 214000
 });
 allCars[5] = new Car({
     marca: 'Aston Martin',
     model: 'Vulcan',
     anul: 2016,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 7000,
     puterea: 820,
-    tractiunea: 'spate',
-    cutia: 'automat',
+    tractiunea: 'Spate',
+    cutia: 'Automata',
     pret: 2300000
 });
 allCars[6] = new Car({
     marca: 'Aston Martin',
     model: 'Vantage GT12',
     anul: 2016,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 5900,
     puterea: 600,
-    tractiunea: 'spate',
-    cutia: 'automat',
+    tractiunea: 'Spate',
+    cutia: 'Automata',
     pret: 385000
 });
 allCars[7] = new Car({
     marca: 'Aston Martin',
     model: 'DB10',
     anul: 2015,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 4700,
     puterea: 430,
-    tractiunea: 'spate',
-    cutia: 'manual',
+    tractiunea: 'Spate',
+    cutia: 'Manuala',
     pret: 3430000
 });
 allCars[8] = new Car({
     marca: 'Audi',
     model: 'R8 V10 Plus',
     anul: 2016,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 5200,
     puterea: 610,
-    tractiunea: 'spate',
-    cutia: 'automat',
+    tractiunea: 'Spate',
+    cutia: 'Automata',
     pret: 255000
 });
 allCars[9] = new Car({
     marca: 'Audi',
     model: 'S1',
     anul: 2015,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 2000,
     puterea: 231,
-    tractiunea: 'integral',
-    cutia: 'manual',
+    tractiunea: 'Integrala',
+    cutia: 'Manuala',
     pret: 23200
 });
 allCars[10] = new Car({
     marca: 'Audi',
     model: 'RS 6 Avant',
     anul: 2015,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 4000,
     puterea: 560,
-    tractiunea: 'integral',
-    cutia: 'automat',
+    tractiunea: 'Integrala',
+    cutia: 'Automata',
     pret: 117700
 });
 allCars[11] = new Car({
     marca: 'Audi',
     model: 'TTS Coupe',
     anul: 2015,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 2000,
     puterea: 265,
-    tractiunea: 'integral',
-    cutia: 'automat',
+    tractiunea: 'Integrala',
+    cutia: 'Automata',
     pret: 49000
 });
 allCars[12] = new Car({
     marca: 'Audi',
     model: 'RS 6',
     anul: 2009,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 4200,
     puterea: 580,
     tractiunea: 'fata',
-    cutia: 'automat',
+    cutia: 'Automata',
     pret: 32000
 });
 allCars[13] = new Car({
     marca: 'Audi',
     model: 'RS 4',
     anul: 2006,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 4200,
     puterea: 420,
-    tractiunea: 'integrala',
-    cutia: 'manual',
+    tractiunea: 'Integrala',
+    cutia: 'Manuala',
     pret: 18000
 
 });
@@ -177,200 +177,290 @@ allCars[14] = new Car({
     marca: 'Audi',
     model: 'RS 6',
     anul: 2009,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 5000,
     puterea: 579,
     tractiunea: 'fata',
-    cutia: 'automat',
+    cutia: 'Automata',
     pret: 36000
 });
 allCars[15] = new Car({
     marca: 'Audi',
     model: 'RS 5',
     anul: 2019,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 2900,
     puterea: 450,
-    tractiunea: 'integrala',
-    cutia: 'automat',
+    tractiunea: 'Integrala',
+    cutia: 'Automata',
     pret: 61000
 });
 allCars[16] = new Car({
     marca: 'Audi',
     model: 'RS Q8',
     anul: 2019,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 4000,
     puterea: 600,
-    tractiunea: 'integrala',
-    cutia: 'automat',
+    tractiunea: 'Integrala',
+    cutia: 'Automata',
     pret: 135000
 });
 allCars[17] = new Car({
     marca: 'BMW',
-    model: 'i8',
+    model: 'I8',
     anul: 2019,
     combustibil: 'hybrid',
     capacitatea: 1500,
     puterea: 374,
-    tractiunea: 'integrala',
-    cutia: 'automat',
+    tractiunea: 'Integrala',
+    cutia: 'Automata',
     pret: 150000
 });
 allCars[18] = new Car({
     marca: 'BMW',
     model: 'M2 Coupe',
     anul: 2016,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 3000,
     puterea: 365,
-    tractiunea: 'spate',
-    cutia: 'manual',
+    tractiunea: 'Spate',
+    cutia: 'Manuala',
     pret: 50000
 });
 allCars[19] = new Car({
     marca: 'BMW',
     model: 'M4 GTS',
     anul: 2016,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 3000,
     puterea: 493,
-    tractiunea: 'spate',
-    cutia: 'automat',
+    tractiunea: 'Spate',
+    cutia: 'Automata',
     pret: 134000
 });
 allCars[20] = new Car({
     marca: 'BMW',
     model: 'M8',
     anul: 2022,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 4400,
     puterea: 617,
-    tractiunea: 'spate',
-    cutia: 'automat',
+    tractiunea: 'Spate',
+    cutia: 'Automata',
     pret: 180000
 });
 allCars[21] = new Car({
     marca: 'Audi',
     model: 'Q8',
     anul: 2019,
-    combustibil: 'diesel',
+    combustibil: 'Diesel',
     capacitatea: 3000,
     puterea: 249,
-    tractiunea: 'integrala',
-    cutia: 'automat',
+    tractiunea: 'Integrala',
+    cutia: 'Automata',
     pret: 112000
 })
 allCars[22] = new Car({
     marca: 'BMW',
     model: 'M50D',
     anul: 2022,
-    combustibil: 'diesel',
+    combustibil: 'Diesel',
     capacitatea: 3000,
     puterea: 400,
-    tractiunea: 'integrala',
-    cutia: 'automat',
+    tractiunea: 'Integrala',
+    cutia: 'Automata',
     pret: 130000
 })
 allCars[23] = new Car({
     marca: 'BMW',
     model: 'X5',
     anul: 2006,
-    combustibil: 'diesel',
+    combustibil: 'Diesel',
     capacitatea: 3000,
     puterea: 225,
-    tractiunea: 'integrala',
-    cutia: 'automat',
+    tractiunea: 'Integrala',
+    cutia: 'Automata',
     pret: 5000
 })
 allCars[24] = new Car({
     marca: 'Mercedes Benz',
     model: 'X CLASS',
     anul: 2018,
-    combustibil: 'diesel',
+    combustibil: 'Diesel',
     capacitatea: 2300,
     puterea: 190,
-    tractiunea: 'integrala',
-    cutia: 'automat',
+    tractiunea: 'Integrala',
+    cutia: 'Automata',
     pret: 60000
 })
 allCars[25] = new Car({
     marca: 'Mercedes Benz',
     model: 'CLS',
     anul: 2018,
-    combustibil: 'diesel',
+    combustibil: 'Diesel',
     capacitatea: 2000,
     puterea: 240,
-    tractiunea: 'spate',
-    cutia: 'automat',
+    tractiunea: 'Spate',
+    cutia: 'Automata',
     pret: 84000
 })
 allCars[26] = new Car({
     marca: 'Chevrolet Corvette',
     model: 'Stingray Coupe',
     anul: 2020,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 6200,
     puterea: 500,
-    tractiunea: 'spate',
-    cutia: 'automat',
+    tractiunea: 'Spate',
+    cutia: 'Automata',
     pret: 80000
 })
 allCars[27] = new Car({
     marca: 'Dodge',
     model: 'Viper ACR',
     anul: 2016,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 8000,
     puterea: 645,
-    tractiunea: 'spate',
-    cutia: 'automat',
+    tractiunea: 'Spate',
+    cutia: 'Automata',
     pret: 118000
 })
 allCars[28] = new Car({
     marca: 'Dodge',
     model: 'Hellcat SRT',
     anul: 2016,
-    combustibil: 'benzin',
+    combustibil: 'Benzin',
     capacitatea: 6200,
     puterea: 717,
-    tractiunea: 'spate',
-    cutia: 'automat',
+    tractiunea: 'Spate',
+    cutia: 'Automata',
     pret: 81000
 })
-// allCars[29] = new Car({
+allCars[29] = new Car({
+    marca: 'Subaru',
+    model: 'Impreza WRX',
+    anul: 2005,
+    combustibil: 'benzin',
+    capacitatea: 2000,
+    puterea: 227,
+    tractiunea: 'integrala',
+    cutia: 'manual',
+    pret: 10000
 
-// })
-// allCars[30] = new Car({
+})
+allCars[30] = new Car({
+    marca: 'BMW',
+    model: 'E60',
+    anul: 2005,
+    combustibil: 'Benzin',
+    capacitatea: 5000,
+    puterea: 500,
+    tractiunea: 'Spate',
+    cutia: 'Automata',
+    pret: 25000
 
-// })
-// allCars[31] = new Car({
-
-// })
-// allCars[32] = new Car({
-
-// })
-// allCars[33] = new Car({
-
-// })
-// allCars[34] = new Car({
-
-// })
-// allCars[35] = new Car({
-
-// })
-// allCars[36] = new Car({
-
-// })
-// allCars[37] = new Car({
-
-// })
-// allCars[38] = new Car({
-
-// })
-// allCars[39] = new Car({
-
-// })
+})
+allCars[31] = new Car({
+    marca: 'BMW',
+    model: 'X5 Le Mans',
+    anul: 2000,
+    combustibil: 'Benzin',
+    capacitatea: 6100,
+    puterea: 710,
+    tractiunea: 'Integrala',
+    cutia: 'Manual',
+    pret: 1000000
+})
+allCars[32] = new Car({
+    marca: 'BMW',
+    model: 'E38',
+    anul: 2001,
+    combustibil: 'Benzin',
+    capacitatea: 3000,
+    puterea: 218,
+    tractiunea: 'Spate',
+    cutia: 'Automat',
+    pret: 6000
+})
+allCars[33] = new Car({
+    marca: 'Toyota',
+    model: 'Corolla',
+    anul: 2005,
+    combustibil: 'Diesel',
+    capacitatea: 1400,
+    puterea: 96,
+    tractiunea: 'Fata',
+    cutia: 'Automat',
+    pret: 5000
+})
+allCars[34] = new Car({
+    marca: 'Toyota',
+    model: 'RAV 4',
+    anul: 2016,
+    combustibil: 'Diesel',
+    capacitatea: 2000,
+    puterea: 176,
+    tractiunea: 'Fata',
+    cutia: 'Manual',
+    pret: 20000
+})
+allCars[35] = new Car({
+    marca: 'Volkswagen',
+    model: 'Golf 6',
+    anul: 2011,
+    combustibil: 'Benzin',
+    capacitatea: 1400,
+    puterea: 172,
+    tractiunea: 'Fata',
+    cutia: 'Manual',
+    pret: 7000
+})
+allCars[36] = new Car({
+    marca: 'Volkswagen',
+    model: 'Transporter 4',
+    anul: 2000,
+    combustibil: 'Diesel',
+    capacitatea: 1900,
+    puterea: 70,
+    tractiunea: 'Fata',
+    cutia: 'Manual',
+    pret: 4500
+})
+allCars[37] = new Car({
+    marca: 'BMW',
+    model: 'E46 GTR',
+    anul: 2005,
+    combustibil: 'Benzin',
+    capacitatea: 4000,
+    puterea: 493,
+    tractiunea: 'Spate',
+    cutia: 'Manual',
+    pret: 229000
+})
+allCars[38] = new Car({
+    marca: 'BMW',
+    model: 'E31',
+    anul: 1999,
+    combustibil: 'Benzin',
+    capacitatea: 5600,
+    puterea: 375,
+    tractiunea: 'Spate',
+    cutia: 'Manual',
+    pret: 35000
+})
+allCars[39] = new Car({
+    marca: 'Toyota',
+    model: 'Corolla',
+    anul: 2021,
+    combustibil: 'Hybrid',
+    capacitatea: 2000,
+    puterea: 168,
+    tractiunea: 'Fata',
+    cutia: 'Automat',
+    pret: 27000
+})
 // allCars[40] = new Car({
 
 // })

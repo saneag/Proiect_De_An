@@ -401,7 +401,7 @@ main .car_galery {
 }
 
 #search_drop:checked+.slide {
-    height: 450px;
+    height: 500px;
 }
 
 #sort_drop {
@@ -484,6 +484,25 @@ input::-webkit-search-cancel-button {
 
 .sort_btns:active {
     background-color: rgba(100, 110, 130, 0.5);
+}
+
+#up_arrow {
+    visibility: hidden;
+    opacity: 0;
+    width: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    
+    transition: 0.5s ease;
+}
+#up_arrow:hover{
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 3px white);
+}
+.change#up_arrow {
+    visibility: visible;
+    opacity: 1;
 }
 
 footer {
