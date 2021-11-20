@@ -8,40 +8,24 @@ const sortWheelDrive = document.getElementById('sortWheelDrive');
 const sortGearbox = document.getElementById('sortGearbox');
 const sortPrice = document.getElementById('sortPrice');
 const search = document.getElementById('search');
+let obj_items = []
 
-function partitionByName(arr, start, end) {
-  const pivotValue = arr[end].marca;
-  let pivotIndex = start;
-  for (let i = start; i < end; i++) {
-    if (ascending == true) {
-      if (arr[i].marca <= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-    else {
-      if (arr[i].marca >= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-  }
-  [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]];
-  return pivotIndex;
+for (j in allCars[0]) {
+  obj_items.push(j)
 }
 
-function partitionByModel(arr, start, end) {
-  const pivotValue = arr[end].model;
+function partition(arr, start, end, item) {
+  let pivotValue = arr[end][item];
   let pivotIndex = start;
   for (let i = start; i < end; i++) {
     if (ascending == true) {
-      if (arr[i].model <= pivotValue) {
+      if (arr[i][item] <= pivotValue) {
         [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
         pivotIndex++;
       }
     }
     else {
-      if (arr[i].model >= pivotValue) {
+      if (arr[i][item] >= pivotValue) {
         [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
         pivotIndex++;
       }
@@ -52,197 +36,43 @@ function partitionByModel(arr, start, end) {
   return pivotIndex;
 }
 
-function partitionByYear(arr, start, end) {
-  const pivotValue = arr[end].anul;
-  let pivotIndex = start;
-  for (let i = start; i < end; i++) {
-    if (ascending == true) {
-      if (arr[i].anul <= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-    else {
-      if (arr[i].anul >= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-  }
-
-  [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]];
-  return pivotIndex;
-}
-
-function partitionByFuelType(arr, start, end) {
-  const pivotValue = arr[end].combustibil;
-  let pivotIndex = start;
-  for (let i = start; i < end; i++) {
-    if (ascending == true) {
-      if (arr[i].combustibil <= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-    else {
-      if (arr[i].combustibil >= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-  }
-
-  [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]];
-  return pivotIndex;
-}
-
-function partitionByEngineCapacity(arr, start, end) {
-  const pivotValue = arr[end].capacitate;
-  let pivotIndex = start;
-  for (let i = start; i < end; i++) {
-    if (ascending == true) {
-      if (arr[i].capacitate <= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-    else {
-      if (arr[i].capacitate >= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-  }
-
-  [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]];
-  return pivotIndex;
-}
-
-function partitionByHP(arr, start, end) {
-  const pivotValue = arr[end].puterea;
-  let pivotIndex = start;
-  for (let i = start; i < end; i++) {
-    if (ascending == true) {
-      if (arr[i].puterea <= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-    else {
-      if (arr[i].puterea >= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-  }
-
-  [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]];
-  return pivotIndex;
-}
-
-function partitionByWheelDrive(arr, start, end) {
-  const pivotValue = arr[end].tractiunea;
-  let pivotIndex = start;
-  for (let i = start; i < end; i++) {
-    if (ascending == true) {
-      if (arr[i].tractiunea <= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-    else {
-      if (arr[i].tractiunea >= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-  }
-
-  [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]];
-  return pivotIndex;
-}
-
-function partitionByGearbox(arr, start, end) {
-  const pivotValue = arr[end].cutia;
-  let pivotIndex = start;
-  for (let i = start; i < end; i++) {
-    if (ascending == true) {
-      if (arr[i].cutia <= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-    else {
-      if (arr[i].cutia >= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-  }
-
-  [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]];
-  return pivotIndex;
-}
-
-function partitionByPrice(arr, start, end) {
-  const pivotValue = arr[end].pret;
-  let pivotIndex = start;
-  for (let i = start; i < end; i++) {
-    if (ascending == true) {
-      if (arr[i].pret <= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-    else {
-      if (arr[i].pret >= pivotValue) {
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        pivotIndex++;
-      }
-    }
-  }
-
-  [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]];
-  return pivotIndex;
-}
-
-function quickSort(arr, start, end, type, ascending) {
+function quickSort(arr, start, end, type) {
   let index;
 
   if (start >= end) return;
 
   switch (type) {
-    case '1':
-      index = partitionByName(arr, start, end, ascending);
+    case 1:
+      index = partition(arr, start, end, obj_items[0]);
       break;
-    case '2':
-      index = partitionByModel(arr, start, end, ascending);
+    case 2:
+      index = partition(arr, start, end, obj_items[1]);
       break;
-    case '3':
-      index = partitionByYear(arr, start, end, ascending);
+    case 3:
+      index = partition(arr, start, end, obj_items[2]);
       break;
-    case '4':
-      index = partitionByFuelType(arr, start, end, ascending);
+    case 4:
+      index = partition(arr, start, end, obj_items[3]);
       break;
-    case '5':
-      index = partitionByEngineCapacity(arr, start, end, ascending);
+    case 5:
+      index = partition(arr, start, end, obj_items[4]);
       break;
-    case '6':
-      index = partitionByHP(arr, start, end, ascending);
+    case 6:
+      index = partition(arr, start, end, obj_items[5]);
       break;
-    case '7':
-      index = partitionByWheelDrive(arr, start, end, ascending);
+    case 7:
+      index = partition(arr, start, end, obj_items[6]);
       break;
-    case '8':
-      index = partitionByGearbox(arr, start, end, ascending);
+    case 8:
+      index = partition(arr, start, end, obj_items[7]);
       break;
-    case '9':
-      index = partitionByPrice(arr, start, end, ascending);
+    case 9:
+      index = partition(arr, start, end, obj_items[8]);
       break;
   }
 
-  quickSort(arr, start, index - 1, type, ascending);
-  quickSort(arr, index + 1, end, type, ascending);
+  quickSort(arr, start, index - 1, type);
+  quickSort(arr, index + 1, end, type);
 }
 
 function searching(arr, compName, compYearMin, compYearMax,
@@ -305,9 +135,9 @@ function searching(arr, compName, compYearMin, compYearMax,
 let ascending = true;
 let iterationCnt = 0;
 
-sortName.addEventListener('click', () => {
+function show_cars_help(q) {
   searching_alg(1)
-  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "1", ascending);
+  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, q);
   delete_main_cars()
   for (let i = 0; i < tempSearchFinal.length; i++) {
     for (let j = 0; j < tempSearchFinal.length; j++) {
@@ -323,182 +153,42 @@ sortName.addEventListener('click', () => {
   else {
     ascending = false;
   }
+}
+
+sortName.addEventListener('click', () => {
+  show_cars_help(1)
 })
 
 sortModel.addEventListener('click', () => {
-  searching_alg(1)
-  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "2", ascending);
-
-  delete_main_cars()
-  for (let i = 0; i < tempSearchFinal.length; i++) {
-    for (let j = 0; j < tempSearchFinal.length; j++) {
-      if (allCars[j] == tempSearchFinal[i]) {
-        temp_array[i] = j
-      }
-    }
-  }
-  display_help()
-
-  if (ascending == false) {
-    ascending = true;
-  }
-  else {
-    ascending = false;
-  }
+  show_cars_help(2)
 })
 
 sortYear.addEventListener('click', () => {
-  searching_alg(1)
-  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "3", ascending);
-
-  delete_main_cars()
-  for (let i = 0; i < tempSearchFinal.length; i++) {
-    for (let j = 0; j < tempSearchFinal.length; j++) {
-      if (allCars[j] == tempSearchFinal[i]) {
-        temp_array[i] = j
-      }
-    }
-  }
-  display_help()
-
-  if (ascending == false) {
-    ascending = true;
-  }
-  else {
-    ascending = false;
-  }
+  show_cars_help(3)
 })
 
 sortFuelType.addEventListener('click', () => {
-  searching_alg(1)
-  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "4", ascending);
-
-  delete_main_cars()
-  for (let i = 0; i < tempSearchFinal.length; i++) {
-    for (let j = 0; j < tempSearchFinal.length; j++) {
-      if (allCars[j] == tempSearchFinal[i]) {
-        temp_array[i] = j
-      }
-    }
-  }
-  display_help()
-
-  if (ascending == false) {
-    ascending = true;
-  }
-  else {
-    ascending = false;
-  }
+  show_cars_help(4)
 })
 
 sortEngineCapacity.addEventListener('click', () => {
-  searching_alg(1)
-  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "5", ascending);
-
-  delete_main_cars()
-  for (let i = 0; i < tempSearchFinal.length; i++) {
-    for (let j = 0; j < tempSearchFinal.length; j++) {
-      if (allCars[j] == tempSearchFinal[i]) {
-        temp_array[i] = j
-      }
-    }
-  }
-  display_help()
-
-  if (ascending == false) {
-    ascending = true;
-  }
-  else {
-    ascending = false;
-  }
+  show_cars_help(5)
 })
 
 sortHP.addEventListener('click', () => {
-  searching_alg(1)
-  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "6", ascending);
-
-  delete_main_cars()
-  for (let i = 0; i < tempSearchFinal.length; i++) {
-    for (let j = 0; j < tempSearchFinal.length; j++) {
-      if (allCars[j] == tempSearchFinal[i]) {
-        temp_array[i] = j
-      }
-    }
-  }
-  display_help()
-
-  if (ascending == false) {
-    ascending = true;
-  }
-  else {
-    ascending = false;
-  }
+  show_cars_help(6)
 })
 
 sortWheelDrive.addEventListener('click', () => {
-  searching_alg(1)
-  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "7", ascending);
-
-  delete_main_cars()
-  for (let i = 0; i < tempSearchFinal.length; i++) {
-    for (let j = 0; j < tempSearchFinal.length; j++) {
-      if (allCars[j] == tempSearchFinal[i]) {
-        temp_array[i] = j
-      }
-    }
-  }
-  display_help()
-
-  if (ascending == false) {
-    ascending = true;
-  }
-  else {
-    ascending = false;
-  }
+  show_cars_help(7)
 })
 
 sortGearbox.addEventListener('click', () => {
-  searching_alg(1)
-  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "8", ascending);
-
-  delete_main_cars()
-  for (let i = 0; i < tempSearchFinal.length; i++) {
-    for (let j = 0; j < tempSearchFinal.length; j++) {
-      if (allCars[j] == tempSearchFinal[i]) {
-        temp_array[i] = j
-      }
-    }
-  }
-  display_help()
-
-  if (ascending == false) {
-    ascending = true;
-  }
-  else {
-    ascending = false;
-  }
+  show_cars_help(8)
 })
 
 sortPrice.addEventListener('click', () => {
-  searching_alg(1)
-  quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, "9", ascending);
-
-  delete_main_cars()
-  for (let i = 0; i < tempSearchFinal.length; i++) {
-    for (let j = 0; j < tempSearchFinal.length; j++) {
-      if (allCars[j] == tempSearchFinal[i]) {
-        temp_array[i] = j
-      }
-    }
-  }
-  display_help()
-
-  if (ascending == false) {
-    ascending = true;
-  }
-  else {
-    ascending = false;
-  }
+  show_cars_help(9)
 })
 
 function searching_alg(temp) {
@@ -514,7 +204,6 @@ function searching_alg(temp) {
   let inputHPMax = document.getElementById("searchHPMax").value;
   let inputPriceMin = document.getElementById("searchPriceMin").value;
   let inputPriceMax = document.getElementById("searchPriceMax").value;
-
 
   if (!inputName) {
     for (let i = 0; i < allCars.length; i++) {
@@ -608,4 +297,3 @@ function searching_alg(temp) {
     display_help()
   }
 }
-

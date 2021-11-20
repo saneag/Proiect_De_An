@@ -1,16 +1,19 @@
 const cars = document.getElementsByClassName('cars')
 const myModal = document.getElementById('myModal')
 const modal_content = document.getElementById('modal_content')
-const img = document.createElement('img')
-let new_div = document.createElement('div')
-let par, car_info
-const links = document.getElementsByTagName('a')
 const inp = document.querySelectorAll('input')
 const footer = document.querySelector('footer')
 const mobile_nav = document.getElementById('mobile_nav')
 const menu = document.getElementById('openmenu')
+let img = document.createElement('img')
+let new_div
+let par, car_info
+let link = document.getElementsByTagName('a')
 let temp_array = []
+let cnt = false
+let a = 0
 
+//loading screen and some fixes
 window.onload = () => {
     window.scrollTo(0, 0)
     document.body.style.overflowY = 'hidden'
@@ -23,6 +26,7 @@ window.onload = () => {
     }, 0)
 }
 
+//display cars
 for (let i = 0; i < cars.length; i++) {
     cars[i].addEventListener('click', () => {
         display(temp_array[i])
@@ -73,7 +77,6 @@ function remove_info() {
     }
     enableScroll()
 }
-
 window.onclick = (event) => {
     if (event.target == myModal) {
         remove_info()
@@ -81,8 +84,9 @@ window.onclick = (event) => {
     }
 }
 
+//theme changer
 function change_theme() {
-    let img = document.getElementById('theme_changer')
+    img = document.getElementById('theme_changer')
     img.classList.toggle('rotate_theme')
     if (img.classList.contains('rotate_theme')) {
         document.body.style.backgroundColor = 'white'
@@ -90,8 +94,8 @@ function change_theme() {
         for (let i = 0; i < inp.length; i++) {
             inp[i].style.color = 'black'
         }
-        for (let i = 4; i < links.length; i++) {
-            links[i].style.color = 'black'
+        for (let i = 4; i < link.length; i++) {
+            link[i].style.color = 'black'
         }
     }
     else {
@@ -100,12 +104,13 @@ function change_theme() {
         for (let i = 0; i < inp.length; i++) {
             inp[i].style.color = ''
         }
-        for (let i = 4; i < links.length; i++) {
-            links[i].style.color = ''
+        for (let i = 4; i < link.length; i++) {
+            link[i].style.color = ''
         }
     }
 }
 
+//scroll prevent
 let keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
 function preventDefault(e) {
     e.preventDefault();
@@ -137,8 +142,7 @@ function enableScroll() {
     window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
-let cnt = false
-
+//input
 function deleteInput() {
     document.getElementsByClassName('arrow')[0].classList.toggle('down')
     document.getElementsByClassName('arrow')[0].classList.toggle('up')
@@ -159,6 +163,7 @@ function rotateArrow() {
     document.getElementsByClassName('arrow')[1].classList.toggle('up')
 }
 
+//mobile menu
 function openMenu() {
     mobile_nav.classList.toggle('show_nav')
     menu.classList.toggle('change')
@@ -180,8 +185,7 @@ window.addEventListener('mouseup', (event) => {
     }
 })
 
-let link, para, image, a = 0
-
+//display cars after sort or search
 function display_help() {
     for (let i = 0; i < temp_array.length; i++) {
         display_main_cars(temp_array[i])
@@ -191,12 +195,12 @@ function display_help() {
 function display_main_cars(i) {
     link = document.createElement('a')
     link.href = 'javascript:void(0)'
-    image = document.createElement('img')
-    para = document.createElement('p')
-    image.src = './images/' + (i + 1) + '.webp'
-    para.textContent = allCars[i].marca + ' ' + allCars[i].model
-    link.appendChild(image)
-    link.appendChild(para)
+    img = document.createElement('img')
+    par = document.createElement('p')
+    img.src = './images/' + (i + 1) + '.webp'
+    par.textContent = allCars[i].marca + ' ' + allCars[i].model
+    link.appendChild(img)
+    link.appendChild(par)
     cars[a].appendChild(link)
     a++
     if (a == tempSearchFinal.length)
@@ -219,6 +223,7 @@ function reset_search() {
     searching_alg(0)
 }
 
+//goto up button
 window.addEventListener('scroll', () => {
     let up_arrow = document.getElementById('up_arrow')
     if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
@@ -233,11 +238,10 @@ function goto_up() {
     document.documentElement.scrollTop = 0
 }
 
+//search btn press
 inp.forEach(element => {
-    element.addEventListener('keyup', (event) =>
-    {
-        if(event.keyCode === 13)
-        {
+    element.addEventListener('keyup', (event) => {
+        if (event.keyCode === 13) {
             event.preventDefault()
             search.click()
         }
