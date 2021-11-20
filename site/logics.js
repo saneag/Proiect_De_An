@@ -9,6 +9,8 @@ const sortGearbox = document.getElementById('sortGearbox');
 const sortPrice = document.getElementById('sortPrice');
 const search = document.getElementById('search');
 let obj_items = []
+let tempSearch = []
+let tempSearchFinal = []
 
 for (j in allCars[0]) {
   obj_items.push(j)
@@ -47,6 +49,7 @@ function quickSort(arr, start, end, type) {
       break;
     case 2:
       index = partition(arr, start, end, obj_items[1]);
+    // debugger
       break;
     case 3:
       index = partition(arr, start, end, obj_items[2]);
@@ -75,72 +78,19 @@ function quickSort(arr, start, end, type) {
   quickSort(arr, index + 1, end, type);
 }
 
-function searching(arr, compName, compYearMin, compYearMax,
-  compCapacityMin, compCapacityMax, compHPMin, compHPMax,
-  compPriceMin, compPriceMax, type) {
-  //type: 1 - inputName nu avem
-  //      2 - inputName avem
-  if (type == 2) {
-    let k = 0;
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i].marca.toLowerCase() == compName.toLowerCase() || arr[i].marca.split(' ')[0].toLowerCase() == compName.toLowerCase() || arr[i].marca.split(' ')[1].toLowerCase() == compName.toLowerCase()) {
-        tempSearchFinal[k] = arr[i];
-        k++;
-      }
-    }
-  }
-  else {
-    for (let i = 0; i < arr.length; i++) {
-      tempSearchFinal[i] = arr[i];
-    }
-  }
-
-  removeIndex = 0;
-  while (removeIndex < tempSearchFinal.length) {
-    if (tempSearchFinal[removeIndex].anul > compYearMax || tempSearchFinal[removeIndex].anul < compYearMin) {
-      tempSearchFinal.splice(removeIndex, 1);
-      removeIndex--;
-    }
-    removeIndex++;
-  }
-
-  removeIndex = 0;
-  while (removeIndex < tempSearchFinal.length) {
-    if (tempSearchFinal[removeIndex].capacitate > compCapacityMax || tempSearchFinal[removeIndex].capacitate < compCapacityMin) {
-      tempSearchFinal.splice(removeIndex, 1);
-      removeIndex--;
-    }
-    removeIndex++;
-  }
-
-  removeIndex = 0;
-  while (removeIndex < tempSearchFinal.length) {
-    if (tempSearchFinal[removeIndex].puterea > compHPMax || tempSearchFinal[removeIndex].puterea < compHPMin) {
-      tempSearchFinal.splice(removeIndex, 1);
-      removeIndex--;
-    }
-    removeIndex++;
-  }
-
-  removeIndex = 0;
-  while (removeIndex < tempSearchFinal.length) {
-    if (tempSearchFinal[removeIndex].pret > compPriceMax || tempSearchFinal[removeIndex].pret < compPriceMin) {
-      tempSearchFinal.splice(removeIndex, 1);
-      removeIndex--;
-    }
-    removeIndex++;
-  }
-}
-
 let ascending = true;
 let iterationCnt = 0;
+let qqq = true
 
 function show_cars_help(q) {
-  searching_alg(1)
+  if (qqq == true) {
+    searching_alg(1)
+    qqq = false
+  }
   quickSort(tempSearchFinal, 0, tempSearchFinal.length - 1, q);
   delete_main_cars()
   for (let i = 0; i < tempSearchFinal.length; i++) {
-    for (let j = 0; j < tempSearchFinal.length; j++) {
+    for (let j = 0; j < allCars.length; j++) {
       if (allCars[j] == tempSearchFinal[i]) {
         temp_array[i] = j
       }
@@ -190,6 +140,63 @@ sortGearbox.addEventListener('click', () => {
 sortPrice.addEventListener('click', () => {
   show_cars_help(9)
 })
+
+function searching(arr, compName, compYearMin, compYearMax,
+  compCapacityMin, compCapacityMax, compHPMin, compHPMax,
+  compPriceMin, compPriceMax, type) {
+  //type: 1 - inputName nu avem
+  //      2 - inputName avem
+  if (type == 2) {
+    let k = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].marca.toLowerCase() == compName.toLowerCase() || arr[i].marca.split(' ')[0].toLowerCase() == compName.toLowerCase() || arr[i].marca.split(' ')[1].toLowerCase() == compName.toLowerCase()) {
+        tempSearchFinal[k] = arr[i];
+        k++;
+      }
+    }
+  }
+  else {
+    for (let i = 0; i < arr.length; i++) {
+      tempSearchFinal[i] = arr[i];
+    }
+  }
+
+  removeIndex = 0;
+  while (removeIndex < tempSearchFinal.length) {
+    if (tempSearchFinal[removeIndex].anul > compYearMax || tempSearchFinal[removeIndex].anul < compYearMin) {
+      tempSearchFinal.splice(removeIndex, 1);
+      removeIndex--;
+    }
+    removeIndex++;
+  }
+
+  removeIndex = 0;
+  while (removeIndex < tempSearchFinal.length) {
+    if (tempSearchFinal[removeIndex].capacitatea > compCapacityMax || tempSearchFinal[removeIndex].capacitatea < compCapacityMin) {
+      tempSearchFinal.splice(removeIndex, 1);
+      removeIndex--;
+    }
+    removeIndex++;
+  }
+
+  removeIndex = 0;
+  while (removeIndex < tempSearchFinal.length) {
+    if (tempSearchFinal[removeIndex].puterea > compHPMax || tempSearchFinal[removeIndex].puterea < compHPMin) {
+      tempSearchFinal.splice(removeIndex, 1);
+      removeIndex--;
+    }
+    removeIndex++;
+  }
+
+  removeIndex = 0;
+  while (removeIndex < tempSearchFinal.length) {
+    if (tempSearchFinal[removeIndex].pret > compPriceMax || tempSearchFinal[removeIndex].pret < compPriceMin) {
+      tempSearchFinal.splice(removeIndex, 1);
+      removeIndex--;
+    }
+    removeIndex++;
+  }
+}
 
 function searching_alg(temp) {
   tempSearch = [];
@@ -284,7 +291,6 @@ function searching_alg(temp) {
       inputPriceMin, inputPriceMax, 2)
   }
   if (temp == 0) {
-    console.log(tempSearchFinal)
     temp_array = new Array()
     delete_main_cars()
     for (let i = 0; i < tempSearchFinal.length; i++) {

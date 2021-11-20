@@ -6,6 +6,7 @@ const footer = document.querySelector('footer')
 const mobile_nav = document.getElementById('mobile_nav')
 const menu = document.getElementById('openmenu')
 let img = document.createElement('img')
+let image = document.createElement('img')
 let new_div
 let par, car_info
 let link = document.getElementsByTagName('a')
@@ -143,21 +144,6 @@ function enableScroll() {
 }
 
 //input
-function deleteInput() {
-    document.getElementsByClassName('arrow')[0].classList.toggle('down')
-    document.getElementsByClassName('arrow')[0].classList.toggle('up')
-    if (cnt) {
-        setTimeout(() => {
-            for (let i = 0; i < inp.length; i++)
-                if (inp[i].value.length != 0) {
-                    inp[i].value = ''
-                }
-            cnt = false
-        }, 300)
-    }
-    cnt = true
-}
-
 function rotateArrow() {
     document.getElementsByClassName('arrow')[1].classList.toggle('down')
     document.getElementsByClassName('arrow')[1].classList.toggle('up')
@@ -195,11 +181,11 @@ function display_help() {
 function display_main_cars(i) {
     link = document.createElement('a')
     link.href = 'javascript:void(0)'
-    img = document.createElement('img')
+    image = document.createElement('img')
     par = document.createElement('p')
-    img.src = './images/' + (i + 1) + '.webp'
+    image.src = './images/' + (i + 1) + '.webp'
     par.textContent = allCars[i].marca + ' ' + allCars[i].model
-    link.appendChild(img)
+    link.appendChild(image)
     link.appendChild(par)
     cars[a].appendChild(link)
     a++
@@ -247,10 +233,3 @@ inp.forEach(element => {
         }
     })
 })
-
-//recomandari
-
-function recomand()
-{
-    
-}
