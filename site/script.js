@@ -29,10 +29,10 @@ window.onload = () => {
 //display cars
 for (let i = 0; i < cars.length; i++) {
     cars[i].addEventListener('click', () => {
-        display(temp_array[i])
+        display_modal(temp_array[i])
     })
 }
-function display(x) {
+function display_modal(x) {
     myModal.style.visibility = 'visible'
     myModal.style.opacity = '1'
     let id = 'car' + (x + 1)
