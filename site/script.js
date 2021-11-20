@@ -247,3 +247,10 @@ inp.forEach(element => {
         }
     })
 })
+
+//recomandari
+
+function recomand()
+{
+    
+}
