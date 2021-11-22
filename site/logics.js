@@ -49,7 +49,7 @@ function quickSort(arr, start, end, type) {
       break;
     case 2:
       index = partition(arr, start, end, obj_items[1]);
-    // debugger
+      // debugger
       break;
     case 3:
       index = partition(arr, start, end, obj_items[2]);
@@ -291,6 +291,10 @@ function searching_alg(temp) {
       inputPriceMin, inputPriceMax, 2)
   }
   if (temp == 0) {
+    if (tempSearchFinal.length == 0) {
+      alert("Nu avem nici o masina de genu!")
+      return;
+    }
     temp_array = new Array()
     delete_main_cars()
     for (let i = 0; i < tempSearchFinal.length; i++) {

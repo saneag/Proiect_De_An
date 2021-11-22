@@ -461,36 +461,190 @@ allCars[39] = new Car({
     cutia: 'Automat',
     pret: 27000
 })
-// allCars[40] = new Car({
-
-// })
-// allCars[41] = new Car({
-
-// })
-// allCars[42] = new Car({
-
-// })
-// allCars[43] = new Car({
-
-// })
-// allCars[44] = new Car({
-
-// })
-// allCars[45] = new Car({
-
-// })
-// allCars[46] = new Car({
-
-// })
-// allCars[47] = new Car({
-
-// })
-// allCars[48] = new Car({
-
-// })
-// allCars[49] = new Car({
-
-// })
-// allCars[50] = new Car({
-
-// })
+allCars[40] = new Car({
+    marca: 'Ferrari',
+    model: 'FF',
+    anul: 2011,
+    combustibil: 'Benzin',
+    capacitatea: 6300,
+    puterea: 650,
+    tractiunea: 'Spate',
+    cutia: 'Automat',
+    pret: 220000
+})
+allCars[41] = new Car({
+    marca: 'Mercedes',
+    model: 'E-CLASS',
+    anul: 2015,
+    combustibil: 'Benzin',
+    capacitatea: 2000,
+    puterea: 211,
+    tractiunea: 'Spate',
+    cutia: 'Automat',
+    pret: 38000
+})
+allCars[42] = new Car({
+    marca: 'Mercedes',
+    model: 'W124',
+    anul: 1996,
+    combustibil: 'Benzin',
+    capacitatea: 5000,
+    puterea: 320,
+    tractiunea: 'Spate',
+    cutia: 'Automat',
+    pret: 40000
+})
+allCars[43] = new Car({
+    marca: 'Mercedes',
+    model: 'W124',
+    anul: 1996,
+    combustibil: 'Benzin',
+    capacitatea: 2300,
+    puterea: 132,
+    tractiunea: 'Spate',
+    cutia: 'Manual',
+    pret: 7000
+})
+allCars[44] = new Car({
+    marca: 'Mercedes',
+    model: 'SLS AMG',
+    anul: 2011,
+    combustibil: 'Benzin',
+    capacitatea: 6200,
+    puterea: 571,
+    tractiunea: 'Spate',
+    cutia: 'Automat',
+    pret: 175000
+})
+allCars[45] = new Car({
+    marca: 'Mercedes',
+    model: 'S-CLASS S500',
+    anul: 1993,
+    combustibil: 'Benzin',
+    capacitatea: 5000,
+    puterea: 320,
+    tractiunea: 'Spate',
+    cutia: 'Automat',
+    pret: 25000
+})
+allCars[46] = new Car({
+    marca: 'Ford',
+    model: 'Sierra ',
+    anul: 1989,
+    combustibil: 'Benzin',
+    capacitatea: 2000,
+    puterea: 117,
+    tractiunea: 'Spate',
+    cutia: 'Manual',
+    pret: 1000
+})
+allCars[47] = new Car({
+    marca: 'Ford',
+    model: 'Puma ',
+    anul: 2021,
+    combustibil: 'Diesel',
+    capacitatea: 1000,
+    puterea: 153,
+    tractiunea: 'Fata',
+    cutia: 'Automat',
+    pret: 30000
+})
+allCars[48] = new Car({
+    marca: 'Aston Martin',
+    model: 'Cygnet ',
+    anul: 2021,
+    combustibil: 'Diesel',
+    capacitatea: 4700,
+    puterea: 430,
+    tractiunea: 'Integrala',
+    cutia: 'Automat',
+    pret: 36000
+})
+allCars[49] = new Car({
+    marca: 'Ford',
+    model: 'Transit',
+    anul: 1990,
+    combustibil: 'Diesel',
+    capacitatea: 2500,
+    puterea: 70,
+    tractiunea: 'Spate',
+    cutia: 'Manual',
+    pret: 7000
+})
+allCars[50] = new Car({
+    marca: 'Volkswagen',
+    model: 'Transporter 1',
+    anul: 1959,
+    combustibil: 'Benzin',
+    capacitatea: 1600,
+    puterea: 44,
+    tractiunea: 'Spate',
+    cutia: 'Manual',
+    pret: 50000
+})
+allCars[51] = new Car({
+    marca: 'Volkswagen',
+    model: 'Beetle',
+    anul: 1950,
+    combustibil: 'Benzin',
+    capacitatea: 1600,
+    puterea: 42,
+    tractiunea: 'Spate',
+    cutia: 'Manual',
+    pret: 15000
+})
+allCars[52] = new Car({
+    marca: 'Toyota',
+    model: 'Supra MK3',
+    anul: 1990,
+    combustibil: 'Benzin',
+    capacitatea: 2500,
+    puterea: 280,
+    tractiunea: 'Spate',
+    cutia: 'Manual',
+    pret: 10000
+})
+allCars[53] = new Car({
+    marca: 'Toyota',
+    model: 'Supra MK4',
+    anul: 1996,
+    combustibil: 'Benzin',
+    capacitatea: 3000,
+    puterea: 280,
+    tractiunea: 'Spate',
+    cutia: 'Manual',
+    pret: 40000
+})
+allCars[54] = new Car({
+    marca: 'Mazda',
+    model: 'RX 7',
+    anul: 1998,
+    combustibil: 'Benzin',
+    capacitatea: 1300,
+    puterea: 115,
+    tractiunea: 'Spate',
+    cutia: 'Manual',
+    pret: 20000
+})
+allCars[55] = new Car({
+    marca: 'Mazda',
+    model: 'MX 5',
+    anul: 1994,
+    combustibil: 'Benzin',
+    capacitatea: 1800,
+    puterea: 130,
+    tractiunea: 'Spate',
+    cutia: 'Manual',
+    pret: 10000
+})
+allCars[56] = new Car({
+    marca: 'Volkswagen',
+    model: 'Polo',
+    anul: 2010,
+    combustibil: 'Benzin',
+    capacitatea: 1400,
+    puterea: 180,
+    tractiunea: 'Fata',
+    cutia: 'Automat',
+    pret: 10000
+})
