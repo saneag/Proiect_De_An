@@ -13,6 +13,7 @@ let link = document.getElementsByTagName('a')
 let temp_array = []
 let cnt = false
 let a = 0
+let contact_modal = document.getElementById('contact_modal')
 
 //loading screen and some fixes
 window.onload = () => {
@@ -24,7 +25,7 @@ window.onload = () => {
         document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
         document.getElementsByClassName('loading')[0].style.opacity = '0'
         document.body.style.overflowY = ''
-    }, 2000)
+    }, 0)
 }
 
 //display cars
@@ -233,3 +234,16 @@ inp.forEach(element => {
         }
     })
 })
+
+function contact()
+{
+    disableScroll()
+    contact_modal.style.visibility = 'visible'
+    contact_modal.style.opacity = '1'
+}
+function close_contact()
+{
+    enableScroll()
+    contact_modal.style.visibility = ''
+    contact_modal.style.opacity = ''
+}

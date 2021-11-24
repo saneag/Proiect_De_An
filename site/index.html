@@ -24,13 +24,13 @@
             </div>
             <ul>
                 <li>
-                    <a href="javascript:void(0);">Contact</a>
+                    <a href="javascript:void(0)" onclick="contact()">Contact</a>
                 </li>
                 <li>
                     <a href="index.html"><img src="./images/home.webp" alt="" width="25px"> Home</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);">About</a>
+                    <a href="./about/about.html">About</a>
                 </li>
             </ul>
             <div class="burger_menu" id="openmenu" onclick="openMenu()">
@@ -45,15 +45,25 @@
                     <a href="index.html">Home</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);">Contact</a>
+                    <a href="javascript:void(0)" onclick="contact()">Contact</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);">About</a>
+                    <a href="./about/about.html">About</a>
                 </li>
             </ul>
         </div>
     </header>
     <main>
+        <div id="contact_modal">
+            <div id="contact_content">
+                <div class="close">
+                    <div class="close_btn_x" id="contact_x" onclick="close_contact()">
+                        <div class="x-bar" id="x-bar-top"></div>
+                        <div class="x-bar" id="x-bar-bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="main_container">
             <div class="car_galery">
                 <div class="cars" id="car1">
@@ -409,7 +419,8 @@
                                 motorului</button>
                         </li>
                         <li>
-                            <button id="sortHP" type="button" class="sort_btns">Sortare dupa puterea masinii</button>
+                            <button id="sortHP" type="button" class="sort_btns">Sortare dupa puterea
+                                masinii</button>
                         </li>
                         <li>
                             <button id="sortWheelDrive" type="button" class="sort_btns">Sortare dupa tipul

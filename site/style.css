@@ -10,7 +10,6 @@
 
 html {
     scroll-behavior: smooth;
-    user-select: none;
 }
 
 ::-webkit-scrollbar {
@@ -45,6 +44,7 @@ body {
     font-family: 'Zen Kurenaido', sans-serif;
     background-color: #282C34FF;
     transition: all 0.5s ease;
+    user-select: none;
 }
 
 button {
@@ -139,6 +139,25 @@ nav ul li a:hover {
     border-bottom: 1px solid red;
 }
 
+#contact_modal {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #B8B8B8C4;
+    transition: all 0.3s linear;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#contact_x{
+    top: 0;
+}
 #circle_theme {
     width: 30px;
     height: 30px;
