@@ -1,44 +1,82 @@
 const car_gal = document.getElementsByClassName('car_galery')[0]
 const cars = document.getElementsByClassName('cars')
 let temp_array = []
-let form = document.getElementById('car_form')
 let obj = []
+let form = document.getElementById('car_form')
 let allCars = []
+let encr = []
 
-form.addEventListener("submit", e => {
-    e.preventDefault()
+// form.addEventListener("submit", e => {
+//     e.preventDefault()
 
-    let data = new FormData(form)
+//     let data = new FormData(form)
 
-    fetch(form.action, {
-        method: "POST",
-        body: data
-    }).then(
-        function (response) {
-            console.log(response.json())
-        }
-    )
-});
+//     let marca = data.get('data[marca]')
+//     let model = data.get('data[model]')
+//     let anul = data.get('data[anul]')
+//     let combustibil = data.get('data[combustibil]')
+//     let capacitatea = data.get('data[capacitatea]')
+//     let puterea = data.get('data[puterea]')
+//     let tractiunea = data.get('data[tractiunea]')
+//     let cutia = data.get('data[cutia]')
+//     let pret = data.get('data[pret]')
+
+//     //!!codul pentru criptare, pentru a cripta folosesti variabilele de mai sus
+//     //exemplu
+//     // let encrMarca = marca + criptarea
+//     // let encrModel = model + criptarea
+//     // let encrAnul = anul + criptarea
+//     // let encrCombustibil = combustibil + criptarea
+//     // let encrCapacitatea = capacitatea + criptarea
+//     // let encrPuterea = puterea + criptarea
+//     // let encrTractiunea = tractiunea + criptarea
+//     // let encrCutia = cutia + criptarea
+//     // let encrPret = pret + criptarea
+
+//     //!!dupa ce termini de criptata, scoti din comentariu randurile de mai jos, acolo o sa fie incarcate datele in db
+
+//     // data.set('data[marca]', encrMarca)
+//     // data.set('data[model]', encrModel)
+//     // data.set('data[anul]', encrAnul)
+//     // data.set('data[combustibil]', encrCombustibil)
+//     // data.set('data[capacitatea]', encrCapacitate)
+//     // data.set('data[puterea]', encrPutere)
+//     // data.set('data[tractiunea]', encrTractiune)
+//     // data.set('data[cutia]', encrCutia)
+//     // data.set('data[pret]', encrPret)
+
+//     fetch(form.action, {
+//         method: "POST",
+//         body: data
+//     }).then(
+//         function (response) {
+//             alert("Masina a fost adaugata!")
+//         }
+//     )
+// });
 
 //loading screen and some fixes
 window.onload = () => {
-    fetch(form.action, {
-        method: "GET"
-    }).then(response => response.json())
-        .then((temp) => {
-            obj = Object.entries(temp)
-            obj.forEach(([key, value]) => {
-                allCars.push(value)
-            });
-        })
+    // fetch(form.action, {
+    //     method: "GET"
+    // }).then(response => response.json())
+    //     .then((temp) => {
+    //         obj = Object.entries(temp)
+    //         obj.forEach(([key, value]) => {
+    //             allCars.push(value) //aici se introduc valori ca marca ....
+    //         });
+    //     })
     window.scrollTo(0, 0)
     document.body.style.overflowY = 'hidden'
 
 
     setTimeout(() => {
+        for (i in allCars[0]) {
+            obj.push(i)
+        }
+        console.log(obj)
         for (let i in allCars) {
-            //aici faci criptarea
-            console.log(allCars[i])
+            //aici faci decriptarea
         }
         for (let i = 0; i < allCars.length; i++) {
             link = document.createElement('a')

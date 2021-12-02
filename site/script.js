@@ -81,7 +81,7 @@ function change_theme() {
         for (let i = 0; i < inp.length; i++) {
             inp[i].style.color = 'black'
         }
-        for (let i = 4; i < link.length; i++) {
+        for (let i = 5; i < link.length; i++) {
             link[i].style.color = 'black'
         }
     }
@@ -91,7 +91,7 @@ function change_theme() {
         for (let i = 0; i < inp.length; i++) {
             inp[i].style.color = ''
         }
-        for (let i = 4; i < link.length; i++) {
+        for (let i = 5; i < link.length; i++) {
             link[i].style.color = ''
         }
     }
