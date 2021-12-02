@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="cache-control" content="max-age=864000" />
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./media.css">
@@ -32,6 +32,9 @@
                 <li>
                     <a href="./about/about.html">About</a>
                 </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="add()">Add</a>
+                </li>
             </ul>
             <div class="burger_menu" id="openmenu" onclick="openMenu()">
                 <div class="bar top"></div>
@@ -50,307 +53,54 @@
                 <li>
                     <a href="./about/about.html">About</a>
                 </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="add()">Add</a>
+                </li>
             </ul>
         </div>
     </header>
     <main>
-        <div id="contact_modal">
-            <div id="contact_content">
+        <div id="add_modal">
+            <div id="add_content">
                 <div class="close">
-                    <div class="close_btn_x" id="contact_x" onclick="close_contact()">
+                    <div class="close_btn_x" id="contact_x" onclick="close_add()">
                         <div class="x-bar" id="x-bar-top"></div>
                         <div class="x-bar" id="x-bar-bottom"></div>
                     </div>
                 </div>
+                <form id="car_form" method="POST" action="https://sheetdb.io/api/v1/4m2syhf9dh34y">
+                    <div>
+                        <p>Marca:</p>
+                        <input type="text" name="data[marca]">
+                        <p>Model:</p>
+                        <input type="text" name="data[model]">
+                        <p>Anul:</p>
+                        <input type="number" name="data[anul]">
+                    </div>
+                    <div>
+                        <p>Combustibil:</p>
+                        <input type="text" name="data[combustibil]">
+                        <p>Capacitatea (ml):</p>
+                        <input type="number" name="data[capacitatea]">
+                        <p>Puterea:</p>
+                        <input type="number" name="data[puterea]">
+                    </div>
+                    <div>
+                        <p>Tractiunea:</p>
+                        <input type="text" name="data[tractiunea]">
+                        <p>Cutia:</p>
+                        <input type="text" name="data[cutia]">
+                        <p>Pret:</p>
+                        <input type="number" name="data[pret]">
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
             </div>
         </div>
+
         <div class="main_container">
             <div class="car_galery">
-                <div class="cars" id="car1">
-                    <a href="javascript:void(0);"><img src="./images/1.webp" alt="">
-                        <p>Alfa Romeo Stelvio Quadrifoglio</p>
-                    </a>
-                </div>
-                <div class="cars" id="car2">
-                    <a href="javascript:void(0);"><img src="./images/2.webp" alt="" height="169px">
-                        <p>Alfa Romeo Giulia Quadrifoglio</p>
-                    </a>
-                </div>
-                <div class="cars" id="car3">
-                    <a href="javascript:void(0);"><img src="./images/3.webp" alt="">
-                        <p>Alfa Romeo 4C</p>
-                    </a>
-                </div>
-                <div class="cars" id="car4">
-                    <a href="javascript:void(0);"><img src="./images/4.webp" alt="">
-                        <p>Alfa Romeo 8C Competizione</p>
-                    </a>
-                </div>
-                <div class="cars" id="car5">
-                    <a href="javascript:void(0);"><img src="./images/5.webp" alt="">
-                        <p>Aston Martin DB11</p>
-                    </a>
-                </div>
-                <div class="cars" id="car6">
-                    <a href="javascript:void(0);"><img src="./images/6.webp" alt="">
-                        <p>Aston Martin Vulcan</p>
-                    </a>
-                </div>
-                <div class="cars" id="car7">
-                    <a href="javascript:void(0);"><img src="./images/7.webp" alt="">
-                        <p>Aston Martin Vantage GT12</p>
-                    </a>
-                </div>
-                <div class="cars" id="car8">
-                    <a href="javascript:void(0);"><img src="./images/8.webp" alt="">
-                        <p>Aston Martin DB10</p>
-                    </a>
-                </div>
-                <div class="cars" id="car9">
-                    <a href="javascript:void(0);"><img src="./images/9.webp" alt="">
-                        <p>Audi R8 V10 Plus</p>
-                    </a>
-                </div>
-                <div class="cars" id="car10">
-                    <a href="javascript:void(0);"><img src="./images/10.webp" alt="">
-                        <p>Audi S1</p>
-                    </a>
-                </div>
-                <div class="cars" id="car11">
-                    <a href="javascript:void(0);"><img src="./images/11.webp" alt="">
-                        <p>Audi RS 6 Avant</p>
-                    </a>
-                </div>
-                <div class="cars" id="car12">
-                    <a href="javascript:void(0);"><img src="./images/12.webp" alt="">
-                        <p>Audi TTS Coupé</p>
-                    </a>
-                </div>
-                <div class=" cars" id="car13">
-                    <a href="javascript:void(0);"><img src="./images/13.webp" alt="">
-                        <p>Audi RS 6</p>
-                    </a>
-                </div>
-                <div class="cars" id="car14">
-                    <a href="javascript:void(0);"><img src="./images/14.webp" alt="">
-                        <p>Audi RS 4</p>
-                    </a>
-                </div>
-                <div class="cars" id="car15">
-                    <a href="javascript:void(0);"><img src="./images/15.webp" alt="">
-                        <p>Audi RS 6</p>
-                    </a>
-                </div>
-                <div class="cars" id="car16">
-                    <a href="javascript:void(0);"><img src="./images/16.webp" alt="">
-                        <p>Audi RS 5</p>
-                    </a>
-                </div>
-                <div class="cars" id="car17">
-                    <a href="javascript:void(0);"><img src="./images/17.webp" alt="">
-                        <p>Audi RS Q8</p>
-                    </a>
-                </div>
-                <div class="cars" id="car18">
-                    <a href="javascript:void(0);"><img src="./images/18.webp" alt="">
-                        <p>BMW i8</p>
-                    </a>
-                </div>
-                <div class="cars" id="car19">
-                    <a href="javascript:void(0);"><img src="./images/19.webp" alt="">
-                        <p>BMW M2 Coupe</p>
-                    </a>
-                </div>
-                <div class="cars" id="car20">
-                    <a href="javascript:void(0);"><img src="./images/20.webp" alt="">
-                        <p>BMW M4 GTS</p>
-                    </a>
-                </div>
-                <div class="cars" id="car21">
-                    <a href="javascript:void(0)"><img src="./images/21.webp" alt="">
-                        <p>BMW M8 2022</p>
-                    </a>
-                </div>
-                <div class="cars" id="car22">
-                    <a href="javascript:void(0)"><img src="./images/22.webp" alt="">
-                        <p>Audi Q8</p>
-                    </a>
-                </div>
-                <div class="cars" id="car23">
-                    <a href="javascript:void(0)"><img src="./images/23.webp" alt="">
-                        <p>BMW M50D</p>
-                    </a>
-                </div>
-                <div class="cars" id="car24">
-                    <a href="javascript:void(0)"><img src="./images/24.webp" alt="">
-                        <p>BMW X5</p>
-                    </a>
-                </div>
-                <div class="cars" id="car25">
-                    <a href="javascript:void(0)"><img src="./images/25.webp" alt="">
-                        <p>Mercedes Benz X Class</p>
-                    </a>
-                </div>
-                <div class="cars" id="car26">
-                    <a href="javascript:void(0)"><img src="./images/26.webp" alt="">
-                        <p>Mercedes Benz Cls</p>
-                    </a>
-                </div>
-                <div class="cars" id="car27">
-                    <a href="javascript:void(0)"><img src="./images/27.webp" alt="">
-                        <p>Chevrolet Corvette Stingray Coupe</p>
-                    </a>
-                </div>
-                <div class="cars" id="car28">
-                    <a href="javascript:void(0)"><img src="./images/28.webp" alt="">
-                        <p>Dodge Viper ACR</p>
-                    </a>
-                </div>
-                <div class="cars" id="car29">
-                    <a href="javascript:void(0)"><img src="./images/29.webp" alt="">
-                        <p>Dodge Challenger HellCat SRT</p>
-                    </a>
-                </div>
-                <div class="cars" id="car30">
-                    <a href="javascript:void(0)"><img src="./images/30.webp" alt="">
-                        <p>Subaru Imperza WRX</p>
-                    </a>
-                </div>
-                <div class="cars" id="car31">
-                    <a href="javascript:void(0)"><img src="./images/31.webp" alt="">
-                        <p>BMW E60</p>
-                    </a>
-                </div>
-                <div class="cars" id="car32">
-                    <a href="javascript:void(0)"><img src="./images/32.webp" alt="">
-                        <p>BMW X5 Le Mans</p>
-                    </a>
-                </div>
-                <div class="cars" id="car33">
-                    <a href="javascript:void(0)"><img src="./images/33.webp" alt="">
-                        <p>BMW E38</p>
-                    </a>
-                </div>
-                <div class="cars" id="car34">
-                    <a href="javascript:void(0)"><img src="./images/34.webp" alt="">
-                        <p>Toyota Corolla</p>
-                    </a>
-                </div>
-                <div class="cars" id="car35">
-                    <a href="javascript:void(0)"><img src="./images/35.webp" alt="">
-                        <p>Toyota RAV 4</p>
-                    </a>
-                </div>
-                <div class="cars" id="car36">
-                    <a href="javascript:void(0)"><img src="./images/36.webp" alt="">
-                        <p>Volkswagen Golf 6</p>
-                    </a>
-                </div>
-                <div class="cars" id="car37">
-                    <a href="javascript:void(0)"><img src="./images/37.webp" alt="">
-                        <p>Volkswagen Transporter 4</p>
-                    </a>
-                </div>
-                <div class="cars" id="car38">
-                    <a href="javascript:void(0)"><img src="./images/38.webp" alt="">
-                        <p>BMW E46 GTR</p>
-                    </a>
-                </div>
-                <div class="cars" id="car39">
-                    <a href="javascript:void(0)"><img src="./images/39.webp" alt="">
-                        <p>BMW E31</p>
-                    </a>
-                </div>
-                <div class="cars" id="car40">
-                    <a href="javascript:void(0)"><img src="./images/40.webp" alt="">
-                        <p>Toyota Corolla</p>
-                    </a>
-                </div>
-                <div class="cars" id="car41">
-                    <a href="javascript:void(0)"><img src="./images/41.webp" alt="">
-                        <p>Ferrari FF</p>
-                    </a>
-                </div>
-                <div class="cars" id="car42">
-                    <a href="javascript:void(0)"><img src="./images/42.webp" alt="">
-                        <p>Mercedes Benz E-CLASS</p>
-                    </a>
-                </div>
-                <div class="cars" id="car43">
-                    <a href="javascript:void(0)"><img src="./images/43.webp" alt="">
-                        <p>Mercedes Benz W124</p>
-                    </a>
-                </div>
-                <div class="cars" id="car44">
-                    <a href="javascript:void(0)"><img src="./images/44.webp" alt="">
-                        <p>Mercedes Benz W124</p>
-                    </a>
-                </div>
-                <div class="cars" id="car45">
-                    <a href="javascript:void(0)"><img src="./images/45.webp" alt="">
-                        <p>Mercedes Benz SLS AMG</p>
-                    </a>
-                </div>
-                <div class="cars" id="car46">
-                    <a href="javascript:void(0)"><img src="./images/46.webp" alt="">
-                        <p>Mercedes Benz S-CLASS S500</p>
-                    </a>
-                </div>
-                <div class="cars" id="car47">
-                    <a href="javascript:void(0)"><img src="./images/47.webp" alt="">
-                        <p>Ford Sierra</p>
-                    </a>
-                </div>
-                <div class="cars" id="car48">
-                    <a href="javascript:void(0)"><img src="./images/48.webp" alt="">
-                        <p>Ford Puma</p>
-                    </a>
-                </div>
-                <div class="cars" id="car49">
-                    <a href="javascript:void(0)"><img src="./images/49.webp" alt="">
-                        <p>Aston Martin Cygnet</p>
-                    </a>
-                </div>
-                <div class="cars" id="car50">
-                    <a href="javascript:void(0)"><img src="./images/50.webp" alt="">
-                        <p>Ford Transit</p>
-                    </a>
-                </div>
-                <div class="cars" id="car51">
-                    <a href="javascript:void(0)"><img src="./images/51.webp" alt="">
-                        <p>Volkswagen Transporter 1</p>
-                    </a>
-                </div>
-                <div class="cars" id="car52">
-                    <a href="javascript:void(0)"><img src="./images/52.webp" alt="">
-                        <p>Volkswagen Beetle</p>
-                    </a>
-                </div>
-                <div class="cars" id="car53">
-                    <a href="javascript:void(0)"><img src="./images/53.webp" alt="">
-                        <p>Toyota Supra MK3</p>
-                    </a>
-                </div>
-                <div class="cars" id="car54">
-                    <a href="javascript:void(0)"><img src="./images/54.webp" alt="">
-                        <p>Toyota Supra MK4</p>
-                    </a>
-                </div>
-                <div class="cars" id="car55">
-                    <a href="javascript:void(0)"><img src="./images/55.webp" alt="">
-                        <p>Mazda RX7</p>
-                    </a>
-                </div>
-                <div class="cars" id="car56">
-                    <a href="javascript:void(0)"><img src="./images/56.webp" alt="">
-                        <p>Mazda RX5</p>
-                    </a>
-                </div>
-                <div class="cars" id="car57">
-                    <a href="javascript:void(0)"><img src="./images/57.webp" alt="">
-                        <p>Volkswagen Polo</p>
-                    </a>
-                </div>
+
             </div>
             <div class="function__btns">
                 <div class="search_menu">
@@ -460,9 +210,8 @@
         </p>
     </footer>
     <noscript>Your browser don't support JavaScript!</noscript>
-    <script type="text/javascript" src="./cars.js"></script>
-    <script type="text/javascript" src="./script.js"></script>
-    <script type="text/javascript" src="./logics.js"></script>
+    <script type="text/javascript" src="./db_load.js"></script>
+    <script type="text/javascript" src="./cars.js" defer></script>
 </body>
 
 </html>

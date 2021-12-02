@@ -1,4 +1,4 @@
-const cars = document.getElementsByClassName('cars')
+// const cars = document.getElementsByClassName('cars')
 const myModal = document.getElementById('myModal')
 const modal_content = document.getElementById('modal_content')
 const inp = document.querySelectorAll('input')
@@ -10,23 +10,8 @@ let image = document.createElement('img')
 let new_div
 let par, car_info
 let link = document.getElementsByTagName('a')
-let temp_array = []
 let cnt = false
 let a = 0
-let contact_modal = document.getElementById('contact_modal')
-
-//loading screen and some fixes
-window.onload = () => {
-    window.scrollTo(0, 0)
-    document.body.style.overflowY = 'hidden'
-    for (let i = 0; i < allCars.length; i++)
-        temp_array[i] = i
-    setTimeout(() => {
-        document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
-        document.getElementsByClassName('loading')[0].style.opacity = '0'
-        document.body.style.overflowY = ''
-    }, 0)
-}
 
 //display cars
 for (let i = 0; i < cars.length; i++) {
@@ -166,7 +151,7 @@ window.onscroll = () => {
 }
 
 window.addEventListener('mouseup', (event) => {
-    if (event.target != mobile_nav && event.target.parentNode != mobile_nav) {
+    if (event.target == document.getElementsByTagName('main')[0]) {
         mobile_nav.classList.remove('show_nav')
         menu.classList.remove('change')
     }
@@ -235,15 +220,12 @@ inp.forEach(element => {
     })
 })
 
-function contact()
-{
-    disableScroll()
-    contact_modal.style.visibility = 'visible'
-    contact_modal.style.opacity = '1'
+function add() {
+    document.getElementById('add_modal').style.visibility = 'visible'
+    document.getElementById('add_modal').style.opacity = 1
 }
-function close_contact()
-{
-    enableScroll()
-    contact_modal.style.visibility = ''
-    contact_modal.style.opacity = ''
+
+function close_add() {
+    document.getElementById('add_modal').style.visibility = 'hidden'
+    document.getElementById('add_modal').style.opacity = 0
 }

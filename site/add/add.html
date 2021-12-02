@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Simple Page</title>
+</head>
+
+<body>
+    <header>
+    </header>
+
+    <main>
+        <div class="modal_add">
+            <div class="close">
+                <div class="close_btn_x" onclick="close_add()">
+                    <div class="x-bar" id="x-bar-top"></div>
+                    <div class="x-bar" id="x-bar-bottom"></div>
+                </div>
+            </div>
+            <form id="car_form" method="POST" action="https://sheetdb.io/api/v1/4m2syhf9dh34y">
+                <div>
+                    <p>Marca: </p> <input name="data[marca]" required>
+                    <p>Model: </p> <input name="data[model]" required>
+                    <p>Anul: </p><input name="data[anul]" required>
+                    <p>Combustibil:</p> <input name="data[combustibility]" required>
+                    <p>Capacitatea: </p> <input name="data[capacitatea]" required>
+                </div>
+                <div>
+                    <p>Puterea: </p> <input name="data[puterea]" required>
+                    <p>Tractiunea: </p><input name="data[tractiunea]" required>
+                    <p>Cutia: </p> <input name="data[cutia]" required>
+                    <p>Pret: </p><input name="data[pret]" required>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p class="copyright">
+            © 2021 Garstea Alexandr, Tentiuc Ion, Raileanu Daniel. All rights reserved.
+        </p>
+    </footer>
+
+    <noscript>Your browser don't support JavaScript!</noscript>
+    <script src="./script.js"></script>
+</body>
+
+</html>
