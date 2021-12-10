@@ -311,6 +311,7 @@ main .car_galery {
 .cars {
     text-align: center;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .cars:empty {
@@ -325,6 +326,22 @@ main .car_galery {
 
 .cars:hover {
     transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 29px;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.cars:hover .overlay {
+    opacity: 1;
 }
 
 .cars a {

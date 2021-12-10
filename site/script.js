@@ -19,6 +19,7 @@ for (let i = 0; i < cars.length; i++) {
         display_modal(temp_array[i])
     })
 }
+
 function display_modal(x) {
     myModal.style.visibility = 'visible'
     myModal.style.opacity = '1'
@@ -173,7 +174,11 @@ function display_main_cars(i) {
     par.textContent = allCars[i].marca + ' ' + allCars[i].model
     link.appendChild(image)
     link.appendChild(par)
+    new_div = document.createElement('div')
+    new_div.className = 'overlay'
+    new_div.appendChild(document.createTextNode('Anul: ' + allCars[i].anul + ' Pretul: ' + allCars[i].pret + '$'))
     cars[a].appendChild(link)
+    cars[a].appendChild(new_div)
     a++
     if (a == tempSearchFinal.length)
         a = 0
@@ -205,6 +210,7 @@ window.addEventListener('scroll', () => {
         up_arrow.classList.remove('change')
     }
 })
+
 function goto_up() {
     document.body.scrollTop = 0
     document.documentElement.scrollTop = 0

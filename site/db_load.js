@@ -74,7 +74,7 @@ window.onload = () => {
         for (i in allCars[0]) {
             obj.push(i)
         }
-        console.log(obj)
+        // console.log(obj)
         for (let i in allCars) {
             //aici faci decriptarea
         }
@@ -91,7 +91,11 @@ window.onload = () => {
             link.appendChild(image)
             link.appendChild(par)
             car_gal.appendChild(new_div)
+            new_div = document.createElement('div')
+            new_div.className = 'overlay'
+            new_div.appendChild(document.createTextNode('Anul: ' + allCars[i].anul + ' Pretul: ' + allCars[i].pret + '$'))
             cars[i].appendChild(link)
+            cars[i].appendChild(new_div)
             temp_array[i] = i
         }
         document.getElementsByClassName('loading')[0].style.visibility = 'hidden'

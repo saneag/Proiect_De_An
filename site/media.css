@@ -34,6 +34,12 @@
     }
 }
 
+@media only screen and (max-width: 1024px) {
+    .cars:hover .overlay {
+        opacity: 0;
+    }
+}
+
 @media only screen and (max-width: 960px) {
     .main_container {
         grid-template-columns: 1fr;
