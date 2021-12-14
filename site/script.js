@@ -65,6 +65,7 @@ function remove_info() {
     }
     enableScroll()
 }
+
 window.onclick = (event) => {
     if (event.target == myModal) {
         remove_info()
@@ -74,7 +75,7 @@ window.onclick = (event) => {
 
 //theme changer
 function change_theme() {
-    img = document.getElementById('theme_changer')
+    let img = document.getElementById('theme_changer')
     img.classList.toggle('rotate_theme')
     if (img.classList.contains('rotate_theme')) {
         document.body.style.backgroundColor = 'white'
@@ -131,7 +132,12 @@ function enableScroll() {
 }
 
 //input
-function rotateArrow() {
+function rotateFirst() {
+    document.getElementsByClassName('arrow')[0].classList.toggle('down')
+    document.getElementsByClassName('arrow')[0].classList.toggle('up')
+}
+
+function rotateSecond() {
     document.getElementsByClassName('arrow')[1].classList.toggle('down')
     document.getElementsByClassName('arrow')[1].classList.toggle('up')
 }

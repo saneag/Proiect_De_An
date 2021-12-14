@@ -109,5 +109,5 @@ window.onload = () => {
         script_el.type = 'text/javascript'
         script_el.src = './logics.js'
         document.body.appendChild(script_el)
-    }, 2000)
+    }, 10)
 }

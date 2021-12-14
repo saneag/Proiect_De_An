@@ -271,7 +271,7 @@ main {
     padding: 20px;
     border: 2px solid white;
     width: 80%;
-    height: 80%;
+    height: 90%;
 }
 
 form {
@@ -286,7 +286,6 @@ form {
 form .btn {
     grid-area: 2/2;
     padding: 10px;
-    margin: 0;
 }
 
 form input {
@@ -368,7 +367,7 @@ main .car_galery {
     height: 100%;
     overflow: auto;
     background-color: #B8B8B8C4;
-    transition: all 0.3s linear;
+    transition: all 0.2s ease-in;
     display: flex;
     justify-content: space-around;
     align-items: center;
