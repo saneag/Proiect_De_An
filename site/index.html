@@ -71,27 +71,27 @@
                 <form id="car_form" method="POST" action="https://sheetdb.io/api/v1/4m2syhf9dh34y">
                     <div>
                         <p>Marca:</p>
-                        <input type="text" name="data[marca]" autocomplete="off" >
+                        <input type="text" name="data[marca]" autocomplete="off" required>
                         <p>Model:</p>
-                        <input type="text" name="data[model]" autocomplete="off" >
+                        <input type="text" name="data[model]" autocomplete="off" required>
                         <p>Anul:</p>
-                        <input type="number" name="data[anul]" autocomplete="off" >
+                        <input type="number" name="data[anul]" autocomplete="off" required>
                     </div>
                     <div>
                         <p>Combustibil:</p>
-                        <input type="text" name="data[combustibil]" autocomplete="off" >
+                        <input type="text" name="data[combustibil]" autocomplete="off" required>
                         <p>Capacitatea (ml):</p>
-                        <input type="number" name="data[capacitatea]" autocomplete="off" >
+                        <input type="number" name="data[capacitatea]" autocomplete="off" required>
                         <p>Puterea:</p>
-                        <input type="number" name="data[puterea]" autocomplete="off" >
+                        <input type="number" name="data[puterea]" autocomplete="off" required>
                     </div>
                     <div>
                         <p>Tractiunea:</p>
-                        <input type="text" name="data[tractiunea]" autocomplete="off" >
+                        <input type="text" name="data[tractiunea]" autocomplete="off" required>
                         <p>Cutia:</p>
-                        <input type="text" name="data[cutia]" autocomplete="off" >
+                        <input type="text" name="data[cutia]" autocomplete="off" required>
                         <p>Pret:</p>
-                        <input type="number" name="data[pret]" autocomplete="off" >
+                        <input type="number" name="data[pret]" autocomplete="off" required>
                     </div>
                     <button type="submit" class="btn">Submit</button>
                 </form>
@@ -104,7 +104,8 @@
             </div>
             <div class="function__btns">
                 <div class="search_menu">
-                    <label for="search_drop" class="alg_btn" onclick="rotateFirst()">Search<i class="arrow down"></i></label>
+                    <label for="search_drop" class="alg_btn" onclick="rotateFirst()">Search<i
+                            class="arrow down"></i></label>
                     <input type="checkbox" id="search_drop">
                     <ul class="slide">
                         <li>

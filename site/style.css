@@ -377,6 +377,7 @@ main .car_galery {
     background-color: #282C34FF;
     padding: 20px;
     border: 2px solid white;
+    border-radius: 10px;
     width: 80%;
     height: 80%;
 }
@@ -461,6 +462,7 @@ main .car_galery {
 .arrow {
     border: solid black;
     border-width: 0 3px 3px 0;
+    border-radius: 2px;
     display: inline-block;
     padding: 3px;
     transition: all 0.3s ease;
@@ -527,13 +529,13 @@ main .car_galery {
     color: rgba(153, 114, 62, 0.8);
 }
 
-.search_menu input::-webkit-inner-spin-button,
-.search_menu input::-webkit-outer-spin-button {
+input::-webkit-search-cancel-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-input::-webkit-search-cancel-button {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }

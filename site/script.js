@@ -25,19 +25,21 @@ function display_modal(x) {
     myModal.style.opacity = '1'
     let id = 'car' + (x + 1)
     let txt = ''
-    a = 0
     display_img(x)
     new_div = document.createElement('div')
     for (let i in allCars[x]) {
-        txt = i.charAt(0).toUpperCase() + i.slice(1) + ': ' + allCars[x][i] + '\n'
-        if (a == 4) {
+        if (i != 'pret')
+            txt = `${i.charAt(0).toUpperCase() + i.slice(1)} : ${allCars[x][i]} \n`
+        if (i == 'pret') {
+            let temp_price = allCars[x][i]
+            temp_price = temp_price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")
+            txt = `${i.charAt(0).toUpperCase() + i.slice(1)} : ${temp_price} $\n`
+        }
+        if (i == 'capacitatea') {
             txt += 'ml'
         }
-        if (a == 5) {
+        if (i == 'puterea') {
             txt += 'HP'
-        }
-        if (a == 8) {
-            txt += ' $'
         }
         par = document.createElement('p')
         car_info = document.createTextNode(txt)
@@ -80,21 +82,15 @@ function change_theme() {
     if (img.classList.contains('rotate_theme')) {
         document.body.style.backgroundColor = 'white'
         footer.style.color = 'black'
-        for (let i = 0; i < inp.length; i++) {
-            inp[i].style.color = 'black'
-        }
-        for (let i = 5; i < link.length; i++) {
-            link[i].style.color = 'black'
+        for (let i = 0; i < cars.length; i++) {
+            cars[i].getElementsByTagName('a')[0].style.color = 'black'
         }
     }
     else {
         document.body.style.backgroundColor = ''
         footer.style.color = ''
-        for (let i = 0; i < inp.length; i++) {
-            inp[i].style.color = ''
-        }
-        for (let i = 5; i < link.length; i++) {
-            link[i].style.color = ''
+        for (let i = 0; i < cars.length; i++) {
+            cars[i].getElementsByTagName('a')[0].style.color = ''
         }
     }
 }
@@ -136,7 +132,6 @@ function rotateFirst() {
     document.getElementsByClassName('arrow')[0].classList.toggle('down')
     document.getElementsByClassName('arrow')[0].classList.toggle('up')
 }
-
 function rotateSecond() {
     document.getElementsByClassName('arrow')[1].classList.toggle('down')
     document.getElementsByClassName('arrow')[1].classList.toggle('up')
@@ -148,12 +143,34 @@ function openMenu() {
     menu.classList.toggle('change')
 }
 
-window.onscroll = () => {
+window.addEventListener('scroll', throttle(callback, 500))
+
+function throttle(fn, wait) {
+    let time = Date.now()
+    return function () {
+        if ((time + wait - Date.now()) < 0) {
+            fn()
+            time = Date.now()
+        }
+    }
+}
+
+function callback() {
     if (mobile_nav.classList.contains('show_nav')) {
         mobile_nav.classList.remove('show_nav')
     }
     if (menu.classList.contains('change')) {
         menu.classList.remove('change')
+    }
+    if (document.documentElement.clientWidth < 960) {
+        if (document.getElementById('search_drop').checked == true) {
+            document.getElementById('search_drop').checked = false
+            rotateFirst()
+        }
+        if (document.getElementById('sort_drop').checked == true) {
+            document.getElementById('sort_drop').checked = false
+            rotateSecond()
+        }
     }
 }
 
@@ -182,7 +199,9 @@ function display_main_cars(i) {
     link.appendChild(par)
     new_div = document.createElement('div')
     new_div.className = 'overlay'
-    new_div.appendChild(document.createTextNode('Anul: ' + allCars[i].anul + ' Pretul: ' + allCars[i].pret + '$'))
+    let temp_price = allCars[i].pret
+    temp_price = temp_price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")
+    new_div.appendChild(document.createTextNode(`Anul: ${allCars[i].anul} \xa0 Pretul: ${temp_price} $`))
     cars[a].appendChild(link)
     cars[a].appendChild(new_div)
     a++

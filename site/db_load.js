@@ -93,7 +93,9 @@ window.onload = () => {
             car_gal.appendChild(new_div)
             new_div = document.createElement('div')
             new_div.className = 'overlay'
-            new_div.appendChild(document.createTextNode('Anul: ' + allCars[i].anul + ' Pretul: ' + allCars[i].pret + '$'))
+            let temp_price = allCars[i].pret
+            temp_price = temp_price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")
+            new_div.appendChild(document.createTextNode(`Anul: ${allCars[i].anul} \xa0 Pretul: ${temp_price} $`))
             cars[i].appendChild(link)
             cars[i].appendChild(new_div)
             temp_array[i] = i
