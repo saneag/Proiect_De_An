@@ -85,6 +85,11 @@ function change_theme() {
         for (let i = 0; i < cars.length; i++) {
             cars[i].getElementsByTagName('a')[0].style.color = 'black'
         }
+        document.getElementById('up_arrow').classList.add('change_color')
+        for (let i = 0; i < document.getElementsByClassName('slide')[0].querySelectorAll('input').length; i++) {
+            document.getElementsByClassName('slide')[0].querySelectorAll('input')[i].style.color = 'black'
+        }
+
     }
     else {
         document.body.style.backgroundColor = ''
@@ -92,6 +97,9 @@ function change_theme() {
         for (let i = 0; i < cars.length; i++) {
             cars[i].getElementsByTagName('a')[0].style.color = ''
         }
+        document.getElementById('up_arrow').classList.remove('change_color')
+        for (let i = 0; i < document.getElementsByClassName('slide')[0].querySelectorAll('input').length; i++)
+            document.getElementsByClassName('slide')[0].querySelectorAll('input')[i].style.color = ''
     }
 }
 
@@ -185,6 +193,8 @@ window.addEventListener('mouseup', (event) => {
 function display_help() {
     for (let i = 0; i < temp_array.length; i++) {
         display_main_cars(temp_array[i])
+        if (document.getElementById('theme_changer').classList.contains('rotate_theme'))
+            cars[i].getElementsByTagName('a')[0].style.color = 'black'
     }
 }
 
