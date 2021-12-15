@@ -29,11 +29,11 @@ function display_modal(x) {
     new_div = document.createElement('div')
     for (let i in allCars[x]) {
         if (i != 'pret')
-            txt = `${i.charAt(0).toUpperCase() + i.slice(1)} : ${allCars[x][i]} \n`
+            txt = `${i.charAt(0).toUpperCase() + i.slice(1)}: ${allCars[x][i]} \n`
         if (i == 'pret') {
             let temp_price = allCars[x][i]
             temp_price = temp_price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")
-            txt = `${i.charAt(0).toUpperCase() + i.slice(1)} : ${temp_price} $\n`
+            txt = `${i.charAt(0).toUpperCase() + i.slice(1)}: ${temp_price} $\n`
         }
         if (i == 'capacitatea') {
             txt += 'ml'
