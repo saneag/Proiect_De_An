@@ -24,7 +24,7 @@
             </div>
             <ul>
                 <li>
-                    <a href="javascript:void(0)" onclick="contact()">Contact</a>
+                    <a href="javascript:void(0)" onclick="prompt('Copy Email: ', 'mailforresponses@gmail.com')">Contact</a>
                 </li>
                 <li>
                     <a href="index.html"><img src="./images/home.webp" alt="" width="25px"> Home</a>
@@ -33,7 +33,7 @@
                     <a href="./about/about.html">About</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" onclick="add()">Add</a>
+                    <a href="javascript:void(0)" onclick="modal('add')">Add</a>
                 </li>
             </ul>
             <div class="burger_menu" id="openmenu" onclick="openMenu()">
@@ -48,13 +48,13 @@
                     <a href="index.html">Home</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" onclick="contact()">Contact</a>
+                    <a href="javascript:void(0)" onclick="prompt('Copy Email: ', 'mailforresponses@gmail.com')">Contact</a>
                 </li>
                 <li>
                     <a href="./about/about.html">About</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" onclick="add()">Add</a>
+                    <a href="javascript:void(0)" onclick="modal('add')">Add</a>
                 </li>
             </ul>
         </div>
@@ -63,7 +63,7 @@
         <div id="add_modal">
             <div id="add_content">
                 <div class="close">
-                    <div class="close_btn_x" id="contact_x" onclick="close_add()">
+                    <div class="close_btn_x" id="contact_x" onclick="modal('ca')">
                         <div class="x-bar" id="x-bar-top"></div>
                         <div class="x-bar" id="x-bar-bottom"></div>
                     </div>

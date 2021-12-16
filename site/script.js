@@ -5,6 +5,7 @@ const inp = document.querySelectorAll('input')
 const footer = document.querySelector('footer')
 const mobile_nav = document.getElementById('mobile_nav')
 const menu = document.getElementById('openmenu')
+let add = document.getElementById('add_modal')
 let img = document.createElement('img')
 let image = document.createElement('img')
 let new_div
@@ -68,11 +69,11 @@ function remove_info() {
     enableScroll()
 }
 
-window.onclick = (event) => {
-    if (event.target == myModal) {
+window.onclick = (e) => {
+    if (e.target == myModal)
         remove_info()
-        enableScroll()
-    }
+    if (e.target == add)
+        modal('ca')
 }
 
 //theme changer
@@ -162,7 +163,8 @@ function throttle(fn, wait) {
         }
     }
 }
-
+let search_drop = document.getElementById('search_drop')
+let sort_drop = document.getElementById('sort_drop')
 function callback() {
     if (mobile_nav.classList.contains('show_nav')) {
         mobile_nav.classList.remove('show_nav')
@@ -170,13 +172,13 @@ function callback() {
     if (menu.classList.contains('change')) {
         menu.classList.remove('change')
     }
-    if (document.documentElement.clientWidth < 960) {
-        if (document.getElementById('search_drop').checked == true) {
-            document.getElementById('search_drop').checked = false
+    if (window.pageYOffset > 900) {
+        if (search_drop.checked == true) {
+            search_drop.checked = false
             rotateFirst()
         }
-        if (document.getElementById('sort_drop').checked == true) {
-            document.getElementById('sort_drop').checked = false
+        if (sort_drop.checked == true) {
+            sort_drop.checked = false
             rotateSecond()
         }
     }
@@ -261,12 +263,15 @@ inp.forEach(element => {
     })
 })
 
-function add() {
-    document.getElementById('add_modal').style.visibility = 'visible'
-    document.getElementById('add_modal').style.opacity = 1
-}
 
-function close_add() {
-    document.getElementById('add_modal').style.visibility = 'hidden'
-    document.getElementById('add_modal').style.opacity = 0
+
+function modal(x) {
+    if (x == 'add') {
+        add.style.visibility = 'visible'
+        add.style.opacity = 1
+    }
+    if (x == 'ca') {
+        add.style.visibility = 'hidden'
+        add.style.opacity = 0
+    }
 }
