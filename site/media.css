@@ -43,7 +43,8 @@
         width: 100%;
         height: 90%;
     }
-    .close{
+
+    .close {
         right: 7%;
     }
 }
@@ -193,16 +194,18 @@
     .cars_about img {
         width: 400px;
     }
+
     .cars_about {
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
     }
-    .close{
+
+    .close {
         right: 3%;
         top: 2rem
     }
-    .modal-content
-    {
+
+    .modal-content {
         height: 100%;
     }
 }
