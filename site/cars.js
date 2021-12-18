@@ -155,7 +155,7 @@ allCars[12] = new Car({
     combustibil: 'Benzin',
     capacitatea: 4200,
     puterea: 580,
-    tractiunea: 'fata',
+    tractiunea: 'Fata',
     cutia: 'Automata',
     pret: 32000
 });
@@ -178,7 +178,7 @@ allCars[14] = new Car({
     combustibil: 'Benzin',
     capacitatea: 5000,
     puterea: 579,
-    tractiunea: 'fata',
+    tractiunea: 'Fata',
     cutia: 'Automata',
     pret: 36000
 });
@@ -343,7 +343,7 @@ allCars[29] = new Car({
     combustibil: 'Benzin',
     capacitatea: 2000,
     puterea: 227,
-    tractiunea: 'integrala',
+    tractiunea: 'Integrala',
     cutia: 'manual',
     pret: 10000
 
