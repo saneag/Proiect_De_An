@@ -288,23 +288,30 @@ for (let i = 0; i < viginereCipher.length; i++) {
 let rowTable = columnTable = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
                               "1","2","3","4","5","6","7","8","9","0"];
 
+
 let key = [];
-let keyLength = Math.floor(Math.random() * 4 + 3);
+
+//generare cheita random
+
+//let keyLength = Math.floor(Math.random() * 4 + 3);
                           
-console.log("Key length: ",keyLength);
-                          
-for (let i = 0; i < keyLength; i++) {
-    letterIndex = Math.floor(Math.random() * 36);
-    //console.log(letterIndex);
-    //console.log(rowTable[letterIndex]);
-    key[i] = rowTable[letterIndex];
-}
-                          
+//console.log("Key length: ",keyLength);
+
+// for (let i = 0; i < keyLength; i++) {
+//     letterIndex = Math.floor(Math.random() * 36);
+//     //console.log(letterIndex);
+//     //console.log(rowTable[letterIndex]);
+//     key[i] = rowTable[letterIndex];
+// }
+
+key = ['P','E','A','C','H']
+let keyLength = key.length  
+
 console.log("\n");
                           
-for (let i = 0; i < keyLength; i++) {
-    console.log(key[i]);
-}
+// for (let i = 0; i < keyLength; i++) {
+//     console.log(key[i]);
+// }
 
 
 function crypt(stringTestCrypt) {
@@ -452,6 +459,37 @@ function decrypt(stringTestDecrypt) {
 }
 
 
-let cryptedNameCar = crypt("PROIECT DE AN 1");
+//let cryptedNameCar = crypt("PROIECT DE AN 1");
 
-decrypt(cryptedNameCar)
+//decrypt(cryptedNameCar)
+
+for (let i = 0; i < 57; i++) {
+  let encrMarca = allCars[i].marca.toUpperCase();
+  crypt(encrMarca);
+
+  let encrModel = allCars[i].model.toUpperCase();
+  crypt(encrModel);
+
+  let encrAnul = allCars[i].anul.toString().toUpperCase();
+  crypt(encrAnul);
+
+  let encrCombustibil = allCars[i].combustibil.toUpperCase();
+  crypt(encrCombustibil);
+
+  let encrCapacitatea = allCars[i].capacitatea.toString().toUpperCase();
+  crypt(encrCapacitatea);
+
+  let encrPuterea = allCars[i].puterea.toString().toUpperCase();
+  crypt(encrPuterea);
+
+  let encrTractiunea = allCars[i].tractiunea.toUpperCase();
+  crypt(encrTractiunea);
+
+  let encrCutia = allCars[i].cutia.toUpperCase();
+  crypt(encrCutia);
+
+  let encrPret = allCars[i].pret.toString().toUpperCase();
+  crypt(encrPret);
+}
+
+
