@@ -1,4 +1,3 @@
-// const cars = document.getElementsByClassName('cars')
 const myModal = document.getElementById('myModal')
 const modal_content = document.getElementById('modal_content')
 const inp = document.querySelectorAll('input')
@@ -15,11 +14,12 @@ let cnt = false
 let a = 0
 
 //display cars
-for (let i = 0; i < cars.length; i++) {
-    cars[i].addEventListener('click', () => {
-        display_modal(temp_array[i])
-    })
-}
+window.addEventListener('click', (e) => {
+    for (let i = 0; i < cars.length; i++) {
+        if (e.target.parentElement.parentElement == cars[i])
+            display_modal(temp_array[i])
+    }
+})
 
 function display_modal(x) {
     myModal.style.visibility = 'visible'
@@ -29,6 +29,8 @@ function display_modal(x) {
     display_img(x)
     new_div = document.createElement('div')
     for (let i in allCars[x]) {
+        if (i == 'link')
+            break
         if (i != 'pret')
             txt = `${i.charAt(0).toUpperCase() + i.slice(1)}: ${allCars[x][i]} \n`
         if (i == 'pret') {
@@ -55,7 +57,7 @@ function display_modal(x) {
 
 function display_img(i) {
     new_div = document.createElement('div')
-    img.src = './images/' + (i + 1) + '.webp'
+    img.src = allCars[i].link
     new_div.appendChild(img)
     modal_content.appendChild(new_div)
 }
@@ -205,17 +207,17 @@ function display_main_cars(i) {
     link.href = 'javascript:void(0)'
     image = document.createElement('img')
     par = document.createElement('p')
-    image.src = './images/' + (i + 1) + '.webp'
+    image.src = allCars[i].link
     par.textContent = allCars[i].marca + ' ' + allCars[i].model
     link.appendChild(image)
     link.appendChild(par)
     new_div = document.createElement('div')
     new_div.className = 'overlay'
+    link.appendChild(new_div)
     let temp_price = allCars[i].pret
     temp_price = temp_price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")
     new_div.appendChild(document.createTextNode(`Anul: ${allCars[i].anul} \xa0 Pretul: ${temp_price} $`))
     cars[a].appendChild(link)
-    cars[a].appendChild(new_div)
     a++
     if (a == tempSearchFinal.length)
         a = 0
@@ -263,233 +265,19 @@ inp.forEach(element => {
     })
 })
 
-
-
 function modal(x) {
     if (x == 'add') {
-        add.style.visibility = 'visible'
-        add.style.opacity = 1
+        let pass = prompt('Introduceti parola:')
+        if (pass === 'Lemon') {
+            add.style.visibility = 'visible'
+            add.style.opacity = 1
+        }
+        else{
+            alert('Parola incorecta!')
+        }
     }
     if (x == 'ca') {
         add.style.visibility = 'hidden'
         add.style.opacity = 0
     }
 }
-
-
-// Criptare
-
-let viginereCipher = new Array(36);
-
-for (let i = 0; i < viginereCipher.length; i++) {
-  viginereCipher[i] = new Array(36);
-}
-
-let rowTable = columnTable = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
-                              "1","2","3","4","5","6","7","8","9","0"];
-
-
-let key = [];
-
-//generare cheita random
-
-//let keyLength = Math.floor(Math.random() * 4 + 3);
-                          
-//console.log("Key length: ",keyLength);
-
-// for (let i = 0; i < keyLength; i++) {
-//     letterIndex = Math.floor(Math.random() * 36);
-//     //console.log(letterIndex);
-//     //console.log(rowTable[letterIndex]);
-//     key[i] = rowTable[letterIndex];
-// }
-
-key = ['P','E','A','C','H']
-let keyLength = key.length  
-
-console.log("\n");
-                          
-// for (let i = 0; i < keyLength; i++) {
-//     console.log(key[i]);
-// }
-
-
-function crypt(stringTestCrypt) {
-  let i1 = 0;
-  let j1 = 0;
-  let l1 = 0;
-  for (let i = 0; i < 36; i++) {
-    for (let j = 0; j < 36; j++) {
-      viginereCipher[i][j] = rowTable[i1 + j1];
-      j1++;
-      if (viginereCipher[i][j] == undefined) {
-        viginereCipher[i][j] = rowTable[l1];
-        l1++;
-      }
-    }
-    i1++;
-    j1 = 0;
-    l1 = 0;
-  }
-
-
-//   for (let i = 0; i < 36; i++) {
-//     for (let j = 0; j < 36; j++) {
-//       console.log(viginereCipher[i][j], " ");
-//     }
-//     console.log("\n");
-//   }
-
-
-  //let stringTestCrypt = "BMW E38";
-
-
-  let keyStream = [];
-
-  console.log(stringTestCrypt);
-
-  let cntKeyStream = 0;
-  let tempI = 0;
-  for (let i = 0; i < stringTestCrypt.length; i++) {
-    if (tempI == key.length) {
-      cntKeyStream = 0;
-      tempI = 0;
-    }
-    keyStream[i] = key[cntKeyStream];
-    cntKeyStream++;
-    tempI++;
-  }
-
-  console.log("Cheita", keyStream);
-
-  let cryptedString = [];
-
-  for (let k = 0; k < stringTestCrypt.length; k++) {
-    if (stringTestCrypt[k] == " ") {
-      cryptedString[k] = " ";
-    }
-    for (let i = 0; i < rowTable.length; i++) {
-      if (stringTestCrypt[k] == rowTable[i]) {
-        for (let j = 0; j < columnTable.length; j++) {
-          if (keyStream[k] == columnTable[j]) {
-            cryptedString[k] = viginereCipher[i][j];
-            break;
-          }
-        }
-      }
-    }
-  }
-
-  console.log("Criptat", cryptedString);
-  
-  return cryptedString;
-}
-
-
-function decrypt(stringTestDecrypt) {
-    let i1 = 0;
-    let j1 = 0;
-    let l1 = 0;
-    for (let i = 0; i < 36; i++) {
-      for (let j = 0; j < 36; j++) {
-        viginereCipher[i][j] = rowTable[i1 + j1];
-        j1++;
-        if (viginereCipher[i][j] == undefined) {
-          viginereCipher[i][j] = rowTable[l1];
-          l1++;
-        }
-      }
-      i1++;
-      j1 = 0;
-      l1 = 0;
-    }
-
-    let keyStreamDecrypt = [];
-
-    let cntKeyStream = 0;
-    let tempI = 0;
-    for (let i = 0; i < stringTestDecrypt.length; i++) {
-        if (tempI == key.length) {
-            cntKeyStream = 0;
-            tempI = 0;
-        }
-    keyStreamDecrypt[i] = key[cntKeyStream];
-    cntKeyStream++;
-    tempI++;
-    }
-
-    //console.log("Cheita pentru decriptare", keyStreamDecrypt);
-
-    for (let i = 0; i < keyStreamDecrypt.length; i++) {
-        for (let j = 0; j < viginereCipher.length; j++)
-        {
-            if(keyStreamDecrypt[i] == viginereCipher[0][j])
-            {
-                keyStreamDecrypt[i] = j;
-                break;
-            }
-        }   
-    }
-
-    console.log("\nCheita pentru decriptare dupa indexi", keyStreamDecrypt);
-
-    let decryptedString = []
-
-    //debugger
-    for (let i = 0; i < keyStreamDecrypt.length; i++) {
-        if(stringTestDecrypt[i] == " ")
-            {
-                decryptedString[i] = " ";
-            }
-        for (let j = 0; j < viginereCipher.length; j++){
-            if(stringTestDecrypt[i] == viginereCipher[0][j])
-            {
-                if(keyStreamDecrypt[i] > j)
-                {
-                    decryptedString[i] = viginereCipher[0][viginereCipher.length - (keyStreamDecrypt[i] - j)]
-                    break;
-                }
-                decryptedString[i] = viginereCipher[0][j-keyStreamDecrypt[i]];
-                break;
-            }
-        }
-    }
-
-    console.log("Decriptat: ",decryptedString)
-}
-
-
-//let cryptedNameCar = crypt("PROIECT DE AN 1");
-
-//decrypt(cryptedNameCar)
-
-for (let i = 0; i < 57; i++) {
-  let encrMarca = allCars[i].marca.toUpperCase();
-  crypt(encrMarca);
-
-  let encrModel = allCars[i].model.toUpperCase();
-  crypt(encrModel);
-
-  let encrAnul = allCars[i].anul.toString().toUpperCase();
-  crypt(encrAnul);
-
-  let encrCombustibil = allCars[i].combustibil.toUpperCase();
-  crypt(encrCombustibil);
-
-  let encrCapacitatea = allCars[i].capacitatea.toString().toUpperCase();
-  crypt(encrCapacitatea);
-
-  let encrPuterea = allCars[i].puterea.toString().toUpperCase();
-  crypt(encrPuterea);
-
-  let encrTractiunea = allCars[i].tractiunea.toUpperCase();
-  crypt(encrTractiunea);
-
-  let encrCutia = allCars[i].cutia.toUpperCase();
-  crypt(encrCutia);
-
-  let encrPret = allCars[i].pret.toString().toUpperCase();
-  crypt(encrPret);
-}
-
-

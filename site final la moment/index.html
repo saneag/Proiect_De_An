@@ -65,12 +65,14 @@
         <div id="add_modal">
             <div id="add_content">
                 <div class="close">
-                    <div class="close_btn_x" id="contact_x" onclick="modal('ca')">
+                    <div class="close_btn_x" onclick="modal('ca')">
                         <div class="x-bar" id="x-bar-top"></div>
                         <div class="x-bar" id="x-bar-bottom"></div>
                     </div>
                 </div>
-                <form id="car_form" method="POST" action="https://sheetdb.io/api/v1/4m2syhf9dh34y">
+                <!-- https://sheetdb.io/api/v1/zwfd6a40nzs62 -->
+                <!-- <form id="car_form" method="POST" action="https://sheetdb.io/api/v1/4m2syhf9dh34y"> -->
+                    <form id="car_form" method="POST" action="https://sheetdb.io/api/v1/zwfd6a40nzs62">
                     <div>
                         <p>Marca:</p>
                         <input type="text" name="data[marca]" autocomplete="off" required>
@@ -94,6 +96,10 @@
                         <input type="text" name="data[cutia]" autocomplete="off" required>
                         <p>Pret:</p>
                         <input type="number" name="data[pret]" autocomplete="off" required>
+                        <div>
+                            <p>Link la imagine:</p>
+                            <input type="url" name="data[link]" autocomplete="off" required>
+                        </div>
                     </div>
                     <button type="submit" class="btn">Submit</button>
                 </form>
@@ -213,8 +219,10 @@
         </p>
     </footer>
     <noscript>Your browser don't support JavaScript!</noscript>
-    <script type="text/javascript" src="./db_load.js"></script>
-    <script type="text/javascript" src="./cars.js" defer></script>
+    <script src="./db_load.js" defer></script>
+    <script src="./cars.js" defer></script>
+    <script src="./script.js" defer></script>
+    <script src="./logics.js" defer></script>
 </body>
 
 </html>

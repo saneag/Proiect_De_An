@@ -12,9 +12,11 @@ let obj_items = []
 let tempSearch = []
 let tempSearchFinal = []
 
-for (j in allCars[0]) {
-  obj_items.push(j)
-}
+setTimeout(() => {
+  for (j in allCars[0]) {
+    obj_items.push(j)
+  }
+}, 1000)
 
 function partition(arr, start, end, item) {
   let pivotValue = arr[end][item];
@@ -306,4 +308,154 @@ function searching_alg(temp) {
     }
     display_help()
   }
+}
+
+// Criptare
+
+let viginereCipher = new Array(36);
+
+for (let i = 0; i < viginereCipher.length; i++) {
+  viginereCipher[i] = new Array(36);
+}
+
+let rowTable = columnTable = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+  "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+
+
+let key = [];
+
+//generare cheita random
+
+//let keyLength = Math.floor(Math.random() * 4 + 3);
+
+//console.log("Key length: ",keyLength);
+
+// for (let i = 0; i < keyLength; i++) {
+//     letterIndex = Math.floor(Math.random() * 36);
+//     //console.log(letterIndex);
+//     //console.log(rowTable[letterIndex]);
+//     key[i] = rowTable[letterIndex];
+// }
+
+key = ['P', 'E', 'A', 'C', 'H']
+let keyLength = key.length
+
+function crypt(stringTestCrypt) {
+  let i1 = 0;
+  let j1 = 0;
+  let l1 = 0;
+  for (let i = 0; i < 36; i++) {
+    for (let j = 0; j < 36; j++) {
+      viginereCipher[i][j] = rowTable[i1 + j1];
+      j1++;
+      if (viginereCipher[i][j] == undefined) {
+        viginereCipher[i][j] = rowTable[l1];
+        l1++;
+      }
+    }
+    i1++;
+    j1 = 0;
+    l1 = 0;
+  }
+
+  let keyStream = [];
+
+  let cntKeyStream = 0;
+  let tempI = 0;
+  for (let i = 0; i < stringTestCrypt.length; i++) {
+    if (tempI == key.length) {
+      cntKeyStream = 0;
+      tempI = 0;
+    }
+    keyStream[i] = key[cntKeyStream];
+    cntKeyStream++;
+    tempI++;
+  }
+
+  let cryptedString = [];
+
+  for (let k = 0; k < stringTestCrypt.length; k++) {
+    if (stringTestCrypt[k] == " ") {
+      cryptedString[k] = " ";
+    }
+    for (let i = 0; i < rowTable.length; i++) {
+      if (stringTestCrypt[k] == rowTable[i]) {
+        for (let j = 0; j < columnTable.length; j++) {
+          if (keyStream[k] == columnTable[j]) {
+            cryptedString[k] = viginereCipher[i][j];
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  return cryptedString.join('');
+}
+
+
+function decrypt(stringTestDecrypt) {
+  let i1 = 0;
+  let j1 = 0;
+  let l1 = 0;
+  for (let i = 0; i < 36; i++) {
+    for (let j = 0; j < 36; j++) {
+      viginereCipher[i][j] = rowTable[i1 + j1];
+      j1++;
+      if (viginereCipher[i][j] == undefined) {
+        viginereCipher[i][j] = rowTable[l1];
+        l1++;
+      }
+    }
+    i1++;
+    j1 = 0;
+    l1 = 0;
+  }
+
+  let keyStreamDecrypt = [];
+
+  let cntKeyStream = 0;
+  let tempI = 0;
+  for (let i = 0; i < stringTestDecrypt.length; i++) {
+    if (tempI == key.length) {
+      cntKeyStream = 0;
+      tempI = 0;
+    }
+    keyStreamDecrypt[i] = key[cntKeyStream];
+    cntKeyStream++;
+    tempI++;
+  }
+
+  for (let i = 0; i < keyStreamDecrypt.length; i++) {
+    for (let j = 0; j < viginereCipher.length; j++) {
+      if (keyStreamDecrypt[i] == viginereCipher[0][j]) {
+        keyStreamDecrypt[i] = j;
+        break;
+      }
+    }
+  }
+
+  let decryptedString = []
+
+  for (let i = 0; i < keyStreamDecrypt.length; i++) {
+    if (stringTestDecrypt[i] == " ") {
+      decryptedString[i] = " ";
+    }
+    for (let j = 0; j < viginereCipher.length; j++) {
+      if (stringTestDecrypt[i] == viginereCipher[0][j]) {
+        if (keyStreamDecrypt[i] > j) {
+          decryptedString[i] = viginereCipher[0][viginereCipher.length - (keyStreamDecrypt[i] - j)]
+          break;
+        }
+        decryptedString[i] = viginereCipher[0][j - keyStreamDecrypt[i]];
+        break;
+      }
+    }
+  }
+  decryptedString = decryptedString.join('').toLowerCase().split(' ')
+  for(let i = 0; i < decryptedString.length; i++)
+  {
+    decryptedString[i] = decryptedString[i].charAt(0).toUpperCase() + decryptedString[i].substring(1)
+  }
+  return decryptedString.join(' ');
 }
