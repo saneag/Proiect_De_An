@@ -1,4 +1,3 @@
-// const cars = document.getElementsByClassName('cars')
 const myModal = document.getElementById('myModal')
 const modal_content = document.getElementById('modal_content')
 const inp = document.querySelectorAll('input')

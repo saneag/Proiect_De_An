@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="media.css">
+    <title>Abous Us</title>
+</head>
+
+<body>
+    <div class="loading">
+        <div class="loader"></div>
+    </div>
+    <header>
+        <nav>
+            <div id="circle_theme">
+                <a href="javascript:void(0);" onclick="change_theme()">
+                    <img src="../images/color_change.webp" alt="" id="theme_changer">
+                </a>
+            </div>
+            <ul>
+                <li>
+                    <a href="../index.html"><img src="../images/home.webp" alt="" width="25px"> Home</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">About</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"
+                        onclick="prompt('Copy Email: ', 'mailforresponses@gmail.com')">Contact</a>
+                </li>
+            </ul>
+            <div class="burger_menu" id="openmenu" onclick="openMenu()">
+                <div class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
+            </div>
+        </nav>
+        <div class="mobile_nav" id="mobile_nav">
+            <ul>
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">About</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"
+                        onclick="prompt('Copy Email: ', 'mailforresponses@gmail.com')">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="galery">
+            <div id="ion">
+                <img src="" alt="">
+                <p><span class="bd"></span></p>
+            </div>
+            <div id="danu">
+                <img src="./images/danu.png" alt="">
+                <p><span class="bd"></span></p>
+            </div>
+            <div id="alex">
+                <a href="https://www.facebook.com/garsteaa/"><img src="./images/alex.jpg" alt=""></a>
+                <p>Eu-s Alex. Am <span class="bd"></span> ani, traiesc in Moldova. Doresc sa devin un fullstack
+                    developer bun in viitor. Asa cum traiesc in Moldova stiu 3 limbi: Romana, Rusa, Engleza. Fac
+                    site-uri din 2018.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p class="copyright">
+            © 2021 Garstea Alexandr, Tentiuc Ion, Raileanu Daniel. All rights reserved.
+        </p>
+    </footer>
+
+    <noscript>Your browser don't support JavaScript!</noscript>
+    <script src="scripts.js" defer></script>
+</body>
+
+</html>

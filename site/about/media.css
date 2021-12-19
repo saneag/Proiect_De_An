@@ -1,0 +1,21 @@
+@media only screen and (max-width: 960px) {
+    .burger_menu {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav {
+        justify-content: space-between;
+        margin: 0 40px;
+    }
+}
+
+@media only screen and (max-height:830px) {
+    .mobile_nav {
+        padding: 150px 0;
+    }
+}
