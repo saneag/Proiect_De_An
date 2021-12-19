@@ -106,5 +106,8 @@ window.onload = () => {
         document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
         document.getElementsByClassName('loading')[0].style.opacity = '0'
         document.body.style.overflowY = ''
-    }, 1000)
+        let script_el = document.createElement('script')
+            script_el.src = './script.js'
+        document.body.appendChild(script_el)
+    }, 2000)
 }
