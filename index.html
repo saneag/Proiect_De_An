@@ -92,7 +92,15 @@
                         <p>Tractiunea:</p>
                         <input type="text" name="data[tractiunea]" autocomplete="off" required>
                         <p>Cutia:</p>
-                        <input type="text" name="data[cutia]" autocomplete="off" required>
+                        <div id="cutia">
+                            <div>
+                                <label for="Mecanica">Mecanica</label>
+                                <input type="radio" name="data[cutia]" id="Mecanica" required>
+                            </div>
+                            <div><label for="Automata">Automata</label>
+                                <input type="radio" name="data[cutia]" id="Automata" required>
+                            </div>
+                        </div>
                         <p>Pret:</p>
                         <input type="number" name="data[pret]" autocomplete="off" required>
                         <div>
