@@ -1,6 +1,0 @@
-Buton de schimbare a temei //pe jumate am facut
-casuta cu search //inca nu am facut
-menu cu sortari //inca nu am facut
-date despre autori (media links ... ) //o sa fac mai incolo oleak
-contact //tot mai incolo
-report bug //mai incolo
