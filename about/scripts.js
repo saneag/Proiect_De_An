@@ -13,7 +13,7 @@ window.onload = () => {
         document.getElementsByClassName('loading')[0].style.opacity = '0'
         document.body.style.overflowY = ''
         birthday()
-    }, 1000);
+    }, 500);
 }
 
 //theme changer
