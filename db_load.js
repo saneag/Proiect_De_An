@@ -18,7 +18,7 @@ form.addEventListener("submit", e => {
     let capacitatea = data.get('data[capacitatea]')
     let puterea = data.get('data[puterea]')
     let tractiunea = data.get('data[tractiunea]')
-    let cutia = document.getElementById('Mecanica').checked ? 'Mecanica' : 'Automata'
+    let cutia = document.getElementById('Manuala').checked ? 'Manuala' : 'Automata'
     let pret = data.get('data[pret]')
     let link = data.get('data[link]')
 
