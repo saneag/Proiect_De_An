@@ -229,10 +229,6 @@ main {
     grid-row-gap: 40px;
 }
 
-#ion {
-    width: 100%;
-}
-
 .galery div {
     max-width: 300px;
 }
@@ -249,6 +245,21 @@ main {
     font-weight: bold;
     letter-spacing: 2px;
     font-size: 1.2rem;
+}
+
+.galery .links_social {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 30px;
+}
+
+.galery .social {
+    width: 30px;
+}
+
+.galery .links_social a {
+    padding: 0;
 }
 
 footer {

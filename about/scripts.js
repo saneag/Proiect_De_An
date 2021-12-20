@@ -20,27 +20,18 @@ window.onload = () => {
 function change_theme() {
     let img = document.getElementById('theme_changer')
     img.classList.toggle('rotate_theme')
+    let par = document.querySelectorAll('p')
     if (img.classList.contains('rotate_theme')) {
         document.body.style.backgroundColor = 'white'
         footer.style.color = 'black'
-        for (let i = 0; i < cars.length; i++) {
-            cars[i].getElementsByTagName('a')[0].style.color = 'black'
-        }
-        document.getElementById('up_arrow').classList.add('change_color')
-        for (let i = 0; i < document.getElementsByClassName('slide')[0].querySelectorAll('input').length; i++) {
-            document.getElementsByClassName('slide')[0].querySelectorAll('input')[i].style.color = 'black'
-        }
-
+        for (let i = 0; i < par.length; i++)
+            par[i].style.color = 'black'
     }
     else {
         document.body.style.backgroundColor = ''
         footer.style.color = ''
-        for (let i = 0; i < cars.length; i++) {
-            cars[i].getElementsByTagName('a')[0].style.color = ''
-        }
-        document.getElementById('up_arrow').classList.remove('change_color')
-        for (let i = 0; i < document.getElementsByClassName('slide')[0].querySelectorAll('input').length; i++)
-            document.getElementsByClassName('slide')[0].querySelectorAll('input')[i].style.color = ''
+        for (let i = 0; i < par.length; i++)
+            par[i].style.color = ''
     }
 }
 
