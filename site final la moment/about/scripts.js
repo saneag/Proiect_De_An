@@ -62,9 +62,18 @@ function birthday() {
     let danu = document.getElementById('danu').getElementsByClassName('bd')[0]
     let alex = document.getElementById('alex').getElementsByClassName('bd')[0]
 
-    let curr_time = new Date()
+    ion.innerHTML = find_date('2000/12/26')
+    danu.innerHTML = find_date('2001/06/19')
+    alex.innerHTML = find_date('2002/06/27')
+}
 
-    ion.innerHTML = curr_time.getFullYear() - 2000
-    danu.innerHTML = curr_time.getFullYear() - 2001
-    alex.innerHTML = curr_time.getFullYear() - 2002
+function find_date(string) {
+    let today = new Date()
+    let birth = new Date(string)
+    let age = today.getFullYear() - birth.getFullYear()
+    let m = today.getMonth() - birth.getMonth()
+    if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+        age--
+    }
+    return age
 }
