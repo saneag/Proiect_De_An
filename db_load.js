@@ -103,11 +103,13 @@ window.onload = () => {
             cars[i].appendChild(link)
             temp_array[i] = i
         }
-        document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
-        document.getElementsByClassName('loading')[0].style.opacity = '0'
-        document.body.style.overflowY = ''
-        let script_el = document.createElement('script')
+        setTimeout(() => {
+            document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
+            document.getElementsByClassName('loading')[0].style.opacity = '0'
+            document.body.style.overflowY = ''
+            let script_el = document.createElement('script')
             script_el.src = './script.js'
-        document.body.appendChild(script_el)
+            document.body.appendChild(script_el)
+        }, 1000)
     }, 2000)
 }
