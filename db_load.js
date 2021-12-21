@@ -88,6 +88,9 @@ window.onload = () => {
             new_div.className = 'cars'
             new_div.id = 'car' + (i + 1)
             image.src = allCars[i].link
+            if (i >= 20) {
+                image.setAttribute('loading', 'lazy')
+            }
             par.textContent = allCars[i].marca + ' ' + allCars[i].model
             link.appendChild(image)
             link.appendChild(par)
@@ -101,13 +104,11 @@ window.onload = () => {
             cars[i].appendChild(link)
             temp_array[i] = i
         }
-        setTimeout(() => {
-            document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
-            document.getElementsByClassName('loading')[0].style.opacity = '0'
-            document.body.style.overflowY = ''
-            let script_el = document.createElement('script')
-            script_el.src = './script.js'
-            document.body.appendChild(script_el)
-        }, 1000)
+        document.getElementsByClassName('loading')[0].style.visibility = 'hidden'
+        document.getElementsByClassName('loading')[0].style.opacity = '0'
+        document.body.style.overflowY = ''
+        let script_el = document.createElement('script')
+        script_el.src = './script.js'
+        document.body.appendChild(script_el)
     }, 2000)
 }
