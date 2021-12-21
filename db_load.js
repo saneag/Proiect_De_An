@@ -14,10 +14,10 @@ form.addEventListener("submit", e => {
     let marca = data.get('data[marca]')
     let model = data.get('data[model]')
     let anul = data.get('data[anul]')
-    let combustibil = data.get('data[combustibil]')
+    let combustibil = document.getElementById('combustibil').value
     let capacitatea = data.get('data[capacitatea]')
     let puterea = data.get('data[puterea]')
-    let tractiunea = data.get('data[tractiunea]')
+    let tractiunea = document.getElementById('tractiunea').value
     let cutia = document.getElementById('Manuala').checked ? 'Manuala' : 'Automata'
     let pret = data.get('data[pret]')
     let link = data.get('data[link]')
@@ -52,8 +52,6 @@ form.addEventListener("submit", e => {
         }
     )
 });
-
-let temp = false
 
 window.onload = () => {
     fetch(form.action, {

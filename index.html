@@ -24,8 +24,7 @@
             </div>
             <ul>
                 <li>
-                    <a href="javascript:void(0)"
-                        onclick="prompt('Copy Email: ', 'proiectdean@gmail.com')">Contact</a>
+                    <a href="javascript:void(0)" onclick="prompt('Copy Email: ', 'proiectdean@gmail.com')">Contact</a>
                 </li>
                 <li>
                     <a href="index.html"><img src="./images/home.webp" alt="" width="25px"> Home</a>
@@ -49,8 +48,7 @@
                     <a href="index.html">Home</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)"
-                        onclick="prompt('Copy Email: ', 'proiectdean@gmail.com')">Contact</a>
+                    <a href="javascript:void(0)" onclick="prompt('Copy Email: ', 'proiectdean@gmail.com')">Contact</a>
                 </li>
                 <li>
                     <a href="./about/about.html">About</a>
@@ -71,41 +69,53 @@
                     </div>
                 </div>
                 <!-- https://sheetdb.io/api/v1/zwfd6a40nzs62 -->
-                    <form id="car_form" method="POST" action="https://sheetdb.io/api/v1/zwfd6a40nzs62">
+                <form id="car_form" method="POST" action="https://sheetdb.io/api/v1/zwfd6a40nzs62">
                     <div>
                         <p>Marca:</p>
-                        <input type="text" name="data[marca]" autocomplete="off" required>
+                        <input type="text" name="data[marca]" autocomplete="off" >
                         <p>Model:</p>
-                        <input type="text" name="data[model]" autocomplete="off" required>
+                        <input type="text" name="data[model]" autocomplete="off" >
                         <p>Anul:</p>
-                        <input type="number" name="data[anul]" autocomplete="off" required>
+                        <input type="number" name="data[anul]" autocomplete="off" >
                     </div>
                     <div>
-                        <p>Combustibil:</p>
-                        <input type="text" name="data[combustibil]" autocomplete="off" required>
+                        <label for="combustibil">Combustibil:</label>
+                        <select name="combustibil" id="combustibil">
+                            <option value="Benzina">Benzina</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Hybrid">Hybrid</option>
+                            <option value="Electrica">Electrica</option>
+                        </select>
                         <p>Capacitatea (ml):</p>
-                        <input type="number" name="data[capacitatea]" autocomplete="off" required>
+                        <input type="number" name="data[capacitatea]" autocomplete="off" >
                         <p>Puterea:</p>
-                        <input type="number" name="data[puterea]" autocomplete="off" required>
+                        <input type="number" name="data[puterea]" autocomplete="off" >
                     </div>
                     <div>
-                        <p>Tractiunea:</p>
-                        <input type="text" name="data[tractiunea]" autocomplete="off" required>
+                        <div class="tractiunea">
+                            <label for="tractiunea">Tractiunea:</label>
+                            <select name="tractiunea" id="tractiunea">
+                                <option value="Fata">Fata</option>
+                                <option value="Spate">Spate</option>
+                                <option value="Integrala">Integrala</option>
+                            </select>
+                        </div>
                         <p>Cutia:</p>
                         <div id="cutia">
                             <div>
-                                <label for="Mecanica">Manuala</label>
-                                <input type="radio" name="data[cutia]" id="Manuala" required>
+                                <label for="Manuala">Manuala</label>
+                                <input type="radio" name="same" id="Manuala" >
                             </div>
-                            <div><label for="Automata">Automata</label>
-                                <input type="radio" name="data[cutia]" id="Automata" required>
+                            <div>
+                                <label for="Automata">Automata</label>
+                                <input type="radio" name="same" id="Automata" >
                             </div>
                         </div>
                         <p>Pret:</p>
-                        <input type="number" name="data[pret]" autocomplete="off" required>
+                        <input type="number" name="data[pret]" autocomplete="off" >
                         <div>
                             <p>Link la imagine:</p>
-                            <input type="url" name="data[link]" autocomplete="off" required>
+                            <input type="url" name="data[link]" autocomplete="off" >
                         </div>
                     </div>
                     <button type="submit" class="btn">Submit</button>
