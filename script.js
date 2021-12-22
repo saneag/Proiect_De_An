@@ -1,6 +1,6 @@
 const myModal = document.getElementById('myModal')
 const modal_content = document.getElementById('modal_content')
-const inp = document.querySelectorAll('input')
+const inp = document.getElementsByClassName('slide')[0].querySelectorAll('input')
 const footer = document.querySelector('footer')
 const mobile_nav = document.getElementById('mobile_nav')
 const menu = document.getElementById('openmenu')
@@ -266,13 +266,16 @@ inp.forEach(element => {
 })
 
 function modal(x) {
+
+
     if (x == 'add') {
         let pass = prompt('Introduceti parola:')
         if (pass === 'Lemon') {
             add.style.visibility = 'visible'
             add.style.opacity = 1
+            delete_input()
         }
-        else{
+        else {
             alert('Parola incorecta!')
         }
     }
@@ -280,4 +283,21 @@ function modal(x) {
         add.style.visibility = 'hidden'
         add.style.opacity = 0
     }
+}
+
+function delete_input() {
+    let add_inp = document.getElementById('car_form').querySelectorAll('input')
+    let select = document.getElementById('car_form').querySelectorAll('select')
+    let radio_btns = document.getElementById('cutia').querySelectorAll('input[type=radio]')
+
+    add_inp.forEach(input => {
+        input.value = ''
+    })
+    select.forEach(sel => {
+        sel.selectedIndex = 0
+    })
+    if (radio_btns[0].checked)
+        radio_btns[0].checked = false
+    if (radio_btns[1].checked)
+        radio_btns[0].checked = false
 }

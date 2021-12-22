@@ -48,7 +48,7 @@ form.addEventListener("submit", e => {
     }).then(
         function (response) {
             alert("Masina a fost adaugata!")
-            // location.reload()
+            delete_input()
         }
     )
 });
