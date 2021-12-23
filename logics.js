@@ -18,6 +18,68 @@ setTimeout(() => {
   }
 }, 1000)
 
+// function partition(arr, start, end, item) {
+//   let pivotValue = arr[end][item];
+//   let pivotIndex = start;
+//   for (let i = start; i < end; i++) {
+//     if (ascending == true) {
+//       if (arr[i][item] <= pivotValue) {
+//         [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+//         pivotIndex++;
+//       }
+//     }
+//     else {
+//       if (arr[i][item] >= pivotValue) {
+//         [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+//         pivotIndex++;
+//       }
+//     }
+//   }
+
+//   [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]];
+//   return pivotIndex;
+// }
+
+// function quickSort(arr, start, end, type) {
+//   let index;
+
+//   if (start >= end) return;
+
+//   switch (type) {
+//     case 1:
+//       index = partition(arr, start, end, obj_items[0]);
+//       break;
+//     case 2:
+//       index = partition(arr, start, end, obj_items[1]);
+//       break;
+//     case 3:
+//       index = partition(arr, start, end, obj_items[2]);
+//       break;
+//     case 4:
+//       index = partition(arr, start, end, obj_items[3]);
+//       break;
+//     case 5:
+//       index = partition(arr, start, end, obj_items[4]);
+//       break;
+//     case 6:
+//       index = partition(arr, start, end, obj_items[5]);
+//       break;
+//     case 7:
+//       index = partition(arr, start, end, obj_items[6]);
+//       break;
+//     case 8:
+//       index = partition(arr, start, end, obj_items[7]);
+//       break;
+//     case 9:
+//       index = partition(arr, start, end, obj_items[8]);
+//       break;
+//   }
+
+//   quickSort(arr, start, index - 1, type);
+//   quickSort(arr, index + 1, end, type);
+// }
+
+//---------------------------------------------------------------
 function partition(arr, start, end, item) {
   let pivotValue = arr[end][item];
   let pivotIndex = start;
@@ -40,44 +102,56 @@ function partition(arr, start, end, item) {
   return pivotIndex;
 }
 
-function quickSort(arr, start, end, type) {
-  let index;
+function randomPivot(arr, start, end, item)
+{
+  let temp
+  let random = Math.random() * (end - start) + start
+  random = parseInt(random)
 
-  if (start >= end) return;
+  [arr[random], arr[end]] = [arr[end], arr[random]];
 
-  switch (type) {
-    case 1:
-      index = partition(arr, start, end, obj_items[0]);
-      break;
-    case 2:
-      index = partition(arr, start, end, obj_items[1]);
-      break;
-    case 3:
-      index = partition(arr, start, end, obj_items[2]);
-      break;
-    case 4:
-      index = partition(arr, start, end, obj_items[3]);
-      break;
-    case 5:
-      index = partition(arr, start, end, obj_items[4]);
-      break;
-    case 6:
-      index = partition(arr, start, end, obj_items[5]);
-      break;
-    case 7:
-      index = partition(arr, start, end, obj_items[6]);
-      break;
-    case 8:
-      index = partition(arr, start, end, obj_items[7]);
-      break;
-    case 9:
-      index = partition(arr, start, end, obj_items[8]);
-      break;
-  }
-
-  quickSort(arr, start, index - 1, type);
-  quickSort(arr, index + 1, end, type);
+  return partition(arr, start, end, item)
 }
+
+function quickSort(arr, start, end, type) {
+    let index;
+  
+    if (start >= end) return;
+  
+    switch (type) {
+      case 1:
+        index = randomPivot(arr, start, end, obj_items[0]);
+        break;
+      case 2:
+        index = randomPivot(arr, start, end, obj_items[1]);
+        break;
+      case 3:
+        index = randomPivot(arr, start, end, obj_items[2]);
+        break;
+      case 4:
+        index = randomPivot(arr, start, end, obj_items[3]);
+        break;
+      case 5:
+        index = randomPivot(arr, start, end, obj_items[4]);
+        break;
+      case 6:
+        index = randomPivot(arr, start, end, obj_items[5]);
+        break;
+      case 7:
+        index = randomPivot(arr, start, end, obj_items[6]);
+        break;
+      case 8:
+        index = randomPivot(arr, start, end, obj_items[7]);
+        break;
+      case 9:
+        index = randomPivot(arr, start, end, obj_items[8]);
+        break;
+    }
+  
+    quickSort(arr, start, index - 1, type);
+    quickSort(arr, index + 1, end, type);
+  }
+//---------------------------------------------------------------
 
 let ascending = true;
 let iterationCnt = 0;
