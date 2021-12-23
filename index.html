@@ -72,11 +72,11 @@
                 <form id="car_form" method="POST" action="https://sheetdb.io/api/v1/gp50mbg819lh7">
                     <div>
                         <p>Marca:</p>
-                        <input type="text" name="data[marca]" autocomplete="off">
+                        <input type="text" name="data[marca]" autocomplete="off" required>
                         <p>Model:</p>
-                        <input type="text" name="data[model]" autocomplete="off">
+                        <input type="text" name="data[model]" autocomplete="off" required>
                         <p>Anul:</p>
-                        <input type="number" name="data[anul]" autocomplete="off">
+                        <input type="number" name="data[anul]" autocomplete="off" required>
                     </div>
                     <div>
                         <label for="combustibil">Combustibil:</label>
@@ -87,9 +87,9 @@
                             <option value="Electrica">Electrica</option>
                         </select>
                         <p>Capacitatea (ml):</p>
-                        <input type="number" name="data[capacitatea]" autocomplete="off">
+                        <input type="number" name="data[capacitatea]" autocomplete="off" required>
                         <p>Puterea:</p>
-                        <input type="number" name="data[puterea]" autocomplete="off">
+                        <input type="number" name="data[puterea]" autocomplete="off" required>
                     </div>
                     <div>
                         <div class="tractiunea">
@@ -104,18 +104,18 @@
                         <div id="cutia">
                             <div>
                                 <label for="Manuala">Manuala</label>
-                                <input type="radio" name="same" id="Manuala">
+                                <input type="radio" name="same" id="Manuala" required>
                             </div>
                             <div>
                                 <label for="Automata">Automata</label>
-                                <input type="radio" name="same" id="Automata">
+                                <input type="radio" name="same" id="Automata" required>
                             </div>
                         </div>
                         <p>Pret:</p>
-                        <input type="number" name="data[pret]" autocomplete="off">
+                        <input type="number" name="data[pret]" autocomplete="off" required>
                         <div>
                             <p>Link la imagine:</p>
-                            <input type="url" name="data[link]" autocomplete="off">
+                            <input type="url" name="data[link]" autocomplete="off" required>
                         </div>
                     </div>
                     <button type="submit" class="btn">Submit</button>
@@ -135,39 +135,39 @@
                     <ul class="slide">
                         <li>
                             <input id="searchName" name="searchName" placeholder="Marca" type="search"
-                                autocomplete="off">
+                                autocomplete="off" required>
                         </li>
                         <li>
                             <input id="searchYearMin" name="searchYearMin" placeholder="Din" type="number"
-                                autocomplete="off">
+                                autocomplete="off" required>
                         </li>
                         <li>
                             <input id="searchYearMax" name="searchYearMax" placeholder="Pana in" type="number"
-                                autocomplete="off">
+                                autocomplete="off" required>
                         </li>
                         <li>
                             <input id="searchCapacityMin" name="searchCapacityMin" placeholder="De la (ml)"
-                                type="number" autocomplete="off">
+                                type="number" autocomplete="off" required>
                         </li>
                         <li>
                             <input id="searchCapacityMax" name="searchCapacityMax" placeholder="Pana la (ml)"
-                                type="number" autocomplete="off">
+                                type="number" autocomplete="off" required>
                         </li>
                         <li>
                             <input id="searchHPMin" name="searchHPMin" placeholder="De la (cp)" type="number"
-                                autocomplete="off">
+                                autocomplete="off" required>
                         </li>
                         <li>
                             <input id="searchHPMax" name="searchHPMax" placeholder="Pana la (cp)" type="number"
-                                autocomplete="off">
+                                autocomplete="off" required>
                         </li>
                         <li>
                             <input id="searchPriceMin" name="searchPriceMin" placeholder="De la ($)" type="number"
-                                autocomplete="off">
+                                autocomplete="off" required>
                         </li>
                         <li>
                             <input id="searchPriceMax" name="searchPriceMax" placeholder="Pana la ($)" type="number"
-                                autocomplete="off">
+                                autocomplete="off" required>
                         </li>
                         <button id="search" type="button" class="btn" onclick="searching_alg(0)">Search</button>
                         <button id="reset" type="button" class="btn" onclick="reset_search(0)">Reset</button>
@@ -236,8 +236,11 @@
         </p>
     </footer>
     <noscript>Your browser don't support JavaScript!</noscript>
+    <!-- Offline db -->
+    <!-- <script src="./offline db/cars.json"></script>
+    <script src="./offline db/load.js"></script> -->
+    <!-- END -->
     <script src="./db_load.js"></script>
-    <script src="./cars.js"></script>
     <script src="./logics.js"></script>
 </body>
 

@@ -51,7 +51,6 @@ function quickSort(arr, start, end, type) {
       break;
     case 2:
       index = partition(arr, start, end, obj_items[1]);
-      // debugger
       break;
     case 3:
       index = partition(arr, start, end, obj_items[2]);
@@ -215,9 +214,8 @@ function searching_alg(temp) {
   let inputPriceMax = document.getElementById("searchPriceMax").value;
 
   if (!inputName) {
-    for (let i = 0; i < allCars.length; i++) {
-      tempSearch[i] = allCars[i];
-    }
+    
+    tempSearch = [...allCars]
 
     if (!inputYearMin) {
       inputYearMin = 0;
@@ -252,11 +250,9 @@ function searching_alg(temp) {
       inputPriceMin, inputPriceMax, 1)
   }
   else {
-    let j = 0;
     for (let i = 0; i < allCars.length; i++) {
       if (allCars[i].marca.toLowerCase() == inputName.toLowerCase() || allCars[i].marca.split(' ')[0].toLowerCase() == inputName.toLowerCase() || (allCars[i].marca.split(' ')[1] ? allCars[i].marca.split(' ')[1].toLowerCase() == inputName.toLowerCase() : false)) {
-        tempSearch[j] = allCars[i];
-        j++
+        tempSearch.push(allCars[i]);
       }
     }
 
@@ -453,8 +449,7 @@ function decrypt(stringTestDecrypt) {
     }
   }
   decryptedString = decryptedString.join('').toLowerCase().split(' ')
-  for(let i = 0; i < decryptedString.length; i++)
-  {
+  for (let i = 0; i < decryptedString.length; i++) {
     decryptedString[i] = decryptedString[i].charAt(0).toUpperCase() + decryptedString[i].substring(1)
   }
   return decryptedString.join(' ');

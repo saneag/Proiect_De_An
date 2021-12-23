@@ -63,10 +63,12 @@ window.onload = () => {
                 allCars.push(value)
             });
         })
+
     window.scrollTo(0, 0)
     document.body.style.overflowY = 'hidden'
 
     setTimeout(() => {
+
         obj = []
         for (let i in allCars[0])
             obj.push(i)

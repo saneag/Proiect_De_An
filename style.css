@@ -252,6 +252,7 @@ main {
     border: 2px solid white;
     width: 80%;
     height: 90%;
+    position: absolute;
 }
 
 form {
@@ -397,6 +398,7 @@ main .car_galery {
 }
 
 .modal-content {
+    position: absolute;
     background-color: #282C34FF;
     padding: 20px;
     border: 2px solid white;
@@ -407,12 +409,13 @@ main .car_galery {
 
 .close {
     position: absolute;
-    right: 13%;
-    margin-top: 10px;
+    right: 0;
 }
 
 .close_btn_x {
     position: relative;
+    right: 40px;
+    top: 20px;
     transform: scale(3);
     display: block;
     padding: 5px 2px;
