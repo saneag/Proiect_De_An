@@ -48,21 +48,14 @@ form.addEventListener("submit", e => {
     }).then(
         function (response) {
             alert("Masina a fost adaugata!")
+            get_data()
             delete_input()
         }
     )
 });
 
 window.onload = () => {
-    fetch(form.action, {
-        method: "GET"
-    }).then(response => response.json())
-        .then((temp) => {
-            obj = Object.entries(temp)
-            obj.forEach(([key, value]) => {
-                allCars.push(value)
-            });
-        })
+    get_data()
 
     window.scrollTo(0, 0)
     document.body.style.overflowY = 'hidden'
@@ -125,18 +118,38 @@ window.onload = () => {
 }
 
 function check_len(type) {
-    if (type.length == 2) {
-        if (type[0].length <= 3) {
-            type[0] = type[0].toUpperCase()
-        }
-        if (type[1].length <= 3) {
-            type[1] = type[1].toUpperCase()
-        }
-    }
-    else {
-        if (type[0].length <= 3) {
-            type[0] = type[0].toUpperCase()
-        }
+    switch (type.length) {
+        case 1:
+            if (type[0].length <= 3)
+                type[0] = type[0].toUpperCase()
+            break
+        case 2:
+            if (type[0].length <= 3)
+                type[0] = type[0].toUpperCase()
+            if (type[1].length <= 3)
+                type[1] = type[1].toUpperCase()
+            break
+        case 3:
+            if (type[0].length <= 3)
+                type[0] = type[0].toUpperCase()
+            if (type[1].length <= 3)
+                type[1] = type[1].toUpperCase()
+            if (type[2].length <= 3)
+                type[2] = type[2].toUpperCase()
+
+            break
     }
     return type
+}
+
+function get_data() {
+    fetch(form.action, {
+        method: "GET"
+    }).then(response => response.json())
+        .then((temp) => {
+            obj = Object.entries(temp)
+            obj.forEach(([key, value]) => {
+                allCars.push(value)
+            });
+        })
 }

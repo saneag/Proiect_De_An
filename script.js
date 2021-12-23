@@ -274,8 +274,6 @@ inp.forEach(element => {
 })
 
 function modal(x) {
-
-
     if (x == 'add') {
         let pass = prompt('Introduceti parola:')
         if (pass === 'ananas') {
