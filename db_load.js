@@ -48,14 +48,21 @@ form.addEventListener("submit", e => {
     }).then(
         function (response) {
             alert("Masina a fost adaugata!")
-            get_data()
             delete_input()
         }
     )
 });
 
 window.onload = () => {
-    get_data()
+    fetch(form.action, {
+        method: "GET"
+    }).then(response => response.json())
+        .then((temp) => {
+            obj = Object.entries(temp)
+            obj.forEach(([key, value]) => {
+                allCars.push(value)
+            });
+        })
 
     window.scrollTo(0, 0)
     document.body.style.overflowY = 'hidden'
@@ -140,16 +147,4 @@ function check_len(type) {
             break
     }
     return type
-}
-
-function get_data() {
-    fetch(form.action, {
-        method: "GET"
-    }).then(response => response.json())
-        .then((temp) => {
-            obj = Object.entries(temp)
-            obj.forEach(([key, value]) => {
-                allCars.push(value)
-            });
-        })
 }

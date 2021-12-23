@@ -370,7 +370,7 @@ main .car_galery {
 .main_container {
     width: 60%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 4fr 1fr;
     grid-gap: 40px;
     margin: 0 auto;
     justify-content: center;
