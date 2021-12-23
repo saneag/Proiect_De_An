@@ -278,7 +278,7 @@ function modal(x) {
 
     if (x == 'add') {
         let pass = prompt('Introduceti parola:')
-        if (pass === 'Lemon') {
+        if (pass === 'ananas') {
             add.style.visibility = 'visible'
             add.style.opacity = 1
             delete_input()
