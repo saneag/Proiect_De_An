@@ -208,7 +208,15 @@ function display_main_cars(i) {
     image = document.createElement('img')
     par = document.createElement('p')
     image.src = allCars[i].link
-    par.textContent = allCars[i].marca + ' ' + allCars[i].model
+    let temp_marca = allCars[i].marca
+    let temp_model = allCars[i].model
+    temp_marca = temp_marca.split(' ')
+    temp_model = temp_model.split(' ')
+
+    temp_marca = check_len(temp_marca)
+    temp_model = check_len(temp_model)
+
+    par.innerHTML = temp_marca.join(' ').bold() + ' ' + temp_model.join(' ').italics()
     link.appendChild(image)
     link.appendChild(par)
     new_div = document.createElement('div')
