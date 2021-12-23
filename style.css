@@ -367,10 +367,6 @@ main .car_galery {
     opacity: 1;
 }
 
-.cars a {
-    font-weight: bold;
-}
-
 .main_container {
     width: 60%;
     display: grid;

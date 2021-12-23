@@ -93,7 +93,16 @@ window.onload = () => {
             if (i >= 20) {
                 image.setAttribute('loading', 'lazy')
             }
-            par.textContent = allCars[i].marca + ' ' + allCars[i].model
+            let temp_marca = allCars[i].marca
+            let temp_model = allCars[i].model
+            temp_marca = temp_marca.split(' ')
+            temp_model = temp_model.split(' ')
+
+            temp_marca = check_len(temp_marca)
+            temp_model = check_len(temp_model)
+
+            par.innerHTML = temp_marca.join(' ').bold() + ' ' + temp_model.join(' ').italics()
+
             link.appendChild(image)
             link.appendChild(par)
             car_gal.appendChild(new_div)
@@ -113,4 +122,21 @@ window.onload = () => {
         script_el.src = './script.js'
         document.body.appendChild(script_el)
     }, 2000)
+}
+
+function check_len(type) {
+    if (type.length == 2) {
+        if (type[0].length <= 3) {
+            type[0] = type[0].toUpperCase()
+        }
+        if (type[1].length <= 3) {
+            type[1] = type[1].toUpperCase()
+        }
+    }
+    else {
+        if (type[0].length <= 3) {
+            type[0] = type[0].toUpperCase()
+        }
+    }
+    return type
 }
